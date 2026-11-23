@@ -1,0 +1,33 @@
+<template>
+  <style>
+    #root { position: absolute; inset: 0; overflow: hidden; background: #07080b; font-family: "Montserrat", sans-serif; }
+    #root .frame { position: absolute; border-radius: 18px; overflow: hidden; background: #111318;
+      border: 1px solid rgba(255,255,255,0.08); box-shadow: 0 30px 80px rgba(0,0,0,0.65), 0 0 60px rgba(255,150,70,0.06); }
+    #root .full { position: absolute; left: 0; top: 0; width: 1920px; height: 1080px; overflow: hidden; }
+    #root .kb { position: absolute; left: 0; top: 0; width: 100%; height: 100%; }
+    #root .kb img, #root .kb video { position: absolute; left: 0; top: 0; width: 100%; height: 100%; object-fit: cover; }
+    #root .scrim { position: absolute; left: 0; top: 0; width: 1920px; height: 1080px;
+      background: linear-gradient(180deg, rgba(7,8,11,0) 55%, rgba(7,8,11,0.78) 100%); }
+    #root .label { position: absolute; left: 192px; top: 918px; height: 34px; display: flex; align-items: center; gap: 22px;
+      color: #c4c8cf; font-size: 28px; letter-spacing: 0.4em; text-transform: uppercase; white-space: nowrap; }
+    #root .label .rule { width: 64px; height: 2px; background: linear-gradient(90deg, #ffc27a, #ff8a3d); transform-origin: left center; }
+
+  </style>
+  <div id="root" data-composition-id="oneyear" data-width="1920" data-height="1080" data-duration="8"
+    data-composition-variables='[{"id": "chapter", "type": "string", "label": "Chapter label", "default": "One year"}]'>
+    <div id="oneyear-b1f1" class="frame" style="left:120px;top:143px;width:536px;height:714px;"><div id="oneyear-b1f1-kb" class="kb"><img id="oneyear-b1f1-m" class="clip" data-start="0" data-duration="8" data-track-index="0" src="assets/photos/anniversary-candles.jpg" alt="" /></div></div>
+    <div id="oneyear-b1f2" class="frame" style="left:692px;top:143px;width:536px;height:714px;"><div id="oneyear-b1f2-kb" class="kb"><img id="oneyear-b1f2-m" class="clip" data-start="0" data-duration="8" data-track-index="1" src="assets/photos/anniversary-cake.jpg" alt="" /></div></div>
+    <div id="oneyear-b1f3" class="frame" style="left:1264px;top:143px;width:536px;height:714px;"><div id="oneyear-b1f3-kb" class="kb"><img id="oneyear-b1f3-m" class="clip" data-start="0" data-duration="8" data-track-index="2" src="assets/photos/story-coaster.jpg" alt="" /></div></div>
+    <div id="oneyear-label" class="label"><div id="oneyear-rule" class="rule"></div><span id="oneyear-label-text" data-var-text="chapter">One year</span></div>
+  </div>
+  <script>
+    const tl = gsap.timeline({ paused: true });
+    tl.fromTo("#oneyear-b1f1, #oneyear-b1f2, #oneyear-b1f3", { opacity: 0, filter: "blur(10px)" }, { opacity: 1, filter: "blur(0px)", duration: 1.4, ease: "power2.out", stagger: 0.6 }, 0.05);
+    tl.fromTo("#oneyear-b1f1-kb, #oneyear-b1f2-kb, #oneyear-b1f3-kb", { scale: 1 }, { scale: 1.06, duration: 8, ease: "sine.inOut" }, 0);
+    tl.to("#oneyear-b1f1, #oneyear-b1f2, #oneyear-b1f3", { opacity: 0, filter: "blur(8px)", duration: 0.35, ease: "power3.in" }, 7.5);
+    tl.fromTo("#oneyear-rule", { scaleX: 0 }, { scaleX: 1, duration: 0.9, ease: "expo.out" }, 0.8);
+    tl.fromTo("#oneyear-label-text", { opacity: 0, filter: "blur(8px)" }, { opacity: 1, filter: "blur(0px)", duration: 0.2, ease: "power4.out" }, 1.05);
+    tl.to("#oneyear-label", { opacity: 0, filter: "blur(8px)", duration: 0.25, ease: "power3.in" }, 7.2);
+    window.__timelines["oneyear"] = tl;
+  </script>
+</template>

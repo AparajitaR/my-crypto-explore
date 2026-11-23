@@ -1,20 +1,17 @@
-# Review: first cut
+# Review: v2
 
-Checked with `hyperframes check` (0 errors) and two snapshot sheets covering every scene.
+`hyperframes check`: 0 errors. Snapshot sheet taken at the middle of all 19 beats; every frame shows the intended media with no empty frames or overlaps.
 
-## Fixed during review
+## Remaining warnings
 
-- Clip names were mismatched at first, so the sunset triptych showed the Manikaran river. Remapped every clip by its frames.
-- HDR auto-promotion to HEVC Main10 removed by tone-mapping the footage.
-- Chapter labels raised from 22 px to the 28 px phone floor; the Manikaran caption contrast fixed.
-- Frame 0 now shows a faint "KASOL", so the thumbnail is not blank.
+- Film is silent (no track supplied yet).
+- Manikaran river clips start at 6.5 s local time (intended).
+- "Dense timeline" notes on chapters with many beats; harmless, and the generator keeps them consistent.
 
 ## Known weaknesses
 
-- **Silent.** No music source is available yet (not signed in to HeyGen, no track supplied).
-- **River-drive clip** (left frame in Manikaran) smears around the passing pole: 1.9 s of handheld footage slowed 3.5×.
-- **Her on the road** comes from a 478×850 file, so it is softer than the other frames.
-- **Title holds** in the intro (about 5 s) and outro (about 4 s) are deliberately still; only the embers move.
-- Remaining lint warnings: the Manikaran clips start at 5.6 s local time (intended), and the film is silent.
+- `her-on-road` comes from a 478×850 file and looks softer than the rest.
+- `hot-spring-pool` and `dusk-pines` are dark images; they read as mood but carry little detail.
+- Beats of 3.5 s with three or four photos are brisk; a 2-minute version would give them room.
 
-Sound was not heard; frames were judged from stills only.
+Frames were judged from stills; motion was checked only at beat midpoints.
