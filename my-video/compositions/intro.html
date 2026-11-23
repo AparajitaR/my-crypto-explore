@@ -1,18 +1,22 @@
 <template>
   <style>
-    #root { position: absolute; inset: 0; overflow: hidden; background: #07080b; font-family: "Montserrat", sans-serif; }
-    #root .shot { position: absolute; left: 0; top: 0; width: 1080px; height: 1920px; overflow: hidden; }
-    #root .kb { position: absolute; left: 0; top: 0; width: 100%; height: 100%; }
+    #root { position: absolute; inset: 0; overflow: hidden; font-family: "Montserrat", sans-serif; }
+    #root .shot { position: absolute; left: 0; top: 0; width: 1080px; height: 1920px; }
+    #root .tx, #root .kb { position: absolute; left: 0; top: 0; width: 100%; height: 100%; }
+    #root .tx { overflow: hidden; }
     #root .kb img, #root .kb video { position: absolute; left: 0; top: 0; width: 100%; height: 100%; object-fit: cover; }
     #root .scrim { position: absolute; left: 0; top: 0; width: 1080px; height: 1920px;
-      background: linear-gradient(180deg, rgba(7,8,11,0.25) 0%, rgba(7,8,11,0) 16%, rgba(7,8,11,0) 50%, rgba(7,8,11,0.72) 74%, rgba(7,8,11,0.82) 100%); }
-    #root .label { position: absolute; left: 120px; top: 1170px; height: 40px; display: flex; align-items: center; gap: 22px;
-      color: #eef0f3; font-size: 34px; letter-spacing: 0.32em; text-transform: uppercase; white-space: nowrap;
-      text-shadow: 0 2px 14px rgba(0,0,0,0.6); }
+      background: linear-gradient(180deg, rgba(7,8,11,0.25) 0%, rgba(7,8,11,0) 16%, rgba(7,8,11,0) 50%, rgba(7,8,11,0.6) 74%, rgba(7,8,11,0.75) 100%); }
+    #root .flash { position: absolute; left: 0; top: 0; width: 1080px; height: 1920px; background: #fff4e3; opacity: 0; }
+    #root .leak { position: absolute; left: 0; top: 0; width: 1700px; height: 1920px; opacity: 0; mix-blend-mode: screen;
+      background: radial-gradient(ellipse 45% 60% at 50% 45%, rgba(255,190,110,0.95), rgba(255,120,60,0.55) 45%, rgba(255,90,40,0) 75%); }
+    #root .label { position: absolute; left: 120px; top: 1170px; height: 44px; display: flex; align-items: center; gap: 22px;
+      color: #ffffff; font-size: 36px; letter-spacing: 0.3em; text-transform: uppercase; white-space: nowrap;
+      text-shadow: 0 2px 16px rgba(0,0,0,0.65); transform-origin: left center; }
     #root .label .rule { width: 64px; height: 3px; background: linear-gradient(90deg, #ffc27a, #ff8a3d); transform-origin: left center; }
 
     #root .dim { position: absolute; left: 0; top: 0; width: 1080px; height: 1920px;
-      background: linear-gradient(180deg, rgba(7,8,11,0.35) 0%, rgba(7,8,11,0.62) 30%, rgba(7,8,11,0.66) 60%, rgba(7,8,11,0.4) 100%); }
+      background: linear-gradient(180deg, rgba(7,8,11,0.3) 0%, rgba(7,8,11,0.55) 30%, rgba(7,8,11,0.6) 60%, rgba(7,8,11,0.35) 100%); }
     #root .glow { position: absolute; left: 40px; top: 430px; width: 1000px; height: 700px; border-radius: 50%;
       background: radial-gradient(closest-side, rgba(255,154,74,0.28), rgba(255,120,50,0.08) 60%, rgba(7,8,11,0) 100%); }
     #root .embers { position: absolute; left: 0; top: 0; width: 1080px; height: 1920px; }
@@ -26,15 +30,16 @@
     #root .title span { display: inline-block; }
     #root .trule { width: 420px; height: 3px; margin: 34px 0 30px;
       background: linear-gradient(90deg, rgba(255,194,122,0), #ffc27a 30%, #ff8a3d 70%, rgba(255,138,61,0)); }
-    #root .sub { font-size: 38px; letter-spacing: 0.12em; text-transform: uppercase; color: #ffc98a; padding-left: 0.14em;
+    #root .sub { font-size: 38px; letter-spacing: 0.12em; text-transform: uppercase; color: #ffc98a; padding-left: 0.12em;
       white-space: nowrap; }
     #root .sub span { display: inline-block; margin: 0 0.12em; }
     #root .closing { margin-top: 44px; color: #f1f2f4; font-size: 38px; letter-spacing: 0.04em; text-shadow: 0 2px 14px rgba(0,0,0,0.6); }
 
   </style>
-  <div id="root" data-composition-id="intro" data-width="1080" data-height="1920" data-duration="6"
-    data-composition-variables='[{"id":"kicker","type":"string","label":"Kicker","default":"Parvati Valley"}]'>
-    <div id="intro-bg" class="shot" data-layout-allow-overflow><div id="intro-bg-kb" class="kb"><video id="intro-bg-m" class="clip" data-start="0" data-duration="6" data-track-index="0" muted playsinline src="assets/video/valley-sunset.mp4"></video></div></div><div id="intro-dim" class="dim"></div>
+  <div id="root" data-composition-id="intro" data-width="1080" data-height="1920" data-duration="6.4000"
+    data-composition-variables='[{"id": "kicker", "type": "string", "label": "Kicker", "default": "Parvati Valley"}]'>
+    <div id="intro-bg" class="shot" data-layout-allow-overflow><div id="intro-bg-tx" class="tx"><div id="intro-bg-kb" class="kb"><video id="intro-bg-m" class="clip" data-start="0" data-duration="6.4" data-track-index="0" muted playsinline src="assets/video/valley-sunset.mp4"></video></div></div></div>
+    <div id="intro-dim" class="dim"></div>
     <div id="intro-glow" class="glow"></div>
     <div id="intro-embers" class="embers" data-layout-ignore><div class="ember" data-rise="478" style="left:633px;top:889px;width:3.7px;height:3.7px;opacity:0.65;"></div><div class="ember" data-rise="267" style="left:159px;top:1771px;width:5.9px;height:5.9px;opacity:0.42;"></div><div class="ember" data-rise="167" style="left:389px;top:1506px;width:5.7px;height:5.7px;opacity:0.69;"></div><div class="ember" data-rise="233" style="left:69px;top:1063px;width:5.0px;height:5.0px;opacity:0.59;"></div><div class="ember" data-rise="336" style="left:67px;top:1233px;width:3.0px;height:3.0px;opacity:0.75;"></div><div class="ember" data-rise="308" style="left:488px;top:1755px;width:4.5px;height:4.5px;opacity:0.7;"></div><div class="ember" data-rise="427" style="left:469px;top:1012px;width:5.4px;height:5.4px;opacity:0.37;"></div><div class="ember" data-rise="452" style="left:765px;top:1323px;width:2.9px;height:2.9px;opacity:0.45;"></div><div class="ember" data-rise="207" style="left:648px;top:1040px;width:2.6px;height:2.6px;opacity:0.74;"></div><div class="ember" data-rise="194" style="left:521px;top:1032px;width:3.3px;height:3.3px;opacity:0.38;"></div><div class="ember" data-rise="353" style="left:323px;top:1560px;width:3.3px;height:3.3px;opacity:0.59;"></div><div class="ember" data-rise="325" style="left:902px;top:1341px;width:3.7px;height:3.7px;opacity:0.31;"></div><div class="ember" data-rise="351" style="left:320px;top:1764px;width:4.2px;height:4.2px;opacity:0.63;"></div><div class="ember" data-rise="199" style="left:511px;top:1199px;width:3.9px;height:3.9px;opacity:0.67;"></div><div class="ember" data-rise="336" style="left:310px;top:1444px;width:5.2px;height:5.2px;opacity:0.3;"></div><div class="ember" data-rise="431" style="left:558px;top:843px;width:5.1px;height:5.1px;opacity:0.76;"></div><div class="ember" data-rise="476" style="left:367px;top:788px;width:2.8px;height:2.8px;opacity:0.61;"></div><div class="ember" data-rise="425" style="left:963px;top:1666px;width:3.6px;height:3.6px;opacity:0.49;"></div><div class="ember" data-rise="171" style="left:796px;top:589px;width:3.7px;height:3.7px;opacity:0.39;"></div><div class="ember" data-rise="376" style="left:850px;top:1795px;width:3.9px;height:3.9px;opacity:0.57;"></div><div class="ember" data-rise="318" style="left:186px;top:856px;width:5.7px;height:5.7px;opacity:0.43;"></div><div class="ember" data-rise="187" style="left:710px;top:1372px;width:3.8px;height:3.8px;opacity:0.38;"></div><div class="ember" data-rise="208" style="left:692px;top:914px;width:2.9px;height:2.9px;opacity:0.75;"></div><div class="ember" data-rise="455" style="left:762px;top:1799px;width:3.3px;height:3.3px;opacity:0.76;"></div><div class="ember" data-rise="260" style="left:232px;top:1483px;width:4.3px;height:4.3px;opacity:0.55;"></div><div class="ember" data-rise="305" style="left:606px;top:1097px;width:4.9px;height:4.9px;opacity:0.51;"></div><div class="ember" data-rise="473" style="left:112px;top:1500px;width:4.2px;height:4.2px;opacity:0.62;"></div><div class="ember" data-rise="256" style="left:176px;top:1655px;width:4.2px;height:4.2px;opacity:0.42;"></div></div>
     <div id="intro-stack" class="stack" data-hold>
@@ -47,17 +52,18 @@
   <script>
     const tl = gsap.timeline({ paused: true });
     document.querySelectorAll("#intro-embers .ember").forEach((el) => {
-      tl.fromTo(el, { y: 0 }, { y: -Number(el.dataset.rise), duration: 6.0, ease: "none" }, 0);
+      tl.fromTo(el, { y: 0 }, { y: -Number(el.dataset.rise), duration: 6.4, ease: "none" }, 0);
     });
-    tl.fromTo("#intro-bg-kb", { scale: 1.0 }, { scale: 1.08, duration: 6, ease: "sine.inOut" }, 0);
+    tl.fromTo("#intro-bg-kb", { scale: 1.0 }, { scale: 1.08, duration: 6.4, ease: "none" }, 0);
     tl.fromTo("#intro-glow", { opacity: 0.4 }, { opacity: 1, duration: 2.2, ease: "power2.inOut" }, 0);
     tl.fromTo("#intro-kicker", { opacity: 0, filter: "blur(8px)" }, { opacity: 1, filter: "blur(0px)", duration: 0.5, ease: "power4.out" }, 0.4);
-    tl.fromTo("#intro-title span", { opacity: 0.3, filter: "blur(4px)" }, { opacity: 1, filter: "blur(0px)", duration: 0.6, ease: "power3.out", stagger: 0.1 }, 0.7);
+    tl.fromTo("#intro-title span", { opacity: 0.3, y: 40, filter: "blur(4px)" }, { opacity: 1, y: 0, filter: "blur(0px)", duration: 0.7, ease: "back.out(1.6)", stagger: 0.09 }, 0.7);
     tl.fromTo("#intro-rule", { scaleX: 0 }, { scaleX: 1, duration: 0.9, ease: "expo.out" }, 1.6);
     tl.fromTo("#intro-sub span", { opacity: 0, filter: "blur(6px)" }, { opacity: 1, filter: "blur(0px)", duration: 0.3, ease: "power4.out", stagger: 0.09 }, 1.9);
     tl.fromTo("#intro-sub", { textShadow: "0 0 0px rgba(255,170,90,0), 0 0 0px rgba(255,140,60,0)" }, { textShadow: "0 0 16px rgba(255,170,90,0.85), 0 0 46px rgba(255,140,60,0.55)", duration: 1.4, ease: "power2.inOut" }, 2.2);
-    tl.to(["#intro-kicker", "#intro-title span", "#intro-rule", "#intro-sub span"], { opacity: 0, filter: "blur(8px)", duration: 0.25, ease: "power3.in", stagger: 0.04 }, 5.1);
-    tl.to(["#intro-glow", "#intro-embers"], { opacity: 0, duration: 0.6, ease: "power2.in" }, 5.1);
+    tl.to(["#intro-kicker", "#intro-title span", "#intro-rule", "#intro-sub span"], { opacity: 0, filter: "blur(8px)", duration: 0.25, ease: "power3.in", stagger: 0.04 }, 5.2);
+    tl.to(["#intro-glow", "#intro-embers", "#intro-dim"], { opacity: 0, duration: 0.6, ease: "power2.in" }, 5.2);
+    tl.to("#intro-bg-tx", { scale: 1.35, filter: "blur(14px)", duration: 0.4, ease: "power2.in" }, 6.0000);
     window.__timelines["intro"] = tl;
   </script>
 </template>

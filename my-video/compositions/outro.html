@@ -1,18 +1,22 @@
 <template>
   <style>
-    #root { position: absolute; inset: 0; overflow: hidden; background: #07080b; font-family: "Montserrat", sans-serif; }
-    #root .shot { position: absolute; left: 0; top: 0; width: 1080px; height: 1920px; overflow: hidden; }
-    #root .kb { position: absolute; left: 0; top: 0; width: 100%; height: 100%; }
+    #root { position: absolute; inset: 0; overflow: hidden; font-family: "Montserrat", sans-serif; }
+    #root .shot { position: absolute; left: 0; top: 0; width: 1080px; height: 1920px; }
+    #root .tx, #root .kb { position: absolute; left: 0; top: 0; width: 100%; height: 100%; }
+    #root .tx { overflow: hidden; }
     #root .kb img, #root .kb video { position: absolute; left: 0; top: 0; width: 100%; height: 100%; object-fit: cover; }
     #root .scrim { position: absolute; left: 0; top: 0; width: 1080px; height: 1920px;
-      background: linear-gradient(180deg, rgba(7,8,11,0.25) 0%, rgba(7,8,11,0) 16%, rgba(7,8,11,0) 50%, rgba(7,8,11,0.72) 74%, rgba(7,8,11,0.82) 100%); }
-    #root .label { position: absolute; left: 120px; top: 1170px; height: 40px; display: flex; align-items: center; gap: 22px;
-      color: #eef0f3; font-size: 34px; letter-spacing: 0.32em; text-transform: uppercase; white-space: nowrap;
-      text-shadow: 0 2px 14px rgba(0,0,0,0.6); }
+      background: linear-gradient(180deg, rgba(7,8,11,0.25) 0%, rgba(7,8,11,0) 16%, rgba(7,8,11,0) 50%, rgba(7,8,11,0.6) 74%, rgba(7,8,11,0.75) 100%); }
+    #root .flash { position: absolute; left: 0; top: 0; width: 1080px; height: 1920px; background: #fff4e3; opacity: 0; }
+    #root .leak { position: absolute; left: 0; top: 0; width: 1700px; height: 1920px; opacity: 0; mix-blend-mode: screen;
+      background: radial-gradient(ellipse 45% 60% at 50% 45%, rgba(255,190,110,0.95), rgba(255,120,60,0.55) 45%, rgba(255,90,40,0) 75%); }
+    #root .label { position: absolute; left: 120px; top: 1170px; height: 44px; display: flex; align-items: center; gap: 22px;
+      color: #ffffff; font-size: 36px; letter-spacing: 0.3em; text-transform: uppercase; white-space: nowrap;
+      text-shadow: 0 2px 16px rgba(0,0,0,0.65); transform-origin: left center; }
     #root .label .rule { width: 64px; height: 3px; background: linear-gradient(90deg, #ffc27a, #ff8a3d); transform-origin: left center; }
 
     #root .dim { position: absolute; left: 0; top: 0; width: 1080px; height: 1920px;
-      background: linear-gradient(180deg, rgba(7,8,11,0.35) 0%, rgba(7,8,11,0.62) 30%, rgba(7,8,11,0.66) 60%, rgba(7,8,11,0.4) 100%); }
+      background: linear-gradient(180deg, rgba(7,8,11,0.3) 0%, rgba(7,8,11,0.55) 30%, rgba(7,8,11,0.6) 60%, rgba(7,8,11,0.35) 100%); }
     #root .glow { position: absolute; left: 40px; top: 430px; width: 1000px; height: 700px; border-radius: 50%;
       background: radial-gradient(closest-side, rgba(255,154,74,0.28), rgba(255,120,50,0.08) 60%, rgba(7,8,11,0) 100%); }
     #root .embers { position: absolute; left: 0; top: 0; width: 1080px; height: 1920px; }
@@ -26,40 +30,48 @@
     #root .title span { display: inline-block; }
     #root .trule { width: 420px; height: 3px; margin: 34px 0 30px;
       background: linear-gradient(90deg, rgba(255,194,122,0), #ffc27a 30%, #ff8a3d 70%, rgba(255,138,61,0)); }
-    #root .sub { font-size: 38px; letter-spacing: 0.12em; text-transform: uppercase; color: #ffc98a; padding-left: 0.14em;
+    #root .sub { font-size: 38px; letter-spacing: 0.12em; text-transform: uppercase; color: #ffc98a; padding-left: 0.12em;
       white-space: nowrap; }
     #root .sub span { display: inline-block; margin: 0 0.12em; }
     #root .closing { margin-top: 44px; color: #f1f2f4; font-size: 38px; letter-spacing: 0.04em; text-shadow: 0 2px 14px rgba(0,0,0,0.6); }
 
   </style>
-  <div id="root" data-composition-id="outro" data-width="1080" data-height="1920" data-duration="7.5"
+  <div id="root" data-composition-id="outro" data-width="1080" data-height="1920" data-duration="7.5000"
     data-composition-variables='[{"id": "closing", "type": "string", "label": "Closing line", "default": "#SayAnAparajitaStory"}]'>
     <div id="outro-stage" class="shot">
-      <div id="outro-bg" class="shot" data-layout-allow-overflow><div id="outro-bg-kb" class="kb"><img id="outro-bg-m" class="clip" data-start="0" data-duration="7.5" data-track-index="0" src="assets/photos/couple-heart.jpg" style="object-position:48% 50%;" alt="" /></div></div><div id="outro-dim" class="dim"></div>
-      <div id="outro-glow" class="glow"></div>
-      <div id="outro-embers" class="embers" data-layout-ignore><div class="ember" data-rise="303" style="left:846px;top:1317px;width:3.9px;height:3.9px;opacity:0.52;"></div><div class="ember" data-rise="231" style="left:622px;top:992px;width:5.8px;height:5.8px;opacity:0.42;"></div><div class="ember" data-rise="308" style="left:730px;top:1539px;width:4.5px;height:4.5px;opacity:0.76;"></div><div class="ember" data-rise="188" style="left:964px;top:1642px;width:3.4px;height:3.4px;opacity:0.52;"></div><div class="ember" data-rise="297" style="left:220px;top:1793px;width:5.7px;height:5.7px;opacity:0.54;"></div><div class="ember" data-rise="244" style="left:883px;top:701px;width:4.7px;height:4.7px;opacity:0.64;"></div><div class="ember" data-rise="172" style="left:136px;top:1529px;width:2.6px;height:2.6px;opacity:0.49;"></div><div class="ember" data-rise="419" style="left:196px;top:1303px;width:4.0px;height:4.0px;opacity:0.59;"></div><div class="ember" data-rise="259" style="left:830px;top:1738px;width:3.0px;height:3.0px;opacity:0.57;"></div><div class="ember" data-rise="171" style="left:576px;top:760px;width:2.6px;height:2.6px;opacity:0.73;"></div><div class="ember" data-rise="235" style="left:175px;top:1689px;width:2.6px;height:2.6px;opacity:0.7;"></div><div class="ember" data-rise="182" style="left:357px;top:1265px;width:4.8px;height:4.8px;opacity:0.4;"></div><div class="ember" data-rise="269" style="left:522px;top:1095px;width:3.5px;height:3.5px;opacity:0.5;"></div><div class="ember" data-rise="277" style="left:747px;top:1344px;width:3.1px;height:3.1px;opacity:0.69;"></div><div class="ember" data-rise="343" style="left:341px;top:1182px;width:4.4px;height:4.4px;opacity:0.79;"></div><div class="ember" data-rise="387" style="left:194px;top:1248px;width:4.5px;height:4.5px;opacity:0.35;"></div><div class="ember" data-rise="424" style="left:166px;top:708px;width:2.6px;height:2.6px;opacity:0.79;"></div><div class="ember" data-rise="365" style="left:672px;top:834px;width:2.6px;height:2.6px;opacity:0.45;"></div><div class="ember" data-rise="231" style="left:709px;top:1752px;width:5.0px;height:5.0px;opacity:0.33;"></div><div class="ember" data-rise="369" style="left:801px;top:1681px;width:3.4px;height:3.4px;opacity:0.57;"></div><div class="ember" data-rise="417" style="left:114px;top:835px;width:2.6px;height:2.6px;opacity:0.48;"></div><div class="ember" data-rise="392" style="left:949px;top:1047px;width:5.6px;height:5.6px;opacity:0.36;"></div><div class="ember" data-rise="337" style="left:294px;top:836px;width:5.8px;height:5.8px;opacity:0.79;"></div><div class="ember" data-rise="406" style="left:572px;top:1346px;width:5.5px;height:5.5px;opacity:0.45;"></div><div class="ember" data-rise="323" style="left:638px;top:1306px;width:4.6px;height:4.6px;opacity:0.42;"></div><div class="ember" data-rise="196" style="left:816px;top:858px;width:4.5px;height:4.5px;opacity:0.4;"></div><div class="ember" data-rise="459" style="left:149px;top:1725px;width:4.1px;height:4.1px;opacity:0.78;"></div><div class="ember" data-rise="255" style="left:308px;top:873px;width:5.4px;height:5.4px;opacity:0.42;"></div></div>
-      <div id="outro-stack" class="stack" data-hold>
-        <h1 id="outro-title" class="title">KASOL</h1>
-        <div id="outro-rule" class="trule"></div>
-        <div id="outro-sub" class="sub"><span id="outro-w1">1st</span><span id="outro-w2">Year</span><span id="outro-w3">Anniversary</span></div>
-        <div id="outro-closing" class="closing" data-var-text="closing">#SayAnAparajitaStory</div>
-      </div>
+    <div id="outro-bg" class="shot" data-layout-allow-overflow><div id="outro-bg-tx" class="tx"><div id="outro-bg-kb" class="kb"><img id="outro-bg-m" class="clip" data-start="0" data-duration="7.5" data-track-index="0" src="assets/photos/couple-heart.jpg" style="object-position:48% 50%;" alt="" /></div></div></div>
+    <div id="outro-dim" class="dim"></div>
+    <div id="outro-glow" class="glow"></div>
+    <div id="outro-embers" class="embers" data-layout-ignore><div class="ember" data-rise="303" style="left:846px;top:1317px;width:3.9px;height:3.9px;opacity:0.52;"></div><div class="ember" data-rise="231" style="left:622px;top:992px;width:5.8px;height:5.8px;opacity:0.42;"></div><div class="ember" data-rise="308" style="left:730px;top:1539px;width:4.5px;height:4.5px;opacity:0.76;"></div><div class="ember" data-rise="188" style="left:964px;top:1642px;width:3.4px;height:3.4px;opacity:0.52;"></div><div class="ember" data-rise="297" style="left:220px;top:1793px;width:5.7px;height:5.7px;opacity:0.54;"></div><div class="ember" data-rise="244" style="left:883px;top:701px;width:4.7px;height:4.7px;opacity:0.64;"></div><div class="ember" data-rise="172" style="left:136px;top:1529px;width:2.6px;height:2.6px;opacity:0.49;"></div><div class="ember" data-rise="419" style="left:196px;top:1303px;width:4.0px;height:4.0px;opacity:0.59;"></div><div class="ember" data-rise="259" style="left:830px;top:1738px;width:3.0px;height:3.0px;opacity:0.57;"></div><div class="ember" data-rise="171" style="left:576px;top:760px;width:2.6px;height:2.6px;opacity:0.73;"></div><div class="ember" data-rise="235" style="left:175px;top:1689px;width:2.6px;height:2.6px;opacity:0.7;"></div><div class="ember" data-rise="182" style="left:357px;top:1265px;width:4.8px;height:4.8px;opacity:0.4;"></div><div class="ember" data-rise="269" style="left:522px;top:1095px;width:3.5px;height:3.5px;opacity:0.5;"></div><div class="ember" data-rise="277" style="left:747px;top:1344px;width:3.1px;height:3.1px;opacity:0.69;"></div><div class="ember" data-rise="343" style="left:341px;top:1182px;width:4.4px;height:4.4px;opacity:0.79;"></div><div class="ember" data-rise="387" style="left:194px;top:1248px;width:4.5px;height:4.5px;opacity:0.35;"></div><div class="ember" data-rise="424" style="left:166px;top:708px;width:2.6px;height:2.6px;opacity:0.79;"></div><div class="ember" data-rise="365" style="left:672px;top:834px;width:2.6px;height:2.6px;opacity:0.45;"></div><div class="ember" data-rise="231" style="left:709px;top:1752px;width:5.0px;height:5.0px;opacity:0.33;"></div><div class="ember" data-rise="369" style="left:801px;top:1681px;width:3.4px;height:3.4px;opacity:0.57;"></div><div class="ember" data-rise="417" style="left:114px;top:835px;width:2.6px;height:2.6px;opacity:0.48;"></div><div class="ember" data-rise="392" style="left:949px;top:1047px;width:5.6px;height:5.6px;opacity:0.36;"></div><div class="ember" data-rise="337" style="left:294px;top:836px;width:5.8px;height:5.8px;opacity:0.79;"></div><div class="ember" data-rise="406" style="left:572px;top:1346px;width:5.5px;height:5.5px;opacity:0.45;"></div><div class="ember" data-rise="323" style="left:638px;top:1306px;width:4.6px;height:4.6px;opacity:0.42;"></div><div class="ember" data-rise="196" style="left:816px;top:858px;width:4.5px;height:4.5px;opacity:0.4;"></div><div class="ember" data-rise="459" style="left:149px;top:1725px;width:4.1px;height:4.1px;opacity:0.78;"></div><div class="ember" data-rise="255" style="left:308px;top:873px;width:5.4px;height:5.4px;opacity:0.42;"></div></div>
+    <div id="outro-stack" class="stack" data-hold>
+      <h1 id="outro-title" class="title">KASOL</h1>
+      <div id="outro-rule" class="trule"></div>
+      <div id="outro-sub" class="sub"><span id="outro-w1">1st</span><span id="outro-w2">Year</span><span id="outro-w3">Anniversary</span></div>
+      <div id="outro-closing" class="closing" data-var-text="closing">#SayAnAparajitaStory</div>
+    </div>
+    <div id="outro-flash" class="flash" data-layout-ignore></div>
+    <div id="outro-leak" class="leak" data-layout-ignore data-layout-allow-overflow></div>
     </div>
   </div>
   <script>
     const tl = gsap.timeline({ paused: true });
+    tl.set("#outro-leak", { x: -1700, opacity: 0 }, 0);
+    tl.set("#outro-flash", { opacity: 0 }, 0);
     document.querySelectorAll("#outro-embers .ember").forEach((el) => {
       tl.fromTo(el, { y: 0 }, { y: -Number(el.dataset.rise), duration: 7.5, ease: "none" }, 0);
     });
-    tl.fromTo("#outro-bg-kb", { x: 160, filter: "blur(16px)", scale: 1.0 }, { x: 0, filter: "blur(0px)", duration: 0.32, ease: "power3.out" }, 0);
-    tl.fromTo("#outro-bg-kb", { scale: 1.0 }, { scale: 1.07, duration: 7.5, ease: "sine.inOut", immediateRender: false }, 0);
+    tl.fromTo("#outro-bg-tx", { scale: 1.5, opacity: 0, filter: "blur(14px)" }, { scale: 1, opacity: 1, filter: "blur(0px)", duration: 0.4, ease: "power2.out" }, 0.0000);
+    tl.set("#outro-leak", { x: -1700 }, 0.0000);
+    tl.to("#outro-leak", { x: 900, duration: 0.80, ease: "power1.inOut" }, 0.0000);
+    tl.to("#outro-leak", { opacity: 0.95, duration: 0.32, ease: "power2.out", yoyo: true, repeat: 1 }, 0.0000);
+    tl.fromTo("#outro-bg-kb", { scale: 1.0 }, { scale: 1.07, duration: 7.5, ease: "none" }, 0);
     tl.fromTo("#outro-dim", { opacity: 0 }, { opacity: 1, duration: 1.0, ease: "power2.inOut" }, 0.6);
     tl.fromTo("#outro-glow", { opacity: 0 }, { opacity: 1, duration: 1.6, ease: "power2.inOut" }, 0.8);
-    tl.fromTo("#outro-title", { opacity: 0, filter: "blur(8px)" }, { opacity: 1, filter: "blur(0px)", duration: 0.8, ease: "power3.out" }, 1.0);
+    tl.fromTo("#outro-title", { opacity: 0, scale: 0.85, filter: "blur(8px)" }, { opacity: 1, scale: 1, filter: "blur(0px)", duration: 0.8, ease: "back.out(1.6)" }, 1.0);
     tl.fromTo("#outro-rule", { scaleX: 0 }, { scaleX: 1, duration: 0.9, ease: "expo.out" }, 1.6);
     tl.fromTo("#outro-sub span", { opacity: 0, filter: "blur(6px)" }, { opacity: 1, filter: "blur(0px)", duration: 0.3, ease: "power4.out", stagger: 0.09 }, 1.9);
     tl.fromTo("#outro-sub", { textShadow: "0 0 0px rgba(255,170,90,0), 0 0 0px rgba(255,140,60,0)" }, { textShadow: "0 0 16px rgba(255,170,90,0.85), 0 0 46px rgba(255,140,60,0.55)", duration: 1.4, ease: "power2.inOut" }, 2.2);
-    tl.fromTo("#outro-closing", { opacity: 0, filter: "blur(6px)" }, { opacity: 1, filter: "blur(0px)", duration: 0.4, ease: "power4.out" }, 3.0);
+    tl.fromTo("#outro-closing", { opacity: 0, y: 20, filter: "blur(6px)" }, { opacity: 1, y: 0, filter: "blur(0px)", duration: 0.5, ease: "back.out(1.8)" }, 3.0);
     tl.to("#outro-stage", { opacity: 0, duration: 2.0, ease: "power2.inOut" }, 5.4);
     window.__timelines["outro"] = tl;
   </script>

@@ -1,36 +1,52 @@
 <template>
   <style>
-    #root { position: absolute; inset: 0; overflow: hidden; background: #07080b; font-family: "Montserrat", sans-serif; }
-    #root .shot { position: absolute; left: 0; top: 0; width: 1080px; height: 1920px; overflow: hidden; }
-    #root .kb { position: absolute; left: 0; top: 0; width: 100%; height: 100%; }
+    #root { position: absolute; inset: 0; overflow: hidden; font-family: "Montserrat", sans-serif; }
+    #root .shot { position: absolute; left: 0; top: 0; width: 1080px; height: 1920px; }
+    #root .tx, #root .kb { position: absolute; left: 0; top: 0; width: 100%; height: 100%; }
+    #root .tx { overflow: hidden; }
     #root .kb img, #root .kb video { position: absolute; left: 0; top: 0; width: 100%; height: 100%; object-fit: cover; }
     #root .scrim { position: absolute; left: 0; top: 0; width: 1080px; height: 1920px;
-      background: linear-gradient(180deg, rgba(7,8,11,0.25) 0%, rgba(7,8,11,0) 16%, rgba(7,8,11,0) 50%, rgba(7,8,11,0.72) 74%, rgba(7,8,11,0.82) 100%); }
-    #root .label { position: absolute; left: 120px; top: 1170px; height: 40px; display: flex; align-items: center; gap: 22px;
-      color: #eef0f3; font-size: 34px; letter-spacing: 0.32em; text-transform: uppercase; white-space: nowrap;
-      text-shadow: 0 2px 14px rgba(0,0,0,0.6); }
+      background: linear-gradient(180deg, rgba(7,8,11,0.25) 0%, rgba(7,8,11,0) 16%, rgba(7,8,11,0) 50%, rgba(7,8,11,0.6) 74%, rgba(7,8,11,0.75) 100%); }
+    #root .flash { position: absolute; left: 0; top: 0; width: 1080px; height: 1920px; background: #fff4e3; opacity: 0; }
+    #root .leak { position: absolute; left: 0; top: 0; width: 1700px; height: 1920px; opacity: 0; mix-blend-mode: screen;
+      background: radial-gradient(ellipse 45% 60% at 50% 45%, rgba(255,190,110,0.95), rgba(255,120,60,0.55) 45%, rgba(255,90,40,0) 75%); }
+    #root .label { position: absolute; left: 120px; top: 1170px; height: 44px; display: flex; align-items: center; gap: 22px;
+      color: #ffffff; font-size: 36px; letter-spacing: 0.3em; text-transform: uppercase; white-space: nowrap;
+      text-shadow: 0 2px 16px rgba(0,0,0,0.65); transform-origin: left center; }
     #root .label .rule { width: 64px; height: 3px; background: linear-gradient(90deg, #ffc27a, #ff8a3d); transform-origin: left center; }
 
   </style>
-  <div id="root" data-composition-id="afternoons" data-width="1080" data-height="1920" data-duration="6.6000"
+  <div id="root" data-composition-id="afternoons" data-width="1080" data-height="1920" data-duration="5.8667"
     data-composition-variables='[{"id": "chapter", "type": "string", "label": "Chapter label", "default": "Slow afternoons"}]'>
-    <div id="afternoons-s1" class="shot" data-layout-allow-overflow><div id="afternoons-s1-kb" class="kb"><img id="afternoons-s1-m" class="clip" data-start="0" data-duration="1.4" data-track-index="0" src="assets/photos/her-heart.jpg" style="object-position:45% 50%;" alt="" /></div></div>
-    <div id="afternoons-s2" class="shot" data-layout-allow-overflow><div id="afternoons-s2-kb" class="kb"><img id="afternoons-s2-m" class="clip" data-start="1.4" data-duration="1.4" data-track-index="1" src="assets/photos/her-river-dusk.jpg" style="object-position:45% 50%;" alt="" /></div></div>
-    <div id="afternoons-s3" class="shot" data-layout-allow-overflow><div id="afternoons-s3-kb" class="kb"><img id="afternoons-s3-m" class="clip" data-start="2.8" data-duration="1.4" data-track-index="0" src="assets/photos/him-river-rock.jpg" style="object-position:58% 50%;" alt="" /></div></div>
-    <div id="afternoons-s4" class="shot" data-layout-allow-overflow><div id="afternoons-s4-kb" class="kb"><img id="afternoons-s4-m" class="clip" data-start="4.2" data-duration="2.4" data-track-index="1" src="assets/photos/couple-selfie-cafe.jpg" style="object-position:12% 50%;" alt="" /></div></div>
+    <div id="afternoons-s1" class="shot" data-layout-allow-overflow><div id="afternoons-s1-tx" class="tx"><div id="afternoons-s1-kb" class="kb"><img id="afternoons-s1-m" class="clip" data-start="0" data-duration="1.5667" data-track-index="0" src="assets/photos/her-heart.jpg" style="object-position:45% 50%;" alt="" /></div></div></div>
+    <div id="afternoons-s2" class="shot" data-layout-allow-overflow><div id="afternoons-s2-tx" class="tx"><div id="afternoons-s2-kb" class="kb"><img id="afternoons-s2-m" class="clip" data-start="1.1667" data-duration="1.5667" data-track-index="1" src="assets/photos/her-river-dusk.jpg" style="object-position:45% 50%;" alt="" /></div></div></div>
+    <div id="afternoons-s3" class="shot" data-layout-allow-overflow><div id="afternoons-s3-tx" class="tx"><div id="afternoons-s3-kb" class="kb"><img id="afternoons-s3-m" class="clip" data-start="2.3333" data-duration="1.5667" data-track-index="0" src="assets/photos/him-river-rock.jpg" style="object-position:58% 50%;" alt="" /></div></div></div>
+    <div id="afternoons-s4" class="shot" data-layout-allow-overflow><div id="afternoons-s4-tx" class="tx"><div id="afternoons-s4-kb" class="kb"><img id="afternoons-s4-m" class="clip" data-start="3.5" data-duration="2.3667" data-track-index="1" src="assets/photos/couple-selfie-cafe.jpg" style="object-position:12% 50%;" alt="" /></div></div></div>
     <div id="afternoons-scrim" class="scrim"></div>
     <div id="afternoons-label" class="label"><div id="afternoons-rule" class="rule"></div><span id="afternoons-label-text" data-var-text="chapter">Slow afternoons</span></div>
+    <div id="afternoons-flash" class="flash" data-layout-ignore></div>
+    <div id="afternoons-leak" class="leak" data-layout-ignore data-layout-allow-overflow></div>
   </div>
   <script>
     const tl = gsap.timeline({ paused: true });
-    tl.fromTo("#afternoons-s1-kb", { x: 160, filter: "blur(16px)" }, { x: 0, filter: "blur(0px)", duration: 0.32, ease: "power3.out" }, 0.0000);
-    tl.fromTo("#afternoons-s2-kb", { scale: 1.07 }, { scale: 1, duration: 0.55, ease: "expo.out" }, 1.4000);
-    tl.fromTo("#afternoons-s3-kb", { scale: 1.07 }, { scale: 1, duration: 0.55, ease: "expo.out" }, 2.8000);
-    tl.fromTo("#afternoons-s4-kb", { scale: 1.07 }, { scale: 1, duration: 0.55, ease: "expo.out" }, 4.2000);
-    tl.fromTo("#afternoons-s4-m", { objectPosition: "12% 50%" }, { objectPosition: "72% 50%", duration: 2.4000, ease: "sine.inOut" }, 4.2000);
-    tl.fromTo("#afternoons-rule", { scaleX: 0 }, { scaleX: 1, duration: 0.7, ease: "expo.out" }, 0.3);
-    tl.fromTo("#afternoons-label-text", { opacity: 0, filter: "blur(8px)" }, { opacity: 1, filter: "blur(0px)", duration: 0.2, ease: "power4.out" }, 0.5);
-    tl.to("#afternoons-label", { opacity: 0, filter: "blur(8px)", duration: 0.2, ease: "power3.in" }, 6.2500);
+    tl.set("#afternoons-leak", { x: -1700, opacity: 0 }, 0);
+    tl.set("#afternoons-flash", { opacity: 0 }, 0);
+    tl.fromTo("#afternoons-s1-tx", { scale: 1.5, opacity: 0, filter: "blur(14px)" }, { scale: 1, opacity: 1, filter: "blur(0px)", duration: 0.4, ease: "power2.out" }, 0.0000);
+    tl.to("#afternoons-s1-tx", { scale: 0.8, filter: "blur(12px)", duration: 0.4, ease: "power2.in" }, 1.1667);
+    tl.fromTo("#afternoons-s1-kb", { scale: 1 }, { scale: 1.06, duration: 1.5667, ease: "none" }, 0.0000);
+    tl.fromTo("#afternoons-s2-tx", { scale: 1.6, opacity: 0, filter: "blur(12px)" }, { scale: 1, opacity: 1, filter: "blur(0px)", duration: 0.4, ease: "power3.out" }, 1.1667);
+    tl.to("#afternoons-s2-tx", { scale: 1.35, filter: "blur(14px)", duration: 0.4, ease: "power2.in" }, 2.3333);
+    tl.fromTo("#afternoons-s2-kb", { scale: 1 }, { scale: 1.06, duration: 1.5667, ease: "none" }, 1.1667);
+    tl.fromTo("#afternoons-s3-tx", { scale: 1.5, opacity: 0, filter: "blur(14px)" }, { scale: 1, opacity: 1, filter: "blur(0px)", duration: 0.4, ease: "power2.out" }, 2.3333);
+    tl.to("#afternoons-s3-tx", { x: -1080, y: 0, filter: "blur(18px)", duration: 0.4, ease: "power2.in" }, 3.5000);
+    tl.fromTo("#afternoons-s3-kb", { scale: 1 }, { scale: 1.06, duration: 1.5667, ease: "none" }, 2.3333);
+    tl.fromTo("#afternoons-s4-tx", { x: 1080, y: 0, filter: "blur(18px)" }, { x: 0, y: 0, filter: "blur(0px)", duration: 0.4, ease: "power2.out" }, 3.5000);
+    tl.to("#afternoons-s4-tx", { scale: 1.35, filter: "blur(14px)", duration: 0.4, ease: "power2.in" }, 5.4667);
+    tl.fromTo("#afternoons-s4-kb", { scale: 1 }, { scale: 1.06, duration: 2.3667, ease: "none" }, 3.5000);
+    tl.fromTo("#afternoons-s4-m", { objectPosition: "12% 50%" }, { objectPosition: "72% 50%", duration: 1.9667, ease: "sine.inOut" }, 3.5000);
+    tl.fromTo("#afternoons-label", { opacity: 0, scale: 0.6 }, { opacity: 1, scale: 1, duration: 0.5, ease: "back.out(2.2)" }, 0.50);
+    tl.fromTo("#afternoons-rule", { scaleX: 0 }, { scaleX: 1, duration: 0.6, ease: "expo.out" }, 0.70);
+    tl.to("#afternoons-label", { opacity: 0, x: -40, duration: 0.25, ease: "power3.in" }, 5.1667);
     window.__timelines["afternoons"] = tl;
   </script>
 </template>
