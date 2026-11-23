@@ -1,43 +1,41 @@
 <template>
   <style>
     #root { position: absolute; inset: 0; overflow: hidden; background: #07080b; font-family: "Montserrat", sans-serif; }
-    #root .frame { position: absolute; border-radius: 18px; overflow: hidden; background: #111318;
-      border: 1px solid rgba(255,255,255,0.08); box-shadow: 0 30px 80px rgba(0,0,0,0.65), 0 0 60px rgba(255,150,70,0.06); }
-    #root .full { position: absolute; left: 0; top: 0; width: 1920px; height: 1080px; overflow: hidden; }
+    #root .shot { position: absolute; left: 0; top: 0; width: 1080px; height: 1920px; overflow: hidden; }
     #root .kb { position: absolute; left: 0; top: 0; width: 100%; height: 100%; }
     #root .kb img, #root .kb video { position: absolute; left: 0; top: 0; width: 100%; height: 100%; object-fit: cover; }
-    #root .scrim { position: absolute; left: 0; top: 0; width: 1920px; height: 1080px;
-      background: linear-gradient(180deg, rgba(7,8,11,0) 55%, rgba(7,8,11,0.78) 100%); }
-    #root .label { position: absolute; left: 192px; top: 918px; height: 34px; display: flex; align-items: center; gap: 22px;
-      color: #c4c8cf; font-size: 28px; letter-spacing: 0.4em; text-transform: uppercase; white-space: nowrap; }
-    #root .label .rule { width: 64px; height: 2px; background: linear-gradient(90deg, #ffc27a, #ff8a3d); transform-origin: left center; }
+    #root .scrim { position: absolute; left: 0; top: 0; width: 1080px; height: 1920px;
+      background: linear-gradient(180deg, rgba(7,8,11,0.25) 0%, rgba(7,8,11,0) 16%, rgba(7,8,11,0) 50%, rgba(7,8,11,0.72) 74%, rgba(7,8,11,0.82) 100%); }
+    #root .label { position: absolute; left: 120px; top: 1170px; height: 40px; display: flex; align-items: center; gap: 22px;
+      color: #eef0f3; font-size: 34px; letter-spacing: 0.32em; text-transform: uppercase; white-space: nowrap;
+      text-shadow: 0 2px 14px rgba(0,0,0,0.6); }
+    #root .label .rule { width: 64px; height: 3px; background: linear-gradient(90deg, #ffc27a, #ff8a3d); transform-origin: left center; }
 
   </style>
-  <div id="root" data-composition-id="morning" data-width="1920" data-height="1080" data-duration="11"
+  <div id="root" data-composition-id="morning" data-width="1080" data-height="1920" data-duration="10.8000"
     data-composition-variables='[{"id": "chapter", "type": "string", "label": "Chapter label", "default": "The morning"}]'>
-    <div id="morning-b1" class="full"><div id="morning-b1-kb" class="kb"><img id="morning-b1-m" class="clip" data-start="0" data-duration="3" data-track-index="0" src="assets/photos/breakfast.jpg" alt="" /></div><div id="morning-b1-scrim" class="scrim"></div></div>
-    <div id="morning-b2f1" class="frame" style="left:120px;top:143px;width:536px;height:714px;"><div id="morning-b2f1-kb" class="kb"><img id="morning-b2f1-m" class="clip" data-start="3" data-duration="4" data-track-index="0" src="assets/photos/scooter-valley.jpg" alt="" /></div></div>
-    <div id="morning-b2f2" class="frame" style="left:692px;top:143px;width:536px;height:714px;"><div id="morning-b2f2-kb" class="kb"><img id="morning-b2f2-m" class="clip" data-start="3" data-duration="4" data-track-index="1" src="assets/photos/him-river-sun.jpg" alt="" /></div></div>
-    <div id="morning-b2f3" class="frame" style="left:1264px;top:143px;width:536px;height:714px;"><div id="morning-b2f3-kb" class="kb"><img id="morning-b2f3-m" class="clip" data-start="3" data-duration="4" data-track-index="2" src="assets/photos/her-river-sun.jpg" alt="" /></div></div>
-    <div id="morning-b3f1" class="frame" style="left:120px;top:143px;width:536px;height:714px;"><div id="morning-b3f1-kb" class="kb"><img id="morning-b3f1-m" class="clip" data-start="7" data-duration="4" data-track-index="0" src="assets/photos/him-beer-cafe.jpg" alt="" /></div></div>
-    <div id="morning-b3f2" class="frame" style="left:692px;top:143px;width:536px;height:714px;"><div id="morning-b3f2-kb" class="kb"><img id="morning-b3f2-m" class="clip" data-start="7" data-duration="4" data-track-index="1" src="assets/photos/cafe-food.jpg" alt="" /></div></div>
-    <div id="morning-b3f3" class="frame" style="left:1264px;top:143px;width:536px;height:714px;"><div id="morning-b3f3-kb" class="kb"><img id="morning-b3f3-m" class="clip" data-start="7" data-duration="4" data-track-index="2" src="assets/photos/her-cafe.jpg" alt="" /></div></div>
+    <div id="morning-s1" class="shot" data-layout-allow-overflow><div id="morning-s1-kb" class="kb"><img id="morning-s1-m" class="clip" data-start="0" data-duration="2.4" data-track-index="0" src="assets/photos/breakfast.jpg" style="object-position:58% 50%;" alt="" /></div></div>
+    <div id="morning-s2" class="shot" data-layout-allow-overflow><div id="morning-s2-kb" class="kb"><img id="morning-s2-m" class="clip" data-start="2.4" data-duration="1.4" data-track-index="1" src="assets/photos/scooter-valley.jpg" style="object-position:70% 50%;" alt="" /></div></div>
+    <div id="morning-s3" class="shot" data-layout-allow-overflow><div id="morning-s3-kb" class="kb"><img id="morning-s3-m" class="clip" data-start="3.8" data-duration="1.4" data-track-index="0" src="assets/photos/him-river-sun.jpg" alt="" /></div></div>
+    <div id="morning-s4" class="shot" data-layout-allow-overflow><div id="morning-s4-kb" class="kb"><img id="morning-s4-m" class="clip" data-start="5.2" data-duration="1.4" data-track-index="1" src="assets/photos/her-river-sun.jpg" alt="" /></div></div>
+    <div id="morning-s5" class="shot" data-layout-allow-overflow><div id="morning-s5-kb" class="kb"><img id="morning-s5-m" class="clip" data-start="6.6" data-duration="1.4" data-track-index="0" src="assets/photos/him-beer-cafe.jpg" style="object-position:65% 50%;" alt="" /></div></div>
+    <div id="morning-s6" class="shot" data-layout-allow-overflow><div id="morning-s6-kb" class="kb"><img id="morning-s6-m" class="clip" data-start="8" data-duration="1.4" data-track-index="1" src="assets/photos/cafe-food.jpg" alt="" /></div></div>
+    <div id="morning-s7" class="shot" data-layout-allow-overflow><div id="morning-s7-kb" class="kb"><img id="morning-s7-m" class="clip" data-start="9.4" data-duration="1.4" data-track-index="0" src="assets/photos/her-cafe.jpg" style="object-position:40% 50%;" alt="" /></div></div>
+    <div id="morning-scrim" class="scrim"></div>
     <div id="morning-label" class="label"><div id="morning-rule" class="rule"></div><span id="morning-label-text" data-var-text="chapter">The morning</span></div>
   </div>
   <script>
     const tl = gsap.timeline({ paused: true });
-    tl.fromTo("#morning-b1", { opacity: 0 }, { opacity: 1, duration: 0.8, ease: "power2.out" }, 0);
-    tl.fromTo("#morning-b1-kb", { scale: 1.04 }, { scale: 1.12, duration: 3, ease: "sine.inOut" }, 0);
-    tl.to("#morning-b1", { opacity: 0, filter: "blur(8px)", duration: 0.4, ease: "power3.in" }, 2.6);
-    tl.fromTo("#morning-b2f1, #morning-b2f2, #morning-b2f3", { opacity: 0, x: 280, filter: "blur(18px)" }, { opacity: 1, x: 0, filter: "blur(0px)", duration: 0.55, ease: "power3.out", stagger: 0.1 }, 3.05);
-    tl.fromTo("#morning-b2f1-kb, #morning-b2f2-kb, #morning-b2f3-kb", { scale: 1 }, { scale: 1.06, duration: 4, ease: "sine.inOut" }, 3);
-    tl.to("#morning-b2f1, #morning-b2f2, #morning-b2f3", { opacity: 0, filter: "blur(8px)", duration: 0.35, ease: "power3.in" }, 6.6);
-    tl.fromTo("#morning-b3f1, #morning-b3f2, #morning-b3f3", { opacity: 0, scale: 0.94, filter: "blur(12px)" }, { opacity: 1, scale: 1, filter: "blur(0px)", duration: 1.0, ease: "expo.out", stagger: 0.14 }, 7.05);
-    tl.fromTo("#morning-b3f1-kb, #morning-b3f2-kb, #morning-b3f3-kb", { scale: 1 }, { scale: 1.06, duration: 4, ease: "sine.inOut" }, 7);
-    tl.to("#morning-b3f1, #morning-b3f2, #morning-b3f3", { opacity: 0, filter: "blur(8px)", duration: 0.35, ease: "power3.in" }, 10.5);
-    tl.fromTo("#morning-rule", { scaleX: 0 }, { scaleX: 1, duration: 0.9, ease: "expo.out" }, 0.8);
-    tl.fromTo("#morning-label-text", { opacity: 0, filter: "blur(8px)" }, { opacity: 1, filter: "blur(0px)", duration: 0.2, ease: "power4.out" }, 1.05);
-    tl.to("#morning-label", { opacity: 0, filter: "blur(8px)", duration: 0.25, ease: "power3.in" }, 10.2);
+    tl.fromTo("#morning-s1-kb", { x: 160, filter: "blur(16px)" }, { x: 0, filter: "blur(0px)", duration: 0.32, ease: "power3.out" }, 0.0000);
+    tl.fromTo("#morning-s2-kb", { scale: 1.07 }, { scale: 1, duration: 0.55, ease: "expo.out" }, 2.4000);
+    tl.fromTo("#morning-s3-kb", { scale: 1.07 }, { scale: 1, duration: 0.55, ease: "expo.out" }, 3.8000);
+    tl.fromTo("#morning-s4-kb", { scale: 1.07 }, { scale: 1, duration: 0.55, ease: "expo.out" }, 5.2000);
+    tl.fromTo("#morning-s5-kb", { scale: 1.07 }, { scale: 1, duration: 0.55, ease: "expo.out" }, 6.6000);
+    tl.fromTo("#morning-s6-kb", { scale: 1.07 }, { scale: 1, duration: 0.55, ease: "expo.out" }, 8.0000);
+    tl.fromTo("#morning-s7-kb", { scale: 1.07 }, { scale: 1, duration: 0.55, ease: "expo.out" }, 9.4000);
+    tl.fromTo("#morning-rule", { scaleX: 0 }, { scaleX: 1, duration: 0.7, ease: "expo.out" }, 0.3);
+    tl.fromTo("#morning-label-text", { opacity: 0, filter: "blur(8px)" }, { opacity: 1, filter: "blur(0px)", duration: 0.2, ease: "power4.out" }, 0.5);
+    tl.to("#morning-label", { opacity: 0, filter: "blur(8px)", duration: 0.2, ease: "power3.in" }, 10.4500);
     window.__timelines["morning"] = tl;
   </script>
 </template>

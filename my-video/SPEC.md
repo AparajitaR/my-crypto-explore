@@ -1,13 +1,13 @@
 # Kasol: 1st Year Anniversary
 
-A 90 s, 1920×1080, 30 fps dark-mode film of the couple's first anniversary trip to Kasol. It opens and closes on a glowing title and ends on #SayAnAparajitaStory.
+A 90 s, 1080×1920 (vertical reel), 30 fps film of the couple's first anniversary trip to Kasol. It opens and closes on a glowing title and ends on #SayAnAparajitaStory.
 
 ## Look
 
-- Ground `#07080b`; warm radial glow and drifting embers behind the titles only.
+- Every shot fills the frame; landscape photos are framed on the faces or pan across. Titles sit over footage with a dark gradient, warm glow and drifting embers.
 - "KASOL": Playfair Display 700, 230 px. Subtitle "1st Year Anniversary": Montserrat 54 px, amber `#ffc27a`, with a glow that rises once and then holds still.
 - Chapter labels: Montserrat 28 px with an amber rule, bottom left inside title-safe.
-- Media sit in rounded frames on the dark ground, sized to fit each beat's row (up to 780 px tall); single landscape photos fill the frame with a slow push.
+- All text stays inside the Reels/TikTok/Shorts safe area (x 120–888, y 288–1248). Cuts land slightly large and settle; each chapter opens with a whip.
 
 ## Structure
 
@@ -35,4 +35,4 @@ Beat entrances rotate between a clip-path rise, a blur-in, a horizontal whip and
 
 ## Sound
 
-Silent until a track is supplied. A music bed goes on its own lane at volume 0.8 with a 2.5 s fade-out ending at 90 s.
+Requested track: "Pahado Me Mera Dil". Put the file at `assets/audio/music.mp3` and rerun the generator; it adds the bed at volume 0.8 with a 2.5 s fade-out.

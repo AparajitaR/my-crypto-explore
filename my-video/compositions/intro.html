@@ -1,40 +1,44 @@
 <template>
   <style>
     #root { position: absolute; inset: 0; overflow: hidden; background: #07080b; font-family: "Montserrat", sans-serif; }
-    #root .frame { position: absolute; border-radius: 18px; overflow: hidden; background: #111318;
-      border: 1px solid rgba(255,255,255,0.08); box-shadow: 0 30px 80px rgba(0,0,0,0.65), 0 0 60px rgba(255,150,70,0.06); }
-    #root .full { position: absolute; left: 0; top: 0; width: 1920px; height: 1080px; overflow: hidden; }
+    #root .shot { position: absolute; left: 0; top: 0; width: 1080px; height: 1920px; overflow: hidden; }
     #root .kb { position: absolute; left: 0; top: 0; width: 100%; height: 100%; }
     #root .kb img, #root .kb video { position: absolute; left: 0; top: 0; width: 100%; height: 100%; object-fit: cover; }
-    #root .scrim { position: absolute; left: 0; top: 0; width: 1920px; height: 1080px;
-      background: linear-gradient(180deg, rgba(7,8,11,0) 55%, rgba(7,8,11,0.78) 100%); }
-    #root .label { position: absolute; left: 192px; top: 918px; height: 34px; display: flex; align-items: center; gap: 22px;
-      color: #c4c8cf; font-size: 28px; letter-spacing: 0.4em; text-transform: uppercase; white-space: nowrap; }
-    #root .label .rule { width: 64px; height: 2px; background: linear-gradient(90deg, #ffc27a, #ff8a3d); transform-origin: left center; }
+    #root .scrim { position: absolute; left: 0; top: 0; width: 1080px; height: 1920px;
+      background: linear-gradient(180deg, rgba(7,8,11,0.25) 0%, rgba(7,8,11,0) 16%, rgba(7,8,11,0) 50%, rgba(7,8,11,0.72) 74%, rgba(7,8,11,0.82) 100%); }
+    #root .label { position: absolute; left: 120px; top: 1170px; height: 40px; display: flex; align-items: center; gap: 22px;
+      color: #eef0f3; font-size: 34px; letter-spacing: 0.32em; text-transform: uppercase; white-space: nowrap;
+      text-shadow: 0 2px 14px rgba(0,0,0,0.6); }
+    #root .label .rule { width: 64px; height: 3px; background: linear-gradient(90deg, #ffc27a, #ff8a3d); transform-origin: left center; }
 
-    #root .glow { position: absolute; left: 260px; top: 90px; width: 1400px; height: 900px; border-radius: 50%;
-      background: radial-gradient(closest-side, rgba(255,154,74,0.22), rgba(255,120,50,0.08) 55%, rgba(7,8,11,0) 100%); }
-    #root .embers { position: absolute; left: 0; top: 0; width: 1920px; height: 1080px; }
+    #root .dim { position: absolute; left: 0; top: 0; width: 1080px; height: 1920px;
+      background: linear-gradient(180deg, rgba(7,8,11,0.35) 0%, rgba(7,8,11,0.62) 30%, rgba(7,8,11,0.66) 60%, rgba(7,8,11,0.4) 100%); }
+    #root .glow { position: absolute; left: 40px; top: 430px; width: 1000px; height: 700px; border-radius: 50%;
+      background: radial-gradient(closest-side, rgba(255,154,74,0.28), rgba(255,120,50,0.08) 60%, rgba(7,8,11,0) 100%); }
+    #root .embers { position: absolute; left: 0; top: 0; width: 1080px; height: 1920px; }
     #root .ember { position: absolute; border-radius: 50%; background: #ffb46a; box-shadow: 0 0 8px #ff9a4a; }
-    #root .stack { position: absolute; left: 0; top: 0; width: 1920px; height: 1080px; display: flex; flex-direction: column;
-      align-items: center; justify-content: center; }
-    #root .kicker { color: #b3b8c1; font-size: 28px; letter-spacing: 0.4em; text-transform: uppercase; margin-bottom: 26px; }
-    #root .title { font-family: "Playfair Display", serif; font-weight: 700; font-size: 230px; line-height: 1;
-      letter-spacing: 0.08em; color: #f4efe6; padding-left: 0.08em; }
+    #root .stack { position: absolute; left: 120px; top: 288px; width: 660px; height: 960px; display: flex;
+      flex-direction: column; align-items: center; justify-content: center; text-align: center; }
+    #root .kicker { color: #e3e5e9; font-size: 30px; letter-spacing: 0.4em; text-transform: uppercase; margin-bottom: 28px;
+      padding-left: 0.4em; text-shadow: 0 2px 14px rgba(0,0,0,0.6); }
+    #root .title { font-family: "Playfair Display", serif; font-weight: 700; font-size: 172px; line-height: 1;
+      letter-spacing: 0.06em; color: #f8f3ea; padding-left: 0.06em; text-shadow: 0 6px 40px rgba(0,0,0,0.45); }
     #root .title span { display: inline-block; }
-    #root .trule { width: 520px; height: 2px; margin: 34px 0 30px;
+    #root .trule { width: 420px; height: 3px; margin: 34px 0 30px;
       background: linear-gradient(90deg, rgba(255,194,122,0), #ffc27a 30%, #ff8a3d 70%, rgba(255,138,61,0)); }
-    #root .sub { font-size: 54px; letter-spacing: 0.22em; text-transform: uppercase; color: #ffc27a; padding-left: 0.22em; }
-    #root .sub span { display: inline-block; margin: 0 0.18em; }
-    #root .closing { margin-top: 46px; color: #d6d9de; font-size: 34px; letter-spacing: 0.08em; }
+    #root .sub { font-size: 38px; letter-spacing: 0.12em; text-transform: uppercase; color: #ffc98a; padding-left: 0.14em;
+      white-space: nowrap; }
+    #root .sub span { display: inline-block; margin: 0 0.12em; }
+    #root .closing { margin-top: 44px; color: #f1f2f4; font-size: 38px; letter-spacing: 0.04em; text-shadow: 0 2px 14px rgba(0,0,0,0.6); }
 
   </style>
-  <div id="root" data-composition-id="intro" data-width="1920" data-height="1080" data-duration="8"
-    data-composition-variables='[{"id":"kicker","type":"string","label":"Kicker","default":"Parvati Valley · Himachal Pradesh"}]'>
+  <div id="root" data-composition-id="intro" data-width="1080" data-height="1920" data-duration="6"
+    data-composition-variables='[{"id":"kicker","type":"string","label":"Kicker","default":"Parvati Valley"}]'>
+    <div id="intro-bg" class="shot" data-layout-allow-overflow><div id="intro-bg-kb" class="kb"><video id="intro-bg-m" class="clip" data-start="0" data-duration="6" data-track-index="0" muted playsinline src="assets/video/valley-sunset.mp4"></video></div></div><div id="intro-dim" class="dim"></div>
     <div id="intro-glow" class="glow"></div>
-    <div id="intro-embers" class="embers" data-layout-ignore><div class="ember" data-rise="438" style="left:1123px;top:505px;width:3.0px;height:3.0px;opacity:0.63;"></div><div class="ember" data-rise="240" style="left:293px;top:1062px;width:4.9px;height:4.9px;opacity:0.38;"></div><div class="ember" data-rise="147" style="left:695px;top:895px;width:4.7px;height:4.7px;opacity:0.68;"></div><div class="ember" data-rise="208" style="left:137px;top:615px;width:4.2px;height:4.2px;opacity:0.57;"></div><div class="ember" data-rise="305" style="left:133px;top:722px;width:2.5px;height:2.5px;opacity:0.75;"></div><div class="ember" data-rise="278" style="left:870px;top:1052px;width:3.7px;height:3.7px;opacity:0.69;"></div><div class="ember" data-rise="390" style="left:836px;top:583px;width:4.5px;height:4.5px;opacity:0.33;"></div><div class="ember" data-rise="414" style="left:1354px;top:779px;width:2.3px;height:2.3px;opacity:0.42;"></div><div class="ember" data-rise="184" style="left:1148px;top:600px;width:2.1px;height:2.1px;opacity:0.73;"></div><div class="ember" data-rise="172" style="left:926px;top:595px;width:2.7px;height:2.7px;opacity:0.34;"></div><div class="ember" data-rise="321" style="left:580px;top:929px;width:2.7px;height:2.7px;opacity:0.57;"></div><div class="ember" data-rise="295" style="left:1593px;top:790px;width:3.0px;height:3.0px;opacity:0.26;"></div><div class="ember" data-rise="319" style="left:575px;top:1057px;width:3.5px;height:3.5px;opacity:0.61;"></div><div class="ember" data-rise="177" style="left:908px;top:701px;width:3.2px;height:3.2px;opacity:0.66;"></div><div class="ember" data-rise="305" style="left:557px;top:856px;width:4.3px;height:4.3px;opacity:0.25;"></div><div class="ember" data-rise="394" style="left:991px;top:476px;width:4.2px;height:4.2px;opacity:0.75;"></div><div class="ember" data-rise="436" style="left:657px;top:442px;width:2.2px;height:2.2px;opacity:0.59;"></div><div class="ember" data-rise="388" style="left:1700px;top:996px;width:2.9px;height:2.9px;opacity:0.46;"></div><div class="ember" data-rise="150" style="left:1409px;top:316px;width:3.0px;height:3.0px;opacity:0.35;"></div><div class="ember" data-rise="343" style="left:1503px;top:1077px;width:3.2px;height:3.2px;opacity:0.55;"></div><div class="ember" data-rise="288" style="left:340px;top:485px;width:4.8px;height:4.8px;opacity:0.4;"></div><div class="ember" data-rise="165" style="left:1257px;top:810px;width:3.1px;height:3.1px;opacity:0.34;"></div><div class="ember" data-rise="185" style="left:1225px;top:521px;width:2.4px;height:2.4px;opacity:0.74;"></div><div class="ember" data-rise="416" style="left:1349px;top:1080px;width:2.7px;height:2.7px;opacity:0.75;"></div><div class="ember" data-rise="234" style="left:421px;top:880px;width:3.6px;height:3.6px;opacity:0.52;"></div><div class="ember" data-rise="276" style="left:1075px;top:636px;width:4.1px;height:4.1px;opacity:0.48;"></div><div class="ember" data-rise="434" style="left:211px;top:890px;width:3.4px;height:3.4px;opacity:0.61;"></div><div class="ember" data-rise="230" style="left:324px;top:988px;width:3.5px;height:3.5px;opacity:0.38;"></div><div class="ember" data-rise="187" style="left:1103px;top:1031px;width:3.0px;height:3.0px;opacity:0.67;"></div><div class="ember" data-rise="144" style="left:826px;top:862px;width:3.4px;height:3.4px;opacity:0.72;"></div><div class="ember" data-rise="346" style="left:348px;top:382px;width:4.5px;height:4.5px;opacity:0.47;"></div><div class="ember" data-rise="359" style="left:588px;top:581px;width:3.7px;height:3.7px;opacity:0.67;"></div><div class="ember" data-rise="223" style="left:1129px;top:827px;width:3.1px;height:3.1px;opacity:0.31;"></div><div class="ember" data-rise="431" style="left:623px;top:829px;width:3.7px;height:3.7px;opacity:0.48;"></div><div class="ember" data-rise="209" style="left:416px;top:613px;width:2.4px;height:2.4px;opacity:0.66;"></div><div class="ember" data-rise="253" style="left:157px;top:533px;width:3.7px;height:3.7px;opacity:0.34;"></div></div>
+    <div id="intro-embers" class="embers" data-layout-ignore><div class="ember" data-rise="478" style="left:633px;top:889px;width:3.7px;height:3.7px;opacity:0.65;"></div><div class="ember" data-rise="267" style="left:159px;top:1771px;width:5.9px;height:5.9px;opacity:0.42;"></div><div class="ember" data-rise="167" style="left:389px;top:1506px;width:5.7px;height:5.7px;opacity:0.69;"></div><div class="ember" data-rise="233" style="left:69px;top:1063px;width:5.0px;height:5.0px;opacity:0.59;"></div><div class="ember" data-rise="336" style="left:67px;top:1233px;width:3.0px;height:3.0px;opacity:0.75;"></div><div class="ember" data-rise="308" style="left:488px;top:1755px;width:4.5px;height:4.5px;opacity:0.7;"></div><div class="ember" data-rise="427" style="left:469px;top:1012px;width:5.4px;height:5.4px;opacity:0.37;"></div><div class="ember" data-rise="452" style="left:765px;top:1323px;width:2.9px;height:2.9px;opacity:0.45;"></div><div class="ember" data-rise="207" style="left:648px;top:1040px;width:2.6px;height:2.6px;opacity:0.74;"></div><div class="ember" data-rise="194" style="left:521px;top:1032px;width:3.3px;height:3.3px;opacity:0.38;"></div><div class="ember" data-rise="353" style="left:323px;top:1560px;width:3.3px;height:3.3px;opacity:0.59;"></div><div class="ember" data-rise="325" style="left:902px;top:1341px;width:3.7px;height:3.7px;opacity:0.31;"></div><div class="ember" data-rise="351" style="left:320px;top:1764px;width:4.2px;height:4.2px;opacity:0.63;"></div><div class="ember" data-rise="199" style="left:511px;top:1199px;width:3.9px;height:3.9px;opacity:0.67;"></div><div class="ember" data-rise="336" style="left:310px;top:1444px;width:5.2px;height:5.2px;opacity:0.3;"></div><div class="ember" data-rise="431" style="left:558px;top:843px;width:5.1px;height:5.1px;opacity:0.76;"></div><div class="ember" data-rise="476" style="left:367px;top:788px;width:2.8px;height:2.8px;opacity:0.61;"></div><div class="ember" data-rise="425" style="left:963px;top:1666px;width:3.6px;height:3.6px;opacity:0.49;"></div><div class="ember" data-rise="171" style="left:796px;top:589px;width:3.7px;height:3.7px;opacity:0.39;"></div><div class="ember" data-rise="376" style="left:850px;top:1795px;width:3.9px;height:3.9px;opacity:0.57;"></div><div class="ember" data-rise="318" style="left:186px;top:856px;width:5.7px;height:5.7px;opacity:0.43;"></div><div class="ember" data-rise="187" style="left:710px;top:1372px;width:3.8px;height:3.8px;opacity:0.38;"></div><div class="ember" data-rise="208" style="left:692px;top:914px;width:2.9px;height:2.9px;opacity:0.75;"></div><div class="ember" data-rise="455" style="left:762px;top:1799px;width:3.3px;height:3.3px;opacity:0.76;"></div><div class="ember" data-rise="260" style="left:232px;top:1483px;width:4.3px;height:4.3px;opacity:0.55;"></div><div class="ember" data-rise="305" style="left:606px;top:1097px;width:4.9px;height:4.9px;opacity:0.51;"></div><div class="ember" data-rise="473" style="left:112px;top:1500px;width:4.2px;height:4.2px;opacity:0.62;"></div><div class="ember" data-rise="256" style="left:176px;top:1655px;width:4.2px;height:4.2px;opacity:0.42;"></div></div>
     <div id="intro-stack" class="stack" data-hold>
-      <div id="intro-kicker" class="kicker" data-var-text="kicker">Parvati Valley · Himachal Pradesh</div>
+      <div id="intro-kicker" class="kicker" data-var-text="kicker">Parvati Valley</div>
       <h1 id="intro-title" class="title"><span id="intro-k1">K</span><span id="intro-k2">A</span><span id="intro-k3">S</span><span id="intro-k4">O</span><span id="intro-k5">L</span></h1>
       <div id="intro-rule" class="trule"></div>
       <div id="intro-sub" class="sub"><span id="intro-w1">1st</span><span id="intro-w2">Year</span><span id="intro-w3">Anniversary</span></div>
@@ -43,18 +47,17 @@
   <script>
     const tl = gsap.timeline({ paused: true });
     document.querySelectorAll("#intro-embers .ember").forEach((el) => {
-      tl.fromTo(el, { y: 0 }, { y: -Number(el.dataset.rise), duration: 8, ease: "none" }, 0);
+      tl.fromTo(el, { y: 0 }, { y: -Number(el.dataset.rise), duration: 6.0, ease: "none" }, 0);
     });
-    tl.fromTo("#intro-embers", { opacity: 0.5 }, { opacity: 1, duration: 2, ease: "power2.inOut" }, 0);
-    tl.fromTo("#intro-glow", { opacity: 0.35 }, { opacity: 1, duration: 2.6, ease: "power2.inOut" }, 0.2);
-    tl.fromTo("#intro-kicker", { opacity: 0, filter: "blur(8px)" }, { opacity: 1, filter: "blur(0px)", duration: 0.6, ease: "power4.out" }, 0.8);
-    tl.fromTo("#intro-title span", { opacity: 0.3, filter: "blur(4px)" }, { opacity: 1, filter: "blur(0px)", duration: 0.7, ease: "power3.out", stagger: 0.12 }, 1.3);
-    tl.fromTo("#intro-rule", { scaleX: 0 }, { scaleX: 1, duration: 1.0, ease: "expo.out" }, 2.5);
-    tl.fromTo("#intro-sub span", { opacity: 0, filter: "blur(6px)" }, { opacity: 1, filter: "blur(0px)", duration: 0.35, ease: "power4.out", stagger: 0.1 }, 2.9);
-    tl.fromTo("#intro-sub", { textShadow: "0 0 0px rgba(255,170,90,0), 0 0 0px rgba(255,140,60,0)" }, { textShadow: "0 0 18px rgba(255,170,90,0.75), 0 0 52px rgba(255,140,60,0.45)", duration: 1.6, ease: "power2.inOut" }, 3.3);
-    tl.to(["#intro-kicker", "#intro-title span", "#intro-rule", "#intro-sub span"], { opacity: 0, filter: "blur(8px)", duration: 0.3, ease: "power3.in", stagger: 0.05 }, 6.6);
-    tl.to("#intro-glow", { opacity: 0, duration: 1.0, ease: "power2.in" }, 6.7);
-    tl.to("#intro-embers", { opacity: 0, duration: 0.9, ease: "power2.in" }, 6.9);
+    tl.fromTo("#intro-bg-kb", { scale: 1.0 }, { scale: 1.08, duration: 6, ease: "sine.inOut" }, 0);
+    tl.fromTo("#intro-glow", { opacity: 0.4 }, { opacity: 1, duration: 2.2, ease: "power2.inOut" }, 0);
+    tl.fromTo("#intro-kicker", { opacity: 0, filter: "blur(8px)" }, { opacity: 1, filter: "blur(0px)", duration: 0.5, ease: "power4.out" }, 0.4);
+    tl.fromTo("#intro-title span", { opacity: 0.3, filter: "blur(4px)" }, { opacity: 1, filter: "blur(0px)", duration: 0.6, ease: "power3.out", stagger: 0.1 }, 0.7);
+    tl.fromTo("#intro-rule", { scaleX: 0 }, { scaleX: 1, duration: 0.9, ease: "expo.out" }, 1.6);
+    tl.fromTo("#intro-sub span", { opacity: 0, filter: "blur(6px)" }, { opacity: 1, filter: "blur(0px)", duration: 0.3, ease: "power4.out", stagger: 0.09 }, 1.9);
+    tl.fromTo("#intro-sub", { textShadow: "0 0 0px rgba(255,170,90,0), 0 0 0px rgba(255,140,60,0)" }, { textShadow: "0 0 16px rgba(255,170,90,0.85), 0 0 46px rgba(255,140,60,0.55)", duration: 1.4, ease: "power2.inOut" }, 2.2);
+    tl.to(["#intro-kicker", "#intro-title span", "#intro-rule", "#intro-sub span"], { opacity: 0, filter: "blur(8px)", duration: 0.25, ease: "power3.in", stagger: 0.04 }, 5.1);
+    tl.to(["#intro-glow", "#intro-embers"], { opacity: 0, duration: 0.6, ease: "power2.in" }, 5.1);
     window.__timelines["intro"] = tl;
   </script>
 </template>

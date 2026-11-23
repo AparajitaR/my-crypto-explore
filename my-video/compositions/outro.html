@@ -1,39 +1,43 @@
 <template>
   <style>
     #root { position: absolute; inset: 0; overflow: hidden; background: #07080b; font-family: "Montserrat", sans-serif; }
-    #root .frame { position: absolute; border-radius: 18px; overflow: hidden; background: #111318;
-      border: 1px solid rgba(255,255,255,0.08); box-shadow: 0 30px 80px rgba(0,0,0,0.65), 0 0 60px rgba(255,150,70,0.06); }
-    #root .full { position: absolute; left: 0; top: 0; width: 1920px; height: 1080px; overflow: hidden; }
+    #root .shot { position: absolute; left: 0; top: 0; width: 1080px; height: 1920px; overflow: hidden; }
     #root .kb { position: absolute; left: 0; top: 0; width: 100%; height: 100%; }
     #root .kb img, #root .kb video { position: absolute; left: 0; top: 0; width: 100%; height: 100%; object-fit: cover; }
-    #root .scrim { position: absolute; left: 0; top: 0; width: 1920px; height: 1080px;
-      background: linear-gradient(180deg, rgba(7,8,11,0) 55%, rgba(7,8,11,0.78) 100%); }
-    #root .label { position: absolute; left: 192px; top: 918px; height: 34px; display: flex; align-items: center; gap: 22px;
-      color: #c4c8cf; font-size: 28px; letter-spacing: 0.4em; text-transform: uppercase; white-space: nowrap; }
-    #root .label .rule { width: 64px; height: 2px; background: linear-gradient(90deg, #ffc27a, #ff8a3d); transform-origin: left center; }
+    #root .scrim { position: absolute; left: 0; top: 0; width: 1080px; height: 1920px;
+      background: linear-gradient(180deg, rgba(7,8,11,0.25) 0%, rgba(7,8,11,0) 16%, rgba(7,8,11,0) 50%, rgba(7,8,11,0.72) 74%, rgba(7,8,11,0.82) 100%); }
+    #root .label { position: absolute; left: 120px; top: 1170px; height: 40px; display: flex; align-items: center; gap: 22px;
+      color: #eef0f3; font-size: 34px; letter-spacing: 0.32em; text-transform: uppercase; white-space: nowrap;
+      text-shadow: 0 2px 14px rgba(0,0,0,0.6); }
+    #root .label .rule { width: 64px; height: 3px; background: linear-gradient(90deg, #ffc27a, #ff8a3d); transform-origin: left center; }
 
-    #root .glow { position: absolute; left: 260px; top: 90px; width: 1400px; height: 900px; border-radius: 50%;
-      background: radial-gradient(closest-side, rgba(255,154,74,0.22), rgba(255,120,50,0.08) 55%, rgba(7,8,11,0) 100%); }
-    #root .embers { position: absolute; left: 0; top: 0; width: 1920px; height: 1080px; }
+    #root .dim { position: absolute; left: 0; top: 0; width: 1080px; height: 1920px;
+      background: linear-gradient(180deg, rgba(7,8,11,0.35) 0%, rgba(7,8,11,0.62) 30%, rgba(7,8,11,0.66) 60%, rgba(7,8,11,0.4) 100%); }
+    #root .glow { position: absolute; left: 40px; top: 430px; width: 1000px; height: 700px; border-radius: 50%;
+      background: radial-gradient(closest-side, rgba(255,154,74,0.28), rgba(255,120,50,0.08) 60%, rgba(7,8,11,0) 100%); }
+    #root .embers { position: absolute; left: 0; top: 0; width: 1080px; height: 1920px; }
     #root .ember { position: absolute; border-radius: 50%; background: #ffb46a; box-shadow: 0 0 8px #ff9a4a; }
-    #root .stack { position: absolute; left: 0; top: 0; width: 1920px; height: 1080px; display: flex; flex-direction: column;
-      align-items: center; justify-content: center; }
-    #root .kicker { color: #b3b8c1; font-size: 28px; letter-spacing: 0.4em; text-transform: uppercase; margin-bottom: 26px; }
-    #root .title { font-family: "Playfair Display", serif; font-weight: 700; font-size: 230px; line-height: 1;
-      letter-spacing: 0.08em; color: #f4efe6; padding-left: 0.08em; }
+    #root .stack { position: absolute; left: 120px; top: 288px; width: 660px; height: 960px; display: flex;
+      flex-direction: column; align-items: center; justify-content: center; text-align: center; }
+    #root .kicker { color: #e3e5e9; font-size: 30px; letter-spacing: 0.4em; text-transform: uppercase; margin-bottom: 28px;
+      padding-left: 0.4em; text-shadow: 0 2px 14px rgba(0,0,0,0.6); }
+    #root .title { font-family: "Playfair Display", serif; font-weight: 700; font-size: 172px; line-height: 1;
+      letter-spacing: 0.06em; color: #f8f3ea; padding-left: 0.06em; text-shadow: 0 6px 40px rgba(0,0,0,0.45); }
     #root .title span { display: inline-block; }
-    #root .trule { width: 520px; height: 2px; margin: 34px 0 30px;
+    #root .trule { width: 420px; height: 3px; margin: 34px 0 30px;
       background: linear-gradient(90deg, rgba(255,194,122,0), #ffc27a 30%, #ff8a3d 70%, rgba(255,138,61,0)); }
-    #root .sub { font-size: 54px; letter-spacing: 0.22em; text-transform: uppercase; color: #ffc27a; padding-left: 0.22em; }
-    #root .sub span { display: inline-block; margin: 0 0.18em; }
-    #root .closing { margin-top: 46px; color: #d6d9de; font-size: 34px; letter-spacing: 0.08em; }
+    #root .sub { font-size: 38px; letter-spacing: 0.12em; text-transform: uppercase; color: #ffc98a; padding-left: 0.14em;
+      white-space: nowrap; }
+    #root .sub span { display: inline-block; margin: 0 0.12em; }
+    #root .closing { margin-top: 44px; color: #f1f2f4; font-size: 38px; letter-spacing: 0.04em; text-shadow: 0 2px 14px rgba(0,0,0,0.6); }
 
   </style>
-  <div id="root" data-composition-id="outro" data-width="1920" data-height="1080" data-duration="10"
+  <div id="root" data-composition-id="outro" data-width="1080" data-height="1920" data-duration="7.5"
     data-composition-variables='[{"id": "closing", "type": "string", "label": "Closing line", "default": "#SayAnAparajitaStory"}]'>
-    <div id="outro-stage" class="full">
+    <div id="outro-stage" class="shot">
+      <div id="outro-bg" class="shot" data-layout-allow-overflow><div id="outro-bg-kb" class="kb"><img id="outro-bg-m" class="clip" data-start="0" data-duration="7.5" data-track-index="0" src="assets/photos/couple-heart.jpg" style="object-position:48% 50%;" alt="" /></div></div><div id="outro-dim" class="dim"></div>
       <div id="outro-glow" class="glow"></div>
-      <div id="outro-embers" class="embers" data-layout-ignore><div class="ember" data-rise="274" style="left:1496px;top:776px;width:3.2px;height:3.2px;opacity:0.49;"></div><div class="ember" data-rise="207" style="left:1103px;top:570px;width:4.9px;height:4.9px;opacity:0.38;"></div><div class="ember" data-rise="278" style="left:1292px;top:915px;width:3.7px;height:3.7px;opacity:0.75;"></div><div class="ember" data-rise="166" style="left:1702px;top:981px;width:2.8px;height:2.8px;opacity:0.49;"></div><div class="ember" data-rise="269" style="left:401px;top:1076px;width:4.7px;height:4.7px;opacity:0.51;"></div><div class="ember" data-rise="219" style="left:1560px;top:387px;width:3.9px;height:3.9px;opacity:0.62;"></div><div class="ember" data-rise="151" style="left:254px;top:909px;width:2.1px;height:2.1px;opacity:0.45;"></div><div class="ember" data-rise="382" style="left:358px;top:767px;width:3.3px;height:3.3px;opacity:0.57;"></div><div class="ember" data-rise="233" style="left:1467px;top:1041px;width:2.4px;height:2.4px;opacity:0.55;"></div><div class="ember" data-rise="150" style="left:1022px;top:424px;width:2.1px;height:2.1px;opacity:0.72;"></div><div class="ember" data-rise="210" style="left:321px;top:1010px;width:2.1px;height:2.1px;opacity:0.69;"></div><div class="ember" data-rise="160" style="left:641px;top:742px;width:4.0px;height:4.0px;opacity:0.36;"></div><div class="ember" data-rise="242" style="left:929px;top:635px;width:2.8px;height:2.8px;opacity:0.47;"></div><div class="ember" data-rise="250" style="left:1322px;top:792px;width:2.5px;height:2.5px;opacity:0.67;"></div><div class="ember" data-rise="311" style="left:612px;top:690px;width:3.6px;height:3.6px;opacity:0.79;"></div><div class="ember" data-rise="352" style="left:354px;top:732px;width:3.7px;height:3.7px;opacity:0.31;"></div><div class="ember" data-rise="387" style="left:306px;top:391px;width:2.1px;height:2.1px;opacity:0.79;"></div><div class="ember" data-rise="332" style="left:1190px;top:471px;width:2.1px;height:2.1px;opacity:0.42;"></div><div class="ember" data-rise="206" style="left:1255px;top:1050px;width:4.1px;height:4.1px;opacity:0.28;"></div><div class="ember" data-rise="336" style="left:1416px;top:1005px;width:2.8px;height:2.8px;opacity:0.54;"></div><div class="ember" data-rise="381" style="left:215px;top:472px;width:2.1px;height:2.1px;opacity:0.44;"></div><div class="ember" data-rise="358" style="left:1676px;top:605px;width:4.6px;height:4.6px;opacity:0.31;"></div><div class="ember" data-rise="306" style="left:530px;top:472px;width:4.8px;height:4.8px;opacity:0.79;"></div><div class="ember" data-rise="371" style="left:1016px;top:794px;width:4.6px;height:4.6px;opacity:0.42;"></div><div class="ember" data-rise="293" style="left:1132px;top:769px;width:3.8px;height:3.8px;opacity:0.38;"></div><div class="ember" data-rise="173" style="left:1444px;top:486px;width:3.7px;height:3.7px;opacity:0.36;"></div><div class="ember" data-rise="420" style="left:276px;top:1033px;width:3.4px;height:3.4px;opacity:0.78;"></div><div class="ember" data-rise="229" style="left:553px;top:495px;width:4.5px;height:4.5px;opacity:0.39;"></div><div class="ember" data-rise="433" style="left:951px;top:886px;width:2.8px;height:2.8px;opacity:0.64;"></div><div class="ember" data-rise="387" style="left:608px;top:340px;width:2.1px;height:2.1px;opacity:0.48;"></div><div class="ember" data-rise="156" style="left:637px;top:534px;width:4.5px;height:4.5px;opacity:0.75;"></div><div class="ember" data-rise="193" style="left:199px;top:992px;width:3.1px;height:3.1px;opacity:0.46;"></div><div class="ember" data-rise="391" style="left:226px;top:902px;width:4.5px;height:4.5px;opacity:0.58;"></div><div class="ember" data-rise="217" style="left:651px;top:857px;width:4.8px;height:4.8px;opacity:0.26;"></div><div class="ember" data-rise="266" style="left:1289px;top:373px;width:2.4px;height:2.4px;opacity:0.45;"></div><div class="ember" data-rise="175" style="left:1480px;top:462px;width:3.2px;height:3.2px;opacity:0.37;"></div></div>
+      <div id="outro-embers" class="embers" data-layout-ignore><div class="ember" data-rise="303" style="left:846px;top:1317px;width:3.9px;height:3.9px;opacity:0.52;"></div><div class="ember" data-rise="231" style="left:622px;top:992px;width:5.8px;height:5.8px;opacity:0.42;"></div><div class="ember" data-rise="308" style="left:730px;top:1539px;width:4.5px;height:4.5px;opacity:0.76;"></div><div class="ember" data-rise="188" style="left:964px;top:1642px;width:3.4px;height:3.4px;opacity:0.52;"></div><div class="ember" data-rise="297" style="left:220px;top:1793px;width:5.7px;height:5.7px;opacity:0.54;"></div><div class="ember" data-rise="244" style="left:883px;top:701px;width:4.7px;height:4.7px;opacity:0.64;"></div><div class="ember" data-rise="172" style="left:136px;top:1529px;width:2.6px;height:2.6px;opacity:0.49;"></div><div class="ember" data-rise="419" style="left:196px;top:1303px;width:4.0px;height:4.0px;opacity:0.59;"></div><div class="ember" data-rise="259" style="left:830px;top:1738px;width:3.0px;height:3.0px;opacity:0.57;"></div><div class="ember" data-rise="171" style="left:576px;top:760px;width:2.6px;height:2.6px;opacity:0.73;"></div><div class="ember" data-rise="235" style="left:175px;top:1689px;width:2.6px;height:2.6px;opacity:0.7;"></div><div class="ember" data-rise="182" style="left:357px;top:1265px;width:4.8px;height:4.8px;opacity:0.4;"></div><div class="ember" data-rise="269" style="left:522px;top:1095px;width:3.5px;height:3.5px;opacity:0.5;"></div><div class="ember" data-rise="277" style="left:747px;top:1344px;width:3.1px;height:3.1px;opacity:0.69;"></div><div class="ember" data-rise="343" style="left:341px;top:1182px;width:4.4px;height:4.4px;opacity:0.79;"></div><div class="ember" data-rise="387" style="left:194px;top:1248px;width:4.5px;height:4.5px;opacity:0.35;"></div><div class="ember" data-rise="424" style="left:166px;top:708px;width:2.6px;height:2.6px;opacity:0.79;"></div><div class="ember" data-rise="365" style="left:672px;top:834px;width:2.6px;height:2.6px;opacity:0.45;"></div><div class="ember" data-rise="231" style="left:709px;top:1752px;width:5.0px;height:5.0px;opacity:0.33;"></div><div class="ember" data-rise="369" style="left:801px;top:1681px;width:3.4px;height:3.4px;opacity:0.57;"></div><div class="ember" data-rise="417" style="left:114px;top:835px;width:2.6px;height:2.6px;opacity:0.48;"></div><div class="ember" data-rise="392" style="left:949px;top:1047px;width:5.6px;height:5.6px;opacity:0.36;"></div><div class="ember" data-rise="337" style="left:294px;top:836px;width:5.8px;height:5.8px;opacity:0.79;"></div><div class="ember" data-rise="406" style="left:572px;top:1346px;width:5.5px;height:5.5px;opacity:0.45;"></div><div class="ember" data-rise="323" style="left:638px;top:1306px;width:4.6px;height:4.6px;opacity:0.42;"></div><div class="ember" data-rise="196" style="left:816px;top:858px;width:4.5px;height:4.5px;opacity:0.4;"></div><div class="ember" data-rise="459" style="left:149px;top:1725px;width:4.1px;height:4.1px;opacity:0.78;"></div><div class="ember" data-rise="255" style="left:308px;top:873px;width:5.4px;height:5.4px;opacity:0.42;"></div></div>
       <div id="outro-stack" class="stack" data-hold>
         <h1 id="outro-title" class="title">KASOL</h1>
         <div id="outro-rule" class="trule"></div>
@@ -45,16 +49,18 @@
   <script>
     const tl = gsap.timeline({ paused: true });
     document.querySelectorAll("#outro-embers .ember").forEach((el) => {
-      tl.fromTo(el, { y: 0 }, { y: -Number(el.dataset.rise), duration: 10, ease: "none" }, 0);
+      tl.fromTo(el, { y: 0 }, { y: -Number(el.dataset.rise), duration: 7.5, ease: "none" }, 0);
     });
-    tl.fromTo("#outro-embers", { opacity: 0 }, { opacity: 1, duration: 2, ease: "power2.inOut" }, 0);
-    tl.fromTo("#outro-glow", { opacity: 0 }, { opacity: 1, duration: 2, ease: "power2.inOut" }, 0);
-    tl.fromTo("#outro-title", { opacity: 0, filter: "blur(8px)" }, { opacity: 1, filter: "blur(0px)", duration: 0.9, ease: "power3.out" }, 0.5);
-    tl.fromTo("#outro-rule", { scaleX: 0 }, { scaleX: 1, duration: 1.0, ease: "expo.out" }, 1.2);
-    tl.fromTo("#outro-sub span", { opacity: 1, color: "#3a3d44" }, { opacity: 1, color: "#ffc27a", duration: 0.5, ease: "power2.out", stagger: 0.1 }, 1.5);
-    tl.fromTo("#outro-sub", { textShadow: "0 0 0px rgba(255,170,90,0), 0 0 0px rgba(255,140,60,0)" }, { textShadow: "0 0 18px rgba(255,170,90,0.75), 0 0 52px rgba(255,140,60,0.45)", duration: 1.6, ease: "power2.inOut" }, 2.0);
-    tl.fromTo("#outro-closing", { opacity: 0, filter: "blur(6px)" }, { opacity: 1, filter: "blur(0px)", duration: 0.4, ease: "power4.out" }, 3.6);
-    tl.to("#outro-stage", { opacity: 0, duration: 2.5, ease: "power2.inOut" }, 7.3);
+    tl.fromTo("#outro-bg-kb", { x: 160, filter: "blur(16px)", scale: 1.0 }, { x: 0, filter: "blur(0px)", duration: 0.32, ease: "power3.out" }, 0);
+    tl.fromTo("#outro-bg-kb", { scale: 1.0 }, { scale: 1.07, duration: 7.5, ease: "sine.inOut", immediateRender: false }, 0);
+    tl.fromTo("#outro-dim", { opacity: 0 }, { opacity: 1, duration: 1.0, ease: "power2.inOut" }, 0.6);
+    tl.fromTo("#outro-glow", { opacity: 0 }, { opacity: 1, duration: 1.6, ease: "power2.inOut" }, 0.8);
+    tl.fromTo("#outro-title", { opacity: 0, filter: "blur(8px)" }, { opacity: 1, filter: "blur(0px)", duration: 0.8, ease: "power3.out" }, 1.0);
+    tl.fromTo("#outro-rule", { scaleX: 0 }, { scaleX: 1, duration: 0.9, ease: "expo.out" }, 1.6);
+    tl.fromTo("#outro-sub span", { opacity: 0, filter: "blur(6px)" }, { opacity: 1, filter: "blur(0px)", duration: 0.3, ease: "power4.out", stagger: 0.09 }, 1.9);
+    tl.fromTo("#outro-sub", { textShadow: "0 0 0px rgba(255,170,90,0), 0 0 0px rgba(255,140,60,0)" }, { textShadow: "0 0 16px rgba(255,170,90,0.85), 0 0 46px rgba(255,140,60,0.55)", duration: 1.4, ease: "power2.inOut" }, 2.2);
+    tl.fromTo("#outro-closing", { opacity: 0, filter: "blur(6px)" }, { opacity: 1, filter: "blur(0px)", duration: 0.4, ease: "power4.out" }, 3.0);
+    tl.to("#outro-stage", { opacity: 0, duration: 2.0, ease: "power2.inOut" }, 5.4);
     window.__timelines["outro"] = tl;
   </script>
 </template>

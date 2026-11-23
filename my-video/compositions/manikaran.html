@@ -1,57 +1,56 @@
 <template>
   <style>
     #root { position: absolute; inset: 0; overflow: hidden; background: #07080b; font-family: "Montserrat", sans-serif; }
-    #root .frame { position: absolute; border-radius: 18px; overflow: hidden; background: #111318;
-      border: 1px solid rgba(255,255,255,0.08); box-shadow: 0 30px 80px rgba(0,0,0,0.65), 0 0 60px rgba(255,150,70,0.06); }
-    #root .full { position: absolute; left: 0; top: 0; width: 1920px; height: 1080px; overflow: hidden; }
+    #root .shot { position: absolute; left: 0; top: 0; width: 1080px; height: 1920px; overflow: hidden; }
     #root .kb { position: absolute; left: 0; top: 0; width: 100%; height: 100%; }
     #root .kb img, #root .kb video { position: absolute; left: 0; top: 0; width: 100%; height: 100%; object-fit: cover; }
-    #root .scrim { position: absolute; left: 0; top: 0; width: 1920px; height: 1080px;
-      background: linear-gradient(180deg, rgba(7,8,11,0) 55%, rgba(7,8,11,0.78) 100%); }
-    #root .label { position: absolute; left: 192px; top: 918px; height: 34px; display: flex; align-items: center; gap: 22px;
-      color: #c4c8cf; font-size: 28px; letter-spacing: 0.4em; text-transform: uppercase; white-space: nowrap; }
-    #root .label .rule { width: 64px; height: 2px; background: linear-gradient(90deg, #ffc27a, #ff8a3d); transform-origin: left center; }
+    #root .scrim { position: absolute; left: 0; top: 0; width: 1080px; height: 1920px;
+      background: linear-gradient(180deg, rgba(7,8,11,0.25) 0%, rgba(7,8,11,0) 16%, rgba(7,8,11,0) 50%, rgba(7,8,11,0.72) 74%, rgba(7,8,11,0.82) 100%); }
+    #root .label { position: absolute; left: 120px; top: 1170px; height: 40px; display: flex; align-items: center; gap: 22px;
+      color: #eef0f3; font-size: 34px; letter-spacing: 0.32em; text-transform: uppercase; white-space: nowrap;
+      text-shadow: 0 2px 14px rgba(0,0,0,0.6); }
+    #root .label .rule { width: 64px; height: 3px; background: linear-gradient(90deg, #ffc27a, #ff8a3d); transform-origin: left center; }
 
   </style>
-  <div id="root" data-composition-id="manikaran" data-width="1920" data-height="1080" data-duration="17"
+  <div id="root" data-composition-id="manikaran" data-width="1080" data-height="1920" data-duration="23.6000"
     data-composition-variables='[{"id": "chapter", "type": "string", "label": "Chapter label", "default": "Manikaran"}]'>
-    <div id="manikaran-b1" class="full"><div id="manikaran-b1-kb" class="kb"><img id="manikaran-b1-m" class="clip" data-start="0" data-duration="3" data-track-index="0" src="assets/photos/gurudwara.jpg" alt="" /></div><div id="manikaran-b1-scrim" class="scrim"></div></div>
-    <div id="manikaran-b2f1" class="frame" style="left:120px;top:143px;width:536px;height:714px;"><div id="manikaran-b2f1-kb" class="kb"><img id="manikaran-b2f1-m" class="clip" data-start="3" data-duration="3.5" data-track-index="0" src="assets/photos/gurudwara-front.jpg" alt="" /></div></div>
-    <div id="manikaran-b2f2" class="frame" style="left:692px;top:143px;width:536px;height:714px;"><div id="manikaran-b2f2-kb" class="kb"><img id="manikaran-b2f2-m" class="clip" data-start="3" data-duration="3.5" data-track-index="1" src="assets/photos/manikaran-temple-river.jpg" alt="" /></div></div>
-    <div id="manikaran-b2f3" class="frame" style="left:1264px;top:143px;width:536px;height:714px;"><div id="manikaran-b2f3-kb" class="kb"><img id="manikaran-b2f3-m" class="clip" data-start="3" data-duration="3.5" data-track-index="2" src="assets/photos/hot-spring-pool.jpg" alt="" /></div></div>
-    <div id="manikaran-b3f1" class="frame" style="left:192px;top:110px;width:439px;height:780px;"><div id="manikaran-b3f1-kb" class="kb"><video id="manikaran-b3f1-m" class="clip" data-start="6.5" data-duration="3.5" data-track-index="0" muted playsinline src="assets/video/river-run.mp4"></video></div></div>
-    <div id="manikaran-b3f2" class="frame" style="left:667px;top:110px;width:439px;height:780px;"><div id="manikaran-b3f2-kb" class="kb"><video id="manikaran-b3f2-m" class="clip" data-start="6.5" data-duration="3.5" data-track-index="1" muted playsinline src="assets/video/manikaran-river.mp4"></video></div></div>
-    <div id="manikaran-b3f3" class="frame" style="left:1142px;top:110px;width:585px;height:780px;"><div id="manikaran-b3f3-kb" class="kb"><img id="manikaran-b3f3-m" class="clip" data-start="6.5" data-duration="3.5" data-track-index="2" src="assets/photos/langar-thali.jpg" alt="" /></div></div>
-    <div id="manikaran-b4f1" class="frame" style="left:121px;top:216px;width:425px;height:567px;"><div id="manikaran-b4f1-kb" class="kb"><img id="manikaran-b4f1-m" class="clip" data-start="10" data-duration="3.5" data-track-index="0" src="assets/photos/her-on-bridge.jpg" alt="" /></div></div>
-    <div id="manikaran-b4f2" class="frame" style="left:582px;top:216px;width:756px;height:567px;"><div id="manikaran-b4f2-kb" class="kb"><img id="manikaran-b4f2-m" class="clip" data-start="10" data-duration="3.5" data-track-index="1" src="assets/photos/couple-selfie-manikaran.jpg" alt="" /></div></div>
-    <div id="manikaran-b4f3" class="frame" style="left:1374px;top:216px;width:425px;height:567px;"><div id="manikaran-b4f3-kb" class="kb"><img id="manikaran-b4f3-m" class="clip" data-start="10" data-duration="3.5" data-track-index="2" src="assets/photos/him-on-bridge.jpg" alt="" /></div></div>
-    <div id="manikaran-b5f1" class="frame" style="left:120px;top:238px;width:393px;height:524px;"><div id="manikaran-b5f1-kb" class="kb"><img id="manikaran-b5f1-m" class="clip" data-start="13.5" data-duration="3.5" data-track-index="0" src="assets/photos/her-gurudwara-railing.jpg" alt="" /></div></div>
-    <div id="manikaran-b5f2" class="frame" style="left:549px;top:238px;width:393px;height:524px;"><div id="manikaran-b5f2-kb" class="kb"><img id="manikaran-b5f2-m" class="clip" data-start="13.5" data-duration="3.5" data-track-index="1" src="assets/photos/him-bridge-walk.jpg" alt="" /></div></div>
-    <div id="manikaran-b5f3" class="frame" style="left:978px;top:238px;width:393px;height:524px;"><div id="manikaran-b5f3-kb" class="kb"><img id="manikaran-b5f3-m" class="clip" data-start="13.5" data-duration="3.5" data-track-index="2" src="assets/photos/her-peace-gurudwara.jpg" alt="" /></div></div>
-    <div id="manikaran-b5f4" class="frame" style="left:1407px;top:238px;width:393px;height:524px;"><div id="manikaran-b5f4-kb" class="kb"><img id="manikaran-b5f4-m" class="clip" data-start="13.5" data-duration="3.5" data-track-index="3" src="assets/photos/him-gurudwara-railing.jpg" alt="" /></div></div>
+    <div id="manikaran-s1" class="shot" data-layout-allow-overflow><div id="manikaran-s1-kb" class="kb"><img id="manikaran-s1-m" class="clip" data-start="0" data-duration="2.4" data-track-index="0" src="assets/photos/gurudwara.jpg" style="object-position:30% 50%;" alt="" /></div></div>
+    <div id="manikaran-s2" class="shot" data-layout-allow-overflow><div id="manikaran-s2-kb" class="kb"><img id="manikaran-s2-m" class="clip" data-start="2.4" data-duration="1.4" data-track-index="1" src="assets/photos/gurudwara-front.jpg" style="object-position:40% 50%;" alt="" /></div></div>
+    <div id="manikaran-s3" class="shot" data-layout-allow-overflow><div id="manikaran-s3-kb" class="kb"><img id="manikaran-s3-m" class="clip" data-start="3.8" data-duration="1.4" data-track-index="0" src="assets/photos/manikaran-temple-river.jpg" style="object-position:40% 50%;" alt="" /></div></div>
+    <div id="manikaran-s4" class="shot" data-layout-allow-overflow><div id="manikaran-s4-kb" class="kb"><img id="manikaran-s4-m" class="clip" data-start="5.2" data-duration="1.4" data-track-index="1" src="assets/photos/hot-spring-pool.jpg" style="object-position:70% 50%;" alt="" /></div></div>
+    <div id="manikaran-s5" class="shot" data-layout-allow-overflow><div id="manikaran-s5-kb" class="kb"><video id="manikaran-s5-m" class="clip" data-start="6.6" data-duration="2.4" data-track-index="0" muted playsinline src="assets/video/river-run.mp4"></video></div></div>
+    <div id="manikaran-s6" class="shot" data-layout-allow-overflow><div id="manikaran-s6-kb" class="kb"><video id="manikaran-s6-m" class="clip" data-start="9" data-duration="2.4" data-track-index="1" muted playsinline src="assets/video/manikaran-river.mp4"></video></div></div>
+    <div id="manikaran-s7" class="shot" data-layout-allow-overflow><div id="manikaran-s7-kb" class="kb"><img id="manikaran-s7-m" class="clip" data-start="11.4" data-duration="1.4" data-track-index="0" src="assets/photos/langar-thali.jpg" alt="" /></div></div>
+    <div id="manikaran-s8" class="shot" data-layout-allow-overflow><div id="manikaran-s8-kb" class="kb"><img id="manikaran-s8-m" class="clip" data-start="12.8" data-duration="1.4" data-track-index="1" src="assets/photos/her-on-bridge.jpg" style="object-position:52% 50%;" alt="" /></div></div>
+    <div id="manikaran-s9" class="shot" data-layout-allow-overflow><div id="manikaran-s9-kb" class="kb"><img id="manikaran-s9-m" class="clip" data-start="14.2" data-duration="2.4" data-track-index="0" src="assets/photos/couple-selfie-manikaran.jpg" style="object-position:43% 50%;" alt="" /></div></div>
+    <div id="manikaran-s10" class="shot" data-layout-allow-overflow><div id="manikaran-s10-kb" class="kb"><img id="manikaran-s10-m" class="clip" data-start="16.6" data-duration="1.4" data-track-index="1" src="assets/photos/him-on-bridge.jpg" style="object-position:55% 50%;" alt="" /></div></div>
+    <div id="manikaran-s11" class="shot" data-layout-allow-overflow><div id="manikaran-s11-kb" class="kb"><img id="manikaran-s11-m" class="clip" data-start="18" data-duration="1.4" data-track-index="0" src="assets/photos/her-gurudwara-railing.jpg" style="object-position:62% 50%;" alt="" /></div></div>
+    <div id="manikaran-s12" class="shot" data-layout-allow-overflow><div id="manikaran-s12-kb" class="kb"><img id="manikaran-s12-m" class="clip" data-start="19.4" data-duration="1.4" data-track-index="1" src="assets/photos/him-bridge-walk.jpg" style="object-position:56% 50%;" alt="" /></div></div>
+    <div id="manikaran-s13" class="shot" data-layout-allow-overflow><div id="manikaran-s13-kb" class="kb"><img id="manikaran-s13-m" class="clip" data-start="20.8" data-duration="1.4" data-track-index="0" src="assets/photos/her-peace-gurudwara.jpg" style="object-position:60% 50%;" alt="" /></div></div>
+    <div id="manikaran-s14" class="shot" data-layout-allow-overflow><div id="manikaran-s14-kb" class="kb"><img id="manikaran-s14-m" class="clip" data-start="22.2" data-duration="1.4" data-track-index="1" src="assets/photos/him-gurudwara-railing.jpg" style="object-position:55% 50%;" alt="" /></div></div>
+    <div id="manikaran-scrim" class="scrim"></div>
     <div id="manikaran-label" class="label"><div id="manikaran-rule" class="rule"></div><span id="manikaran-label-text" data-var-text="chapter">Manikaran</span></div>
   </div>
   <script>
     const tl = gsap.timeline({ paused: true });
-    tl.fromTo("#manikaran-b1", { opacity: 0 }, { opacity: 1, duration: 0.8, ease: "power2.out" }, 0);
-    tl.fromTo("#manikaran-b1-kb", { scale: 1.04 }, { scale: 1.12, duration: 3, ease: "sine.inOut" }, 0);
-    tl.to("#manikaran-b1", { opacity: 0, filter: "blur(8px)", duration: 0.4, ease: "power3.in" }, 2.6);
-    tl.fromTo("#manikaran-b2f1, #manikaran-b2f2, #manikaran-b2f3", { opacity: 0, scale: 0.94, filter: "blur(12px)" }, { opacity: 1, scale: 1, filter: "blur(0px)", duration: 1.0, ease: "expo.out", stagger: 0.14 }, 3.05);
-    tl.fromTo("#manikaran-b2f1-kb, #manikaran-b2f2-kb, #manikaran-b2f3-kb", { scale: 1 }, { scale: 1.06, duration: 3.5, ease: "sine.inOut" }, 3);
-    tl.to("#manikaran-b2f1, #manikaran-b2f2, #manikaran-b2f3", { opacity: 0, filter: "blur(8px)", duration: 0.35, ease: "power3.in" }, 6.1);
-    tl.fromTo("#manikaran-b3f1, #manikaran-b3f2, #manikaran-b3f3", { opacity: 0, x: 280, filter: "blur(18px)" }, { opacity: 1, x: 0, filter: "blur(0px)", duration: 0.55, ease: "power3.out", stagger: 0.1 }, 6.55);
-    tl.fromTo("#manikaran-b3f1-kb, #manikaran-b3f2-kb, #manikaran-b3f3-kb", { scale: 1 }, { scale: 1.06, duration: 3.5, ease: "sine.inOut" }, 6.5);
-    tl.to("#manikaran-b3f1, #manikaran-b3f2, #manikaran-b3f3", { opacity: 0, filter: "blur(8px)", duration: 0.35, ease: "power3.in" }, 9.6);
-    tl.fromTo("#manikaran-b4f1, #manikaran-b4f2, #manikaran-b4f3", { opacity: 0, clipPath: "inset(100% 0% 0% 0% round 18px)" }, { opacity: 1, clipPath: "inset(0% 0% 0% 0% round 18px)", duration: 1.0, ease: "expo.out", stagger: 0.12 }, 10.05);
-    tl.fromTo("#manikaran-b4f1-kb, #manikaran-b4f2-kb, #manikaran-b4f3-kb", { scale: 1.15 }, { scale: 1, duration: 1.2, ease: "expo.out", stagger: 0.12 }, 10.05);
-    tl.fromTo("#manikaran-b4f1-kb, #manikaran-b4f2-kb, #manikaran-b4f3-kb", { scale: 1 }, { scale: 1.05, duration: 2.2, ease: "sine.inOut", immediateRender: false }, 11.3);
-    tl.to("#manikaran-b4f1, #manikaran-b4f2, #manikaran-b4f3", { opacity: 0, filter: "blur(8px)", duration: 0.35, ease: "power3.in" }, 13.1);
-    tl.fromTo("#manikaran-b5f1, #manikaran-b5f2, #manikaran-b5f3, #manikaran-b5f4", { opacity: 0, scale: 0.94, filter: "blur(12px)" }, { opacity: 1, scale: 1, filter: "blur(0px)", duration: 1.0, ease: "expo.out", stagger: 0.14 }, 13.55);
-    tl.fromTo("#manikaran-b5f1-kb, #manikaran-b5f2-kb, #manikaran-b5f3-kb, #manikaran-b5f4-kb", { scale: 1 }, { scale: 1.06, duration: 3.5, ease: "sine.inOut" }, 13.5);
-    tl.to("#manikaran-b5f1, #manikaran-b5f2, #manikaran-b5f3, #manikaran-b5f4", { opacity: 0, filter: "blur(8px)", duration: 0.35, ease: "power3.in" }, 16.5);
-    tl.fromTo("#manikaran-rule", { scaleX: 0 }, { scaleX: 1, duration: 0.9, ease: "expo.out" }, 0.8);
-    tl.fromTo("#manikaran-label-text", { opacity: 0, filter: "blur(8px)" }, { opacity: 1, filter: "blur(0px)", duration: 0.2, ease: "power4.out" }, 1.05);
-    tl.to("#manikaran-label", { opacity: 0, filter: "blur(8px)", duration: 0.25, ease: "power3.in" }, 16.2);
+    tl.fromTo("#manikaran-s1-kb", { x: 160, filter: "blur(16px)" }, { x: 0, filter: "blur(0px)", duration: 0.32, ease: "power3.out" }, 0.0000);
+    tl.fromTo("#manikaran-s1-m", { objectPosition: "30% 50%" }, { objectPosition: "70% 50%", duration: 2.4000, ease: "sine.inOut" }, 0.0000);
+    tl.fromTo("#manikaran-s2-kb", { scale: 1.07 }, { scale: 1, duration: 0.55, ease: "expo.out" }, 2.4000);
+    tl.fromTo("#manikaran-s3-kb", { scale: 1.07 }, { scale: 1, duration: 0.55, ease: "expo.out" }, 3.8000);
+    tl.fromTo("#manikaran-s4-kb", { scale: 1.07 }, { scale: 1, duration: 0.55, ease: "expo.out" }, 5.2000);
+    tl.fromTo("#manikaran-s5-kb", { scale: 1.07 }, { scale: 1, duration: 0.55, ease: "expo.out" }, 6.6000);
+    tl.fromTo("#manikaran-s6-kb", { scale: 1.07 }, { scale: 1, duration: 0.55, ease: "expo.out" }, 9.0000);
+    tl.fromTo("#manikaran-s7-kb", { scale: 1.07 }, { scale: 1, duration: 0.55, ease: "expo.out" }, 11.4000);
+    tl.fromTo("#manikaran-s8-kb", { scale: 1.07 }, { scale: 1, duration: 0.55, ease: "expo.out" }, 12.8000);
+    tl.fromTo("#manikaran-s9-kb", { scale: 1.07 }, { scale: 1, duration: 0.55, ease: "expo.out" }, 14.2000);
+    tl.fromTo("#manikaran-s10-kb", { scale: 1.07 }, { scale: 1, duration: 0.55, ease: "expo.out" }, 16.6000);
+    tl.fromTo("#manikaran-s11-kb", { scale: 1.07 }, { scale: 1, duration: 0.55, ease: "expo.out" }, 18.0000);
+    tl.fromTo("#manikaran-s12-kb", { scale: 1.07 }, { scale: 1, duration: 0.55, ease: "expo.out" }, 19.4000);
+    tl.fromTo("#manikaran-s13-kb", { scale: 1.07 }, { scale: 1, duration: 0.55, ease: "expo.out" }, 20.8000);
+    tl.fromTo("#manikaran-s14-kb", { scale: 1.07 }, { scale: 1, duration: 0.55, ease: "expo.out" }, 22.2000);
+    tl.fromTo("#manikaran-rule", { scaleX: 0 }, { scaleX: 1, duration: 0.7, ease: "expo.out" }, 0.3);
+    tl.fromTo("#manikaran-label-text", { opacity: 0, filter: "blur(8px)" }, { opacity: 1, filter: "blur(0px)", duration: 0.2, ease: "power4.out" }, 0.5);
+    tl.to("#manikaran-label", { opacity: 0, filter: "blur(8px)", duration: 0.2, ease: "power3.in" }, 23.2500);
     window.__timelines["manikaran"] = tl;
   </script>
 </template>
