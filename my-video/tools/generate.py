@@ -21,9 +21,11 @@ TRANSITIONS = ["zoom", "whip-left", "spin", "iris", "whip-up", "flash", "whip-ri
 CHAPTER_TRANSITIONS = ["leak", "zoom", "leak", "spin"]
 
 
-def ph(name, pos=None, pan=None, kind=None, cap=None, y=None):
-    """A photo. pos/y: focus point in %; pan: (from %, to %) to sweep across a wide one; cap: sticker text."""
-    return {"tag": "img", "src": P + name + ".jpg", "pos": pos, "y": y, "pan": pan, "kind": kind, "cap": cap}
+def ph(name, pos=None, pan=None, kind=None, cap=None, y=None, credit=None):
+    """A photo. pos/y: focus point in %; pan: (from %, to %) to sweep across a wide one; cap: sticker text;
+    credit: attribution line for licensed photos from Wikimedia Commons."""
+    return {"tag": "img", "src": P + name + ".jpg", "pos": pos, "y": y, "pan": pan, "kind": kind, "cap": cap,
+            "credit": credit}
 
 
 def vd(name, start=0.0, cap=None):
@@ -53,8 +55,7 @@ SCENES = [
     ("morning", "The morning", [
         ph("breakfast", pos=58, cap="Paratha o'clock"), ph("scooter-valley", pos=70, cap="Scooty diaries"),
         split(ph("him-river-sun", y=55), ph("her-river-sun", y=62), "His view", "Her view"),
-        ph("him-beer-cafe", pos=65, cap="Riverside cheers"), ph("cafe-food"),
-        ph("her-cafe", pos=40, cap="Main character energy"),
+        ph("cafe-food", cap="Carbs with a view"),
     ]),
     ("golden", "Golden hour", [
         vd("walk-to-sunset"), vd("valley-sunset", start=6.0, cap="Golden hour hits different"), vd("sun-rays"),
@@ -85,7 +86,7 @@ SCENES = [
         ph("apple-mirror", cap="Mirror, mirror"), ph("couple-cosy-night", pos=26), ph("room-mirror"),
     ]),
     ("oneyear", "One year", [
-        count(365, "Days of us", "Our first year"), ph("anniversary-candles", kind="hero"),
+        count(365, "Days of us", "Our first year"), ph("anniversary-candles-crop", kind="hero", y=40),
         ph("anniversary-bracelet", kind="hero", cap="A for always"), ph("anniversary-cake", kind="hero"),
         ph("story-coaster", kind="hero"),
     ]),
@@ -216,6 +217,8 @@ SHOT_CSS = """
     #root .sticker { position: absolute; left: 160px; top: 380px; padding: 14px 28px; border-radius: 18px;
       font-family: "Poppins", sans-serif; font-weight: 700; font-size: 42px; line-height: 1.15; white-space: nowrap;
       box-shadow: 0 14px 36px rgba(0,0,0,0.35); transform-origin: 30% 50%; }
+    #root .credit { position: absolute; left: 120px; top: 1262px; font-size: 22px; color: rgba(255,255,255,0.78);
+      letter-spacing: 0.02em; text-shadow: 0 1px 6px rgba(0,0,0,0.7); white-space: nowrap; }
     #root .sticker.s0 { background: #ffffff; color: #15161a; }
     #root .sticker.s1 { background: linear-gradient(135deg, #ffd08a, #ff8a3d); color: #2a1206; }
     #root .sticker.s2 { background: #15161a; color: #ffd9a6; }
@@ -359,6 +362,8 @@ def build_scene(sid, chapter, items):
             sh = (f'    <div id="{fid}" class="shot" data-layout-allow-overflow data-layout-allow-overlap>'
                   f'<div id="{fid}-tx" class="tx {bg}"><div id="{fid}-kb" class="kb">{inner}</div></div></div>')
             js.extend(sjs)
+        if item.get("credit"):
+            cap_html += f'<div id="{fid}-credit" class="credit" data-layout-ignore>Photo: {item["credit"]}</div>'
         if cap_html:
             k = sh.rindex("</div></div>")
             sh = sh[:k] + cap_html + sh[k:]
