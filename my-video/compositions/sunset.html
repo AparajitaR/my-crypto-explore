@@ -48,14 +48,14 @@
       font-family: "Poppins", sans-serif; font-weight: 700; font-size: 48px; text-transform: uppercase; letter-spacing: 0.1em; }
 
   </style>
-  <div id="root" data-composition-id="sunset" data-width="1080" data-height="1920" data-duration="9.5667"
+  <div id="root" data-composition-id="sunset" data-width="1080" data-height="1920" data-duration="9.1333"
     data-composition-variables='[{"id": "chapter", "type": "string", "label": "Chapter label", "default": "Sunset"}]'>
-    <div id="sunset-s1" class="shot" data-layout-allow-overflow><div id="sunset-s1-tx" class="tx"><div id="sunset-s1-kb" class="kb"><img id="sunset-s1-m" class="clip" data-start="0" data-duration="1.6333" data-track-index="0" src="assets/photos/road-walk.jpg" alt="" /></div></div></div>
-    <div id="sunset-s2" class="shot" data-layout-allow-overflow><div id="sunset-s2-tx" class="tx"><div id="sunset-s2-kb" class="kb"><video id="sunset-s2-m" class="clip" data-start="1.2333" data-duration="2.4667" data-track-index="1" muted playsinline src="assets/video/her-on-road.mp4"></video></div></div></div>
-    <div id="sunset-s3" class="shot" data-layout-allow-overflow><div id="sunset-s3-tx" class="tx"><div id="sunset-s3-kb" class="kb"><img id="sunset-s3-m" class="clip" data-start="3.3" data-duration="1.6333" data-track-index="0" src="assets/photos/sunset-view.jpg" style="object-position:62% 50%;" alt="" /></div></div></div>
-    <div id="sunset-s4" class="shot" data-layout-allow-overflow><div id="sunset-s4-tx" class="tx"><div id="sunset-s4-kb" class="kb"><img id="sunset-s4-m" class="clip" data-start="4.5333" data-duration="2.1" data-track-index="1" src="assets/photos/her-photographing-sunset.jpg" style="object-position:55% 50%;" alt="" /></div><div id="sunset-s4-cap" class="sticker s2">One more photo, please</div></div></div>
-    <div id="sunset-s5" class="shot" data-layout-allow-overflow><div id="sunset-s5-tx" class="tx"><div id="sunset-s5-kb" class="kb"><img id="sunset-s5-m" class="clip" data-start="6.2333" data-duration="2.1" data-track-index="0" src="assets/photos/sunset-fire.jpg" alt="" /></div><div id="sunset-s5-cap" class="sticker s0">Sky on fire</div></div></div>
-    <div id="sunset-s6" class="shot" data-layout-allow-overflow><div id="sunset-s6-tx" class="tx"><div id="sunset-s6-kb" class="kb"><img id="sunset-s6-m" class="clip" data-start="7.9333" data-duration="1.6333" data-track-index="1" src="assets/photos/sunset-road-red.jpg" alt="" /></div></div></div>
+    <div id="sunset-s1" class="shot" data-layout-allow-overflow><div id="sunset-s1-tx" class="tx"><div id="sunset-s1-kb" class="kb"><img id="sunset-s1-m" class="clip" data-start="0" data-duration="1.5667" data-track-index="0" src="assets/photos/road-walk.jpg" alt="" /></div></div></div>
+    <div id="sunset-s2" class="shot" data-layout-allow-overflow><div id="sunset-s2-tx" class="tx"><div id="sunset-s2-kb" class="kb"><video id="sunset-s2-m" class="clip" data-start="1.1667" data-duration="2.3667" data-track-index="1" muted playsinline src="assets/video/her-on-road.mp4"></video></div></div></div>
+    <div id="sunset-s3" class="shot" data-layout-allow-overflow><div id="sunset-s3-tx" class="tx"><div id="sunset-s3-kb" class="kb"><img id="sunset-s3-m" class="clip" data-start="3.1333" data-duration="1.5667" data-track-index="0" src="assets/photos/sunset-view.jpg" style="object-position:62% 50%;" alt="" /></div></div></div>
+    <div id="sunset-s4" class="shot" data-layout-allow-overflow><div id="sunset-s4-tx" class="tx"><div id="sunset-s4-kb" class="kb"><img id="sunset-s4-m" class="clip" data-start="4.3" data-duration="2.0333" data-track-index="1" src="assets/photos/her-photographing-sunset.jpg" style="object-position:55% 50%;" alt="" /></div><div id="sunset-s4-cap" class="sticker s2">One more photo, please</div></div></div>
+    <div id="sunset-s5" class="shot" data-layout-allow-overflow><div id="sunset-s5-tx" class="tx"><div id="sunset-s5-kb" class="kb"><img id="sunset-s5-m" class="clip" data-start="5.9333" data-duration="2.0333" data-track-index="0" src="assets/photos/sunset-fire.jpg" alt="" /></div><div id="sunset-s5-cap" class="sticker s0">Sky on fire</div></div></div>
+    <div id="sunset-s6" class="shot" data-layout-allow-overflow><div id="sunset-s6-tx" class="tx"><div id="sunset-s6-kb" class="kb"><img id="sunset-s6-m" class="clip" data-start="7.5667" data-duration="1.5667" data-track-index="1" src="assets/photos/sunset-road-red.jpg" alt="" /></div></div></div>
     <div id="sunset-scrim" class="scrim"></div>
     <div id="sunset-label" class="label"><div id="sunset-rule" class="rule"></div><span id="sunset-label-text" data-var-text="chapter">Sunset</span></div>
     <div id="sunset-flash" class="flash" data-layout-ignore></div>
@@ -65,29 +65,36 @@
     const tl = gsap.timeline({ paused: true });
     tl.set("#sunset-leak", { x: -1700, opacity: 0 }, 0);
     tl.set("#sunset-flash", { opacity: 0 }, 0);
-    tl.fromTo("#sunset-s1-tx", { rotation: -22, scale: 1.45, opacity: 0, filter: "blur(16px)" }, { rotation: 0, scale: 1, opacity: 1, filter: "blur(0px)", duration: 0.4, ease: "power2.out" }, 0.0000);
-    tl.to("#sunset-s1-tx", { scale: 1.35, filter: "blur(14px)", duration: 0.4, ease: "power2.in" }, 1.2333);
-    tl.fromTo("#sunset-s1-kb", { scale: 1 }, { scale: 1.06, duration: 1.6333, ease: "none" }, 0.0000);
-    tl.fromTo("#sunset-s2-tx", { scale: 1.5, opacity: 0, filter: "blur(14px)" }, { scale: 1, opacity: 1, filter: "blur(0px)", duration: 0.4, ease: "power2.out" }, 1.2333);
-    tl.to("#sunset-s2-tx", { x: -1080, y: 0, filter: "blur(18px)", duration: 0.4, ease: "power2.in" }, 3.3000);
-    tl.fromTo("#sunset-s2-kb", { scale: 1 }, { scale: 1.06, duration: 2.4667, ease: "none" }, 1.2333);
-    tl.fromTo("#sunset-s3-tx", { x: 1080, y: 0, filter: "blur(18px)" }, { x: 0, y: 0, filter: "blur(0px)", duration: 0.4, ease: "power2.out" }, 3.3000);
-    tl.to("#sunset-s3-tx", { rotation: 22, scale: 1.45, filter: "blur(16px)", duration: 0.4, ease: "power2.in" }, 4.5333);
-    tl.fromTo("#sunset-s3-kb", { scale: 1 }, { scale: 1.06, duration: 1.6333, ease: "none" }, 3.3000);
-    tl.fromTo("#sunset-s4-cap", { scale: 0, rotation: -11 }, { scale: 1, rotation: 3, duration: 0.5, ease: "back.out(2.6)" }, 4.9833);
-    tl.fromTo("#sunset-s4-tx", { rotation: -22, scale: 1.45, opacity: 0, filter: "blur(16px)" }, { rotation: 0, scale: 1, opacity: 1, filter: "blur(0px)", duration: 0.4, ease: "power2.out" }, 4.5333);
-    tl.to("#sunset-s4-tx", { scale: 1.12, duration: 0.4, ease: "power1.in" }, 6.2333);
-    tl.fromTo("#sunset-s4-kb", { scale: 1 }, { scale: 1.06, duration: 2.1000, ease: "none" }, 4.5333);
-    tl.fromTo("#sunset-s5-cap", { scale: 0, rotation: -16 }, { scale: 1, rotation: -2, duration: 0.5, ease: "back.out(2.6)" }, 6.6833);
-    tl.fromTo("#sunset-s5-tx", { clipPath: "circle(0% at 50% 46%)" }, { clipPath: "circle(74% at 50% 46%)", duration: 0.440, ease: "power2.inOut" }, 6.2333);
-    tl.to("#sunset-s5-tx", { x: 0, y: -1920, filter: "blur(18px)", duration: 0.4, ease: "power2.in" }, 7.9333);
-    tl.fromTo("#sunset-s5-kb", { scale: 1 }, { scale: 1.06, duration: 2.1000, ease: "none" }, 6.2333);
-    tl.fromTo("#sunset-s6-tx", { x: 0, y: 1920, filter: "blur(18px)" }, { x: 0, y: 0, filter: "blur(0px)", duration: 0.4, ease: "power2.out" }, 7.9333);
-    tl.to("#sunset-s6-tx", { scale: 1.35, filter: "blur(14px)", duration: 0.4, ease: "power2.in" }, 9.1667);
-    tl.fromTo("#sunset-s6-kb", { scale: 1 }, { scale: 1.06, duration: 1.6333, ease: "none" }, 7.9333);
+    tl.fromTo("#sunset-s1-tx", { scale: 1.5, opacity: 0, filter: "blur(14px)" }, { scale: 1, opacity: 1, filter: "blur(0px)", duration: 0.4, ease: "power2.out" }, 0.0000);
+    tl.set("#sunset-leak", { x: -1700 }, 0.0000);
+    tl.to("#sunset-leak", { x: 900, duration: 0.80, ease: "power1.inOut" }, 0.0000);
+    tl.to("#sunset-leak", { opacity: 0.95, duration: 0.32, ease: "power2.out", yoyo: true, repeat: 1 }, 0.0000);
+    tl.to("#sunset-s1-tx", { x: -1080, y: 0, filter: "blur(18px)", duration: 0.4, ease: "power2.in" }, 1.1667);
+    tl.fromTo("#sunset-s1-kb", { scale: 1 }, { scale: 1.06, duration: 1.5667, ease: "none" }, 0.0000);
+    tl.fromTo("#sunset-s2-tx", { x: 1080, y: 0, filter: "blur(18px)" }, { x: 0, y: 0, filter: "blur(0px)", duration: 0.4, ease: "power2.out" }, 1.1667);
+    tl.to("#sunset-s2-tx", { rotation: 22, scale: 1.45, filter: "blur(16px)", duration: 0.4, ease: "power2.in" }, 3.1333);
+    tl.fromTo("#sunset-s2-kb", { scale: 1 }, { scale: 1.06, duration: 2.3667, ease: "none" }, 1.1667);
+    tl.fromTo("#sunset-s3-tx", { rotation: -22, scale: 1.45, opacity: 0, filter: "blur(16px)" }, { rotation: 0, scale: 1, opacity: 1, filter: "blur(0px)", duration: 0.4, ease: "power2.out" }, 3.1333);
+    tl.to("#sunset-s3-tx", { scale: 1.12, duration: 0.4, ease: "power1.in" }, 4.3000);
+    tl.fromTo("#sunset-s3-kb", { scale: 1 }, { scale: 1.06, duration: 1.5667, ease: "none" }, 3.1333);
+    tl.fromTo("#sunset-s4-cap", { scale: 0, rotation: -11 }, { scale: 1, rotation: 3, duration: 0.5, ease: "back.out(2.6)" }, 4.7500);
+    tl.to("#sunset-s4-cap", { opacity: 0, scale: 0.8, duration: 0.18, ease: "power2.in" }, 5.7333);
+    tl.fromTo("#sunset-s4-tx", { clipPath: "circle(0% at 50% 46%)" }, { clipPath: "circle(74% at 50% 46%)", duration: 0.440, ease: "power2.inOut" }, 4.3000);
+    tl.to("#sunset-s4-tx", { x: 0, y: -1920, filter: "blur(18px)", duration: 0.4, ease: "power2.in" }, 5.9333);
+    tl.fromTo("#sunset-s4-kb", { scale: 1 }, { scale: 1.06, duration: 2.0333, ease: "none" }, 4.3000);
+    tl.fromTo("#sunset-s5-cap", { scale: 0, rotation: -16 }, { scale: 1, rotation: -2, duration: 0.5, ease: "back.out(2.6)" }, 6.3833);
+    tl.to("#sunset-s5-cap", { opacity: 0, scale: 0.8, duration: 0.18, ease: "power2.in" }, 7.3667);
+    tl.fromTo("#sunset-s5-tx", { x: 0, y: 1920, filter: "blur(18px)" }, { x: 0, y: 0, filter: "blur(0px)", duration: 0.4, ease: "power2.out" }, 5.9333);
+    tl.to("#sunset-s5-tx", { scale: 1.12, duration: 0.4, ease: "power1.in" }, 7.5667);
+    tl.fromTo("#sunset-s5-kb", { scale: 1 }, { scale: 1.06, duration: 2.0333, ease: "none" }, 5.9333);
+    tl.fromTo("#sunset-s6-tx", { opacity: 0 }, { opacity: 1, duration: 0.06, ease: "none" }, 7.7067);
+    tl.to("#sunset-flash", { opacity: 0.85, duration: 0.16, ease: "power2.out" }, 7.5667);
+    tl.to("#sunset-flash", { opacity: 0, duration: 0.36, ease: "power2.in" }, 7.7267);
+    tl.to("#sunset-s6-tx", { scale: 1.35, filter: "blur(14px)", duration: 0.4, ease: "power2.in" }, 8.7333);
+    tl.fromTo("#sunset-s6-kb", { scale: 1 }, { scale: 1.06, duration: 1.5667, ease: "none" }, 7.5667);
     tl.fromTo("#sunset-label", { opacity: 0, scale: 0.6 }, { opacity: 1, scale: 1, duration: 0.5, ease: "back.out(2.2)" }, 0.50);
     tl.fromTo("#sunset-rule", { scaleX: 0 }, { scaleX: 1, duration: 0.6, ease: "expo.out" }, 0.70);
-    tl.to("#sunset-label", { opacity: 0, x: -40, duration: 0.25, ease: "power3.in" }, 8.8667);
+    tl.to("#sunset-label", { opacity: 0, x: -40, duration: 0.25, ease: "power3.in" }, 8.4333);
     window.__timelines["sunset"] = tl;
   </script>
 </template>

@@ -21,11 +21,11 @@ TRANSITIONS = ["zoom", "whip-left", "spin", "iris", "whip-up", "flash", "whip-ri
 CHAPTER_TRANSITIONS = ["leak", "zoom", "leak", "spin"]
 
 
-def ph(name, pos=None, pan=None, kind=None, cap=None, y=None, credit=None):
+def ph(name, pos=None, pan=None, kind=None, cap=None, y=None, credit=None, zoom=None):
     """A photo. pos/y: focus point in %; pan: (from %, to %) to sweep across a wide one; cap: sticker text;
     credit: attribution line for licensed photos from Wikimedia Commons."""
     return {"tag": "img", "src": P + name + ".jpg", "pos": pos, "y": y, "pan": pan, "kind": kind, "cap": cap,
-            "credit": credit}
+            "credit": credit, "zoom": zoom}
 
 
 def vd(name, start=0.0, cap=None):
@@ -49,6 +49,10 @@ def count(n, word, kicker):
 
 
 SCENES = [
+    ("valley", "Parvati Valley", [
+        ph("stock-tosh-snow", kind="hero", zoom=(1.35, 1.0, "50% 8%"), credit="Wikimedia Commons, CC BY-SA 4.0"),
+        ph("stock-kasol-evening", kind="hero", pan=(15, 75), credit="Alok Kumar, Wikimedia Commons, CC BY-SA 4.0"),
+    ]),
     ("drive", "The drive in", [
         vd("forest-drive"), vd("drive-traffic", start=1.0), vd("camp-pan"), ph("kasol-street", cap="Hello, Kasol"),
     ]),
@@ -290,7 +294,8 @@ def sticker(fid, item, s):
     r = (-4, 3, -2, 5)[n % 4]
     h = f'<div id="{fid}-cap" class="sticker s{n % 3}">{item["cap"]}</div>'
     js = [f'    tl.fromTo("#{fid}-cap", {{ scale: 0, rotation: {r - 14} }}, '
-          f'{{ scale: 1, rotation: {r}, duration: 0.5, ease: "back.out(2.6)" }}, {s + T + 0.05:.4f});']
+          f'{{ scale: 1, rotation: {r}, duration: 0.5, ease: "back.out(2.6)" }}, {s + T + 0.05:.4f});',
+          f'    tl.to("#{fid}-cap", {{ opacity: 0, scale: 0.8, duration: 0.18, ease: "power2.in" }}, {s + item["frames"] / FPS - 0.2:.4f});']
     return h, js
 
 
@@ -382,7 +387,12 @@ def build_scene(sid, chapter, items):
         else:
             js.append(t_in(item["in_kind"], f"#{fid}-tx", s, sid))
         js.append(t_out(item["out_kind"], f"#{fid}-tx", s + d))
-        js.append(f'    tl.fromTo("#{fid}-kb", {{ scale: 1 }}, {{ scale: 1.06, duration: {d + T:.4f}, ease: "none" }}, {s:.4f});')
+        if item.get("zoom"):
+            za, zb, zo = item["zoom"]
+            js.append(f'    tl.set("#{fid}-kb", {{ transformOrigin: "{zo}" }}, {s:.4f});')
+            js.append(f'    tl.fromTo("#{fid}-kb", {{ scale: {za} }}, {{ scale: {zb}, duration: {d + T:.4f}, ease: "sine.out" }}, {s:.4f});')
+        else:
+            js.append(f'    tl.fromTo("#{fid}-kb", {{ scale: 1 }}, {{ scale: 1.06, duration: {d + T:.4f}, ease: "none" }}, {s:.4f});')
         if item.get("pan"):
             a, b = item["pan"]
             js.append(f'    tl.fromTo("#{fid}-m", {{ objectPosition: "{a}% 50%" }}, '

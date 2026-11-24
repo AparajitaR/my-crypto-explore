@@ -48,12 +48,12 @@
       font-family: "Poppins", sans-serif; font-weight: 700; font-size: 48px; text-transform: uppercase; letter-spacing: 0.1em; }
 
   </style>
-  <div id="root" data-composition-id="morning" data-width="1080" data-height="1920" data-duration="9.1333"
+  <div id="root" data-composition-id="morning" data-width="1080" data-height="1920" data-duration="8.7667"
     data-composition-variables='[{"id": "chapter", "type": "string", "label": "Chapter label", "default": "The morning"}]'>
-    <div id="morning-s1" class="shot" data-layout-allow-overflow><div id="morning-s1-tx" class="tx"><div id="morning-s1-kb" class="kb"><img id="morning-s1-m" class="clip" data-start="0" data-duration="3.3" data-track-index="0" src="assets/photos/breakfast.jpg" style="object-position:58% 50%;" alt="" /></div><div id="morning-s1-cap" class="sticker s1">Paratha o'clock</div></div></div>
-    <div id="morning-s2" class="shot" data-layout-allow-overflow><div id="morning-s2-tx" class="tx"><div id="morning-s2-kb" class="kb"><img id="morning-s2-m" class="clip" data-start="2.9" data-duration="2.1" data-track-index="1" src="assets/photos/scooter-valley.jpg" style="object-position:70% 50%;" alt="" /></div><div id="morning-s2-cap" class="sticker s2">Scooty diaries</div></div></div>
-    <div id="morning-s3" class="shot" data-layout-allow-overflow data-layout-allow-overlap><div id="morning-s3-tx" class="tx splitbg"><div id="morning-s3-kb" class="kb"><div id="morning-s3-a" class="half" style="top:0"><img id="morning-s3-ma" class="clip" data-start="4.6" data-duration="2.8333" data-track-index="2" src="assets/photos/him-river-sun.jpg" style="object-position:50% 55%;" alt="" /></div><div id="morning-s3-b" class="half" style="top:960px"><img id="morning-s3-mb" class="clip" data-start="4.6" data-duration="2.8333" data-track-index="3" src="assets/photos/her-river-sun.jpg" style="object-position:50% 62%;" alt="" /></div><div id="morning-s3-bar" class="bar"></div><div id="morning-s3-la" class="tag" style="top:820px">His view</div><div id="morning-s3-lb" class="tag b" style="top:1000px">Her view</div></div></div></div>
-    <div id="morning-s4" class="shot" data-layout-allow-overflow><div id="morning-s4-tx" class="tx"><div id="morning-s4-kb" class="kb"><img id="morning-s4-m" class="clip" data-start="7.0333" data-duration="2.1" data-track-index="1" src="assets/photos/cafe-food.jpg" alt="" /></div><div id="morning-s4-cap" class="sticker s0">Carbs with a view</div></div></div>
+    <div id="morning-s1" class="shot" data-layout-allow-overflow><div id="morning-s1-tx" class="tx"><div id="morning-s1-kb" class="kb"><img id="morning-s1-m" class="clip" data-start="0" data-duration="3.1667" data-track-index="0" src="assets/photos/breakfast.jpg" style="object-position:58% 50%;" alt="" /></div><div id="morning-s1-cap" class="sticker s1">Paratha o'clock</div></div></div>
+    <div id="morning-s2" class="shot" data-layout-allow-overflow><div id="morning-s2-tx" class="tx"><div id="morning-s2-kb" class="kb"><img id="morning-s2-m" class="clip" data-start="2.7667" data-duration="2.0333" data-track-index="1" src="assets/photos/scooter-valley.jpg" style="object-position:70% 50%;" alt="" /></div><div id="morning-s2-cap" class="sticker s2">Scooty diaries</div></div></div>
+    <div id="morning-s3" class="shot" data-layout-allow-overflow data-layout-allow-overlap><div id="morning-s3-tx" class="tx splitbg"><div id="morning-s3-kb" class="kb"><div id="morning-s3-a" class="half" style="top:0"><img id="morning-s3-ma" class="clip" data-start="4.4" data-duration="2.7333" data-track-index="2" src="assets/photos/him-river-sun.jpg" style="object-position:50% 55%;" alt="" /></div><div id="morning-s3-b" class="half" style="top:960px"><img id="morning-s3-mb" class="clip" data-start="4.4" data-duration="2.7333" data-track-index="3" src="assets/photos/her-river-sun.jpg" style="object-position:50% 62%;" alt="" /></div><div id="morning-s3-bar" class="bar"></div><div id="morning-s3-la" class="tag" style="top:820px">His view</div><div id="morning-s3-lb" class="tag b" style="top:1000px">Her view</div></div></div></div>
+    <div id="morning-s4" class="shot" data-layout-allow-overflow><div id="morning-s4-tx" class="tx"><div id="morning-s4-kb" class="kb"><img id="morning-s4-m" class="clip" data-start="6.7333" data-duration="2.0333" data-track-index="1" src="assets/photos/cafe-food.jpg" alt="" /></div><div id="morning-s4-cap" class="sticker s0">Carbs with a view</div></div></div>
     <div id="morning-scrim" class="scrim"></div>
     <div id="morning-label" class="label"><div id="morning-rule" class="rule"></div><span id="morning-label-text" data-var-text="chapter">The morning</span></div>
     <div id="morning-flash" class="flash" data-layout-ignore></div>
@@ -64,30 +64,36 @@
     tl.set("#morning-leak", { x: -1700, opacity: 0 }, 0);
     tl.set("#morning-flash", { opacity: 0 }, 0);
     tl.fromTo("#morning-s1-cap", { scale: 0, rotation: -11 }, { scale: 1, rotation: 3, duration: 0.5, ease: "back.out(2.6)" }, 0.4500);
+    tl.to("#morning-s1-cap", { opacity: 0, scale: 0.8, duration: 0.18, ease: "power2.in" }, 2.5667);
     tl.fromTo("#morning-s1-tx", { scale: 1.5, opacity: 0, filter: "blur(14px)" }, { scale: 1, opacity: 1, filter: "blur(0px)", duration: 0.4, ease: "power2.out" }, 0.0000);
-    tl.to("#morning-s1-tx", { scale: 1.12, duration: 0.4, ease: "power1.in" }, 2.9000);
-    tl.fromTo("#morning-s1-kb", { scale: 1 }, { scale: 1.06, duration: 3.3000, ease: "none" }, 0.0000);
-    tl.fromTo("#morning-s2-cap", { scale: 0, rotation: -16 }, { scale: 1, rotation: -2, duration: 0.5, ease: "back.out(2.6)" }, 3.3500);
-    tl.fromTo("#morning-s2-tx", { clipPath: "circle(0% at 50% 46%)" }, { clipPath: "circle(74% at 50% 46%)", duration: 0.440, ease: "power2.inOut" }, 2.9000);
-    tl.to("#morning-s2-tx", { x: 0, y: -1920, filter: "blur(18px)", duration: 0.4, ease: "power2.in" }, 4.6000);
-    tl.fromTo("#morning-s2-kb", { scale: 1 }, { scale: 1.06, duration: 2.1000, ease: "none" }, 2.9000);
-    tl.fromTo("#morning-s3-a", { x: -1080 }, { x: 0, duration: 0.5, ease: "power3.out" }, 4.7000);
-    tl.fromTo("#morning-s3-b", { x: 1080 }, { x: 0, duration: 0.5, ease: "power3.out" }, 4.8200);
-    tl.fromTo("#morning-s3-bar", { scaleX: 0 }, { scaleX: 1, duration: 0.45, ease: "expo.out" }, 5.0500);
-    tl.fromTo("#morning-s3-la", { scale: 0, rotation: -18 }, { scale: 1, rotation: -4, duration: 0.45, ease: "back.out(2.6)" }, 5.2000);
-    tl.fromTo("#morning-s3-lb", { scale: 0, rotation: 18 }, { scale: 1, rotation: 3, duration: 0.45, ease: "back.out(2.6)" }, 5.3500);
-    tl.fromTo("#morning-s3-tx", { x: 0, y: 1920, filter: "blur(18px)" }, { x: 0, y: 0, filter: "blur(0px)", duration: 0.4, ease: "power2.out" }, 4.6000);
-    tl.to("#morning-s3-tx", { scale: 1.12, duration: 0.4, ease: "power1.in" }, 7.0333);
-    tl.fromTo("#morning-s3-kb", { scale: 1 }, { scale: 1.06, duration: 2.8333, ease: "none" }, 4.6000);
-    tl.fromTo("#morning-s4-cap", { scale: 0, rotation: -9 }, { scale: 1, rotation: 5, duration: 0.5, ease: "back.out(2.6)" }, 7.4833);
-    tl.fromTo("#morning-s4-tx", { opacity: 0 }, { opacity: 1, duration: 0.06, ease: "none" }, 7.1733);
-    tl.to("#morning-flash", { opacity: 0.85, duration: 0.16, ease: "power2.out" }, 7.0333);
-    tl.to("#morning-flash", { opacity: 0, duration: 0.36, ease: "power2.in" }, 7.1933);
-    tl.to("#morning-s4-tx", { scale: 1.35, filter: "blur(14px)", duration: 0.4, ease: "power2.in" }, 8.7333);
-    tl.fromTo("#morning-s4-kb", { scale: 1 }, { scale: 1.06, duration: 2.1000, ease: "none" }, 7.0333);
+    tl.set("#morning-leak", { x: -1700 }, 0.0000);
+    tl.to("#morning-leak", { x: 900, duration: 0.80, ease: "power1.inOut" }, 0.0000);
+    tl.to("#morning-leak", { opacity: 0.95, duration: 0.32, ease: "power2.out", yoyo: true, repeat: 1 }, 0.0000);
+    tl.to("#morning-s1-tx", { x: 0, y: -1920, filter: "blur(18px)", duration: 0.4, ease: "power2.in" }, 2.7667);
+    tl.fromTo("#morning-s1-kb", { scale: 1 }, { scale: 1.06, duration: 3.1667, ease: "none" }, 0.0000);
+    tl.fromTo("#morning-s2-cap", { scale: 0, rotation: -16 }, { scale: 1, rotation: -2, duration: 0.5, ease: "back.out(2.6)" }, 3.2167);
+    tl.to("#morning-s2-cap", { opacity: 0, scale: 0.8, duration: 0.18, ease: "power2.in" }, 4.2000);
+    tl.fromTo("#morning-s2-tx", { x: 0, y: 1920, filter: "blur(18px)" }, { x: 0, y: 0, filter: "blur(0px)", duration: 0.4, ease: "power2.out" }, 2.7667);
+    tl.to("#morning-s2-tx", { scale: 1.12, duration: 0.4, ease: "power1.in" }, 4.4000);
+    tl.fromTo("#morning-s2-kb", { scale: 1 }, { scale: 1.06, duration: 2.0333, ease: "none" }, 2.7667);
+    tl.fromTo("#morning-s3-a", { x: -1080 }, { x: 0, duration: 0.5, ease: "power3.out" }, 4.5000);
+    tl.fromTo("#morning-s3-b", { x: 1080 }, { x: 0, duration: 0.5, ease: "power3.out" }, 4.6200);
+    tl.fromTo("#morning-s3-bar", { scaleX: 0 }, { scaleX: 1, duration: 0.45, ease: "expo.out" }, 4.8500);
+    tl.fromTo("#morning-s3-la", { scale: 0, rotation: -18 }, { scale: 1, rotation: -4, duration: 0.45, ease: "back.out(2.6)" }, 5.0000);
+    tl.fromTo("#morning-s3-lb", { scale: 0, rotation: 18 }, { scale: 1, rotation: 3, duration: 0.45, ease: "back.out(2.6)" }, 5.1500);
+    tl.fromTo("#morning-s3-tx", { opacity: 0 }, { opacity: 1, duration: 0.06, ease: "none" }, 4.5400);
+    tl.to("#morning-flash", { opacity: 0.85, duration: 0.16, ease: "power2.out" }, 4.4000);
+    tl.to("#morning-flash", { opacity: 0, duration: 0.36, ease: "power2.in" }, 4.5600);
+    tl.to("#morning-s3-tx", { x: 1080, y: 0, filter: "blur(18px)", duration: 0.4, ease: "power2.in" }, 6.7333);
+    tl.fromTo("#morning-s3-kb", { scale: 1 }, { scale: 1.06, duration: 2.7333, ease: "none" }, 4.4000);
+    tl.fromTo("#morning-s4-cap", { scale: 0, rotation: -9 }, { scale: 1, rotation: 5, duration: 0.5, ease: "back.out(2.6)" }, 7.1833);
+    tl.to("#morning-s4-cap", { opacity: 0, scale: 0.8, duration: 0.18, ease: "power2.in" }, 8.1667);
+    tl.fromTo("#morning-s4-tx", { x: -1080, y: 0, filter: "blur(18px)" }, { x: 0, y: 0, filter: "blur(0px)", duration: 0.4, ease: "power2.out" }, 6.7333);
+    tl.to("#morning-s4-tx", { rotation: 22, scale: 1.45, filter: "blur(16px)", duration: 0.4, ease: "power2.in" }, 8.3667);
+    tl.fromTo("#morning-s4-kb", { scale: 1 }, { scale: 1.06, duration: 2.0333, ease: "none" }, 6.7333);
     tl.fromTo("#morning-label", { opacity: 0, scale: 0.6 }, { opacity: 1, scale: 1, duration: 0.5, ease: "back.out(2.2)" }, 0.50);
     tl.fromTo("#morning-rule", { scaleX: 0 }, { scaleX: 1, duration: 0.6, ease: "expo.out" }, 0.70);
-    tl.to("#morning-label", { opacity: 0, x: -40, duration: 0.25, ease: "power3.in" }, 8.4333);
+    tl.to("#morning-label", { opacity: 0, x: -40, duration: 0.25, ease: "power3.in" }, 8.0667);
     window.__timelines["morning"] = tl;
   </script>
 </template>

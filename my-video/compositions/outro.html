@@ -93,9 +93,6 @@
       tl.fromTo(el, { y: 0 }, { y: -Number(el.dataset.rise), duration: 7.5, ease: "none" }, 0);
     });
     tl.fromTo("#outro-bg-tx", { scale: 1.5, opacity: 0, filter: "blur(14px)" }, { scale: 1, opacity: 1, filter: "blur(0px)", duration: 0.4, ease: "power2.out" }, 0.0000);
-    tl.set("#outro-leak", { x: -1700 }, 0.0000);
-    tl.to("#outro-leak", { x: 900, duration: 0.80, ease: "power1.inOut" }, 0.0000);
-    tl.to("#outro-leak", { opacity: 0.95, duration: 0.32, ease: "power2.out", yoyo: true, repeat: 1 }, 0.0000);
     tl.fromTo("#outro-bg-kb", { scale: 1.0 }, { scale: 1.07, duration: 7.5, ease: "none" }, 0);
     tl.fromTo("#outro-dim", { opacity: 0 }, { opacity: 1, duration: 1.0, ease: "power2.inOut" }, 0.6);
     tl.fromTo("#outro-glow", { opacity: 0 }, { opacity: 1, duration: 1.6, ease: "power2.inOut" }, 0.8);

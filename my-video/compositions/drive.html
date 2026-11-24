@@ -48,12 +48,12 @@
       font-family: "Poppins", sans-serif; font-weight: 700; font-size: 48px; text-transform: uppercase; letter-spacing: 0.1em; }
 
   </style>
-  <div id="root" data-composition-id="drive" data-width="1080" data-height="1920" data-duration="8.3000"
+  <div id="root" data-composition-id="drive" data-width="1080" data-height="1920" data-duration="7.9333"
     data-composition-variables='[{"id": "chapter", "type": "string", "label": "Chapter label", "default": "The drive in"}]'>
-    <div id="drive-s1" class="shot" data-layout-allow-overflow><div id="drive-s1-tx" class="tx"><div id="drive-s1-kb" class="kb"><video id="drive-s1-m" class="clip" data-start="0" data-duration="2.4667" data-track-index="0" muted playsinline src="assets/video/forest-drive.mp4"></video></div></div></div>
-    <div id="drive-s2" class="shot" data-layout-allow-overflow><div id="drive-s2-tx" class="tx"><div id="drive-s2-kb" class="kb"><video id="drive-s2-m" class="clip" data-start="2.0667" data-duration="2.4667" data-track-index="1" data-media-start="1" muted playsinline src="assets/video/drive-traffic.mp4"></video></div></div></div>
-    <div id="drive-s3" class="shot" data-layout-allow-overflow><div id="drive-s3-tx" class="tx"><div id="drive-s3-kb" class="kb"><video id="drive-s3-m" class="clip" data-start="4.1333" data-duration="2.4667" data-track-index="0" muted playsinline src="assets/video/camp-pan.mp4"></video></div></div></div>
-    <div id="drive-s4" class="shot" data-layout-allow-overflow><div id="drive-s4-tx" class="tx"><div id="drive-s4-kb" class="kb"><img id="drive-s4-m" class="clip" data-start="6.2" data-duration="2.1" data-track-index="1" src="assets/photos/kasol-street.jpg" alt="" /></div><div id="drive-s4-cap" class="sticker s0">Hello, Kasol</div></div></div>
+    <div id="drive-s1" class="shot" data-layout-allow-overflow><div id="drive-s1-tx" class="tx"><div id="drive-s1-kb" class="kb"><video id="drive-s1-m" class="clip" data-start="0" data-duration="2.3667" data-track-index="0" muted playsinline src="assets/video/forest-drive.mp4"></video></div></div></div>
+    <div id="drive-s2" class="shot" data-layout-allow-overflow><div id="drive-s2-tx" class="tx"><div id="drive-s2-kb" class="kb"><video id="drive-s2-m" class="clip" data-start="1.9667" data-duration="2.3667" data-track-index="1" data-media-start="1" muted playsinline src="assets/video/drive-traffic.mp4"></video></div></div></div>
+    <div id="drive-s3" class="shot" data-layout-allow-overflow><div id="drive-s3-tx" class="tx"><div id="drive-s3-kb" class="kb"><video id="drive-s3-m" class="clip" data-start="3.9333" data-duration="2.3667" data-track-index="0" muted playsinline src="assets/video/camp-pan.mp4"></video></div></div></div>
+    <div id="drive-s4" class="shot" data-layout-allow-overflow><div id="drive-s4-tx" class="tx"><div id="drive-s4-kb" class="kb"><img id="drive-s4-m" class="clip" data-start="5.9" data-duration="2.0333" data-track-index="1" src="assets/photos/kasol-street.jpg" alt="" /></div><div id="drive-s4-cap" class="sticker s0">Hello, Kasol</div></div></div>
     <div id="drive-scrim" class="scrim"></div>
     <div id="drive-label" class="label"><div id="drive-rule" class="rule"></div><span id="drive-label-text" data-var-text="chapter">The drive in</span></div>
     <div id="drive-flash" class="flash" data-layout-ignore></div>
@@ -64,24 +64,22 @@
     tl.set("#drive-leak", { x: -1700, opacity: 0 }, 0);
     tl.set("#drive-flash", { opacity: 0 }, 0);
     tl.fromTo("#drive-s1-tx", { scale: 1.5, opacity: 0, filter: "blur(14px)" }, { scale: 1, opacity: 1, filter: "blur(0px)", duration: 0.4, ease: "power2.out" }, 0.0000);
-    tl.set("#drive-leak", { x: -1700 }, 0.0000);
-    tl.to("#drive-leak", { x: 900, duration: 0.80, ease: "power1.inOut" }, 0.0000);
-    tl.to("#drive-leak", { opacity: 0.95, duration: 0.32, ease: "power2.out", yoyo: true, repeat: 1 }, 0.0000);
-    tl.to("#drive-s1-tx", { scale: 1.35, filter: "blur(14px)", duration: 0.4, ease: "power2.in" }, 2.0667);
-    tl.fromTo("#drive-s1-kb", { scale: 1 }, { scale: 1.06, duration: 2.4667, ease: "none" }, 0.0000);
-    tl.fromTo("#drive-s2-tx", { scale: 1.5, opacity: 0, filter: "blur(14px)" }, { scale: 1, opacity: 1, filter: "blur(0px)", duration: 0.4, ease: "power2.out" }, 2.0667);
-    tl.to("#drive-s2-tx", { x: -1080, y: 0, filter: "blur(18px)", duration: 0.4, ease: "power2.in" }, 4.1333);
-    tl.fromTo("#drive-s2-kb", { scale: 1 }, { scale: 1.06, duration: 2.4667, ease: "none" }, 2.0667);
-    tl.fromTo("#drive-s3-tx", { x: 1080, y: 0, filter: "blur(18px)" }, { x: 0, y: 0, filter: "blur(0px)", duration: 0.4, ease: "power2.out" }, 4.1333);
-    tl.to("#drive-s3-tx", { rotation: 22, scale: 1.45, filter: "blur(16px)", duration: 0.4, ease: "power2.in" }, 6.2000);
-    tl.fromTo("#drive-s3-kb", { scale: 1 }, { scale: 1.06, duration: 2.4667, ease: "none" }, 4.1333);
-    tl.fromTo("#drive-s4-cap", { scale: 0, rotation: -18 }, { scale: 1, rotation: -4, duration: 0.5, ease: "back.out(2.6)" }, 6.6500);
-    tl.fromTo("#drive-s4-tx", { rotation: -22, scale: 1.45, opacity: 0, filter: "blur(16px)" }, { rotation: 0, scale: 1, opacity: 1, filter: "blur(0px)", duration: 0.4, ease: "power2.out" }, 6.2000);
-    tl.to("#drive-s4-tx", { scale: 1.35, filter: "blur(14px)", duration: 0.4, ease: "power2.in" }, 7.9000);
-    tl.fromTo("#drive-s4-kb", { scale: 1 }, { scale: 1.06, duration: 2.1000, ease: "none" }, 6.2000);
+    tl.to("#drive-s1-tx", { x: -1080, y: 0, filter: "blur(18px)", duration: 0.4, ease: "power2.in" }, 1.9667);
+    tl.fromTo("#drive-s1-kb", { scale: 1 }, { scale: 1.06, duration: 2.3667, ease: "none" }, 0.0000);
+    tl.fromTo("#drive-s2-tx", { x: 1080, y: 0, filter: "blur(18px)" }, { x: 0, y: 0, filter: "blur(0px)", duration: 0.4, ease: "power2.out" }, 1.9667);
+    tl.to("#drive-s2-tx", { rotation: 22, scale: 1.45, filter: "blur(16px)", duration: 0.4, ease: "power2.in" }, 3.9333);
+    tl.fromTo("#drive-s2-kb", { scale: 1 }, { scale: 1.06, duration: 2.3667, ease: "none" }, 1.9667);
+    tl.fromTo("#drive-s3-tx", { rotation: -22, scale: 1.45, opacity: 0, filter: "blur(16px)" }, { rotation: 0, scale: 1, opacity: 1, filter: "blur(0px)", duration: 0.4, ease: "power2.out" }, 3.9333);
+    tl.to("#drive-s3-tx", { scale: 1.12, duration: 0.4, ease: "power1.in" }, 5.9000);
+    tl.fromTo("#drive-s3-kb", { scale: 1 }, { scale: 1.06, duration: 2.3667, ease: "none" }, 3.9333);
+    tl.fromTo("#drive-s4-cap", { scale: 0, rotation: -18 }, { scale: 1, rotation: -4, duration: 0.5, ease: "back.out(2.6)" }, 6.3500);
+    tl.to("#drive-s4-cap", { opacity: 0, scale: 0.8, duration: 0.18, ease: "power2.in" }, 7.3333);
+    tl.fromTo("#drive-s4-tx", { clipPath: "circle(0% at 50% 46%)" }, { clipPath: "circle(74% at 50% 46%)", duration: 0.440, ease: "power2.inOut" }, 5.9000);
+    tl.to("#drive-s4-tx", { scale: 1.35, filter: "blur(14px)", duration: 0.4, ease: "power2.in" }, 7.5333);
+    tl.fromTo("#drive-s4-kb", { scale: 1 }, { scale: 1.06, duration: 2.0333, ease: "none" }, 5.9000);
     tl.fromTo("#drive-label", { opacity: 0, scale: 0.6 }, { opacity: 1, scale: 1, duration: 0.5, ease: "back.out(2.2)" }, 0.50);
     tl.fromTo("#drive-rule", { scaleX: 0 }, { scaleX: 1, duration: 0.6, ease: "expo.out" }, 0.70);
-    tl.to("#drive-label", { opacity: 0, x: -40, duration: 0.25, ease: "power3.in" }, 7.6000);
+    tl.to("#drive-label", { opacity: 0, x: -40, duration: 0.25, ease: "power3.in" }, 7.2333);
     window.__timelines["drive"] = tl;
   </script>
 </template>
