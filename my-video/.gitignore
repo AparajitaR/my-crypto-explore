@@ -2,3 +2,5 @@
 node_modules/
 renders/
 .transcode-cache/
+posts/*.jpg
+posts/src/
