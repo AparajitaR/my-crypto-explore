@@ -14,17 +14,45 @@
       color: #ffffff; font-size: 36px; letter-spacing: 0.3em; text-transform: uppercase; white-space: nowrap;
       text-shadow: 0 2px 16px rgba(0,0,0,0.65); transform-origin: left center; }
     #root .label .rule { width: 64px; height: 3px; background: linear-gradient(90deg, #ffc27a, #ff8a3d); transform-origin: left center; }
+    #root .sticker { position: absolute; left: 160px; top: 380px; padding: 14px 28px; border-radius: 18px;
+      font-family: "Poppins", sans-serif; font-weight: 700; font-size: 42px; line-height: 1.15; white-space: nowrap;
+      box-shadow: 0 14px 36px rgba(0,0,0,0.35); transform-origin: 30% 50%; }
+    #root .sticker.s0 { background: #ffffff; color: #15161a; }
+    #root .sticker.s1 { background: linear-gradient(135deg, #ffd08a, #ff8a3d); color: #2a1206; }
+    #root .sticker.s2 { background: #15161a; color: #ffd9a6; }
+    #root .splitbg { background: linear-gradient(160deg, #ffb35c, #ff6a3d); }
+    #root .half { position: absolute; left: 0; width: 1080px; height: 960px; overflow: hidden; }
+    #root .bar { position: absolute; left: 0; top: 952px; width: 1080px; height: 16px; background: #fff3e2;
+      box-shadow: 0 0 24px rgba(255,170,90,0.8); }
+    #root .tag { position: absolute; left: 120px; padding: 10px 24px; border-radius: 999px; background: #ffffff; color: #15161a;
+      font-family: "Poppins", sans-serif; font-weight: 700; font-size: 38px; text-transform: uppercase; letter-spacing: 0.08em;
+      box-shadow: 0 10px 28px rgba(0,0,0,0.35); white-space: nowrap; }
+    #root .tag.b { background: #ff8a3d; color: #1c0b03; }
+    #root .board { background: radial-gradient(ellipse at 50% 35%, #fbefdd 0%, #f0d2ab 60%, #e2b585 100%); }
+    #root .pol { position: absolute; width: 520px; height: 690px; background: #fffdf8; border-radius: 6px;
+      box-shadow: 0 24px 50px rgba(60,30,10,0.35); }
+    #root .kb .pol img { position: absolute; left: 22px; top: 22px; width: 476px; height: 560px; object-fit: cover; }
+    #root .countbg { background: radial-gradient(ellipse at 50% 45%, #3a1a0a 0%, #160b06 55%, #07080b 100%); }
+    #root .cstack { position: absolute; left: 120px; top: 288px; width: 840px; height: 960px; display: flex;
+      flex-direction: column; align-items: center; justify-content: center; }
+    #root .ckicker { color: #f1e3cf; font-size: 34px; letter-spacing: 0.3em; text-transform: uppercase; margin-bottom: 20px; padding-left: 0.3em; }
+    #root .digits { display: flex; gap: 6px; height: 360px; }
+    #root .dcol { width: 175px; height: 360px; overflow: hidden; }
+    #root .dstrip { display: flex; flex-direction: column; }
+    #root .dstrip span { display: block; height: 360px; line-height: 360px; text-align: center;
+      font-family: "Playfair Display", serif; font-weight: 700; font-size: 280px; color: #ffc98a;
+      text-shadow: 0 0 22px rgba(255,170,90,0.75), 0 0 60px rgba(255,120,50,0.5); }
+    #root .cword { margin-top: 30px; padding: 14px 34px; border-radius: 999px; background: #fff3e2; color: #2a1206;
+      font-family: "Poppins", sans-serif; font-weight: 700; font-size: 48px; text-transform: uppercase; letter-spacing: 0.1em; }
 
   </style>
-  <div id="root" data-composition-id="night" data-width="1080" data-height="1920" data-duration="10.9667"
+  <div id="root" data-composition-id="night" data-width="1080" data-height="1920" data-duration="10.4000"
     data-composition-variables='[{"id": "chapter", "type": "string", "label": "Chapter label", "default": "After dark"}]'>
-    <div id="night-s1" class="shot" data-layout-allow-overflow><div id="night-s1-tx" class="tx"><div id="night-s1-kb" class="kb"><img id="night-s1-m" class="clip" data-start="0" data-duration="2.3667" data-track-index="0" src="assets/photos/enfield-night.jpg" style="object-position:0% 50%;" alt="" /></div></div></div>
-    <div id="night-s2" class="shot" data-layout-allow-overflow><div id="night-s2-tx" class="tx"><div id="night-s2-kb" class="kb"><img id="night-s2-m" class="clip" data-start="1.9667" data-duration="1.5667" data-track-index="1" src="assets/photos/snooker-him.jpg" style="object-position:40% 50%;" alt="" /></div></div></div>
-    <div id="night-s3" class="shot" data-layout-allow-overflow><div id="night-s3-tx" class="tx"><div id="night-s3-kb" class="kb"><img id="night-s3-m" class="clip" data-start="3.1333" data-duration="1.5667" data-track-index="0" src="assets/photos/snooker-her.jpg" style="object-position:55% 50%;" alt="" /></div></div></div>
-    <div id="night-s4" class="shot" data-layout-allow-overflow><div id="night-s4-tx" class="tx"><div id="night-s4-kb" class="kb"><img id="night-s4-m" class="clip" data-start="4.3" data-duration="1.5667" data-track-index="1" src="assets/photos/apple-mirror.jpg" alt="" /></div></div></div>
-    <div id="night-s5" class="shot" data-layout-allow-overflow><div id="night-s5-tx" class="tx"><div id="night-s5-kb" class="kb"><img id="night-s5-m" class="clip" data-start="5.4667" data-duration="2.3667" data-track-index="0" src="assets/photos/couple-cosy-night.jpg" style="object-position:26% 50%;" alt="" /></div></div></div>
-    <div id="night-s6" class="shot" data-layout-allow-overflow><div id="night-s6-tx" class="tx"><div id="night-s6-kb" class="kb"><img id="night-s6-m" class="clip" data-start="7.4333" data-duration="1.5667" data-track-index="1" src="assets/photos/room-mirror.jpg" alt="" /></div></div></div>
-    <div id="night-s7" class="shot" data-layout-allow-overflow><div id="night-s7-tx" class="tx"><div id="night-s7-kb" class="kb"><img id="night-s7-m" class="clip" data-start="8.6" data-duration="2.3667" data-track-index="0" src="assets/photos/couple-cosy-selfie.jpg" style="object-position:45% 50%;" alt="" /></div></div></div>
+    <div id="night-s1" class="shot" data-layout-allow-overflow><div id="night-s1-tx" class="tx"><div id="night-s1-kb" class="kb"><img id="night-s1-m" class="clip" data-start="0" data-duration="3.2" data-track-index="0" src="assets/photos/enfield-night.jpg" style="object-position:0% 50%;" alt="" /></div><div id="night-s1-cap" class="sticker s1">Night ride</div></div></div>
+    <div id="night-s2" class="shot" data-layout-allow-overflow data-layout-allow-overlap><div id="night-s2-tx" class="tx splitbg"><div id="night-s2-kb" class="kb"><div id="night-s2-a" class="half" style="top:0"><img id="night-s2-ma" class="clip" data-start="2.8" data-duration="2.7667" data-track-index="2" src="assets/photos/snooker-him.jpg" style="object-position:40% 45%;" alt="" /></div><div id="night-s2-b" class="half" style="top:960px"><img id="night-s2-mb" class="clip" data-start="2.8" data-duration="2.7667" data-track-index="3" src="assets/photos/snooker-her.jpg" style="object-position:55% 42%;" alt="" /></div><div id="night-s2-bar" class="bar"></div><div id="night-s2-la" class="tag" style="top:820px">His shot</div><div id="night-s2-lb" class="tag b" style="top:1000px">Her shot</div></div></div></div>
+    <div id="night-s3" class="shot" data-layout-allow-overflow><div id="night-s3-tx" class="tx"><div id="night-s3-kb" class="kb"><img id="night-s3-m" class="clip" data-start="5.1667" data-duration="2.0667" data-track-index="0" src="assets/photos/apple-mirror.jpg" alt="" /></div><div id="night-s3-cap" class="sticker s2">Mirror, mirror</div></div></div>
+    <div id="night-s4" class="shot" data-layout-allow-overflow><div id="night-s4-tx" class="tx"><div id="night-s4-kb" class="kb"><img id="night-s4-m" class="clip" data-start="6.8333" data-duration="2.4" data-track-index="1" src="assets/photos/couple-cosy-night.jpg" style="object-position:26% 50%;" alt="" /></div></div></div>
+    <div id="night-s5" class="shot" data-layout-allow-overflow><div id="night-s5-tx" class="tx"><div id="night-s5-kb" class="kb"><img id="night-s5-m" class="clip" data-start="8.8333" data-duration="1.5667" data-track-index="0" src="assets/photos/room-mirror.jpg" alt="" /></div></div></div>
     <div id="night-scrim" class="scrim"></div>
     <div id="night-label" class="label"><div id="night-rule" class="rule"></div><span id="night-label-text" data-var-text="chapter">After dark</span></div>
     <div id="night-flash" class="flash" data-layout-ignore></div>
@@ -34,36 +62,37 @@
     const tl = gsap.timeline({ paused: true });
     tl.set("#night-leak", { x: -1700, opacity: 0 }, 0);
     tl.set("#night-flash", { opacity: 0 }, 0);
+    tl.fromTo("#night-s1-cap", { scale: 0, rotation: -11 }, { scale: 1, rotation: 3, duration: 0.5, ease: "back.out(2.6)" }, 0.4500);
     tl.fromTo("#night-s1-tx", { scale: 1.5, opacity: 0, filter: "blur(14px)" }, { scale: 1, opacity: 1, filter: "blur(0px)", duration: 0.4, ease: "power2.out" }, 0.0000);
     tl.set("#night-leak", { x: -1700 }, 0.0000);
     tl.to("#night-leak", { x: 900, duration: 0.80, ease: "power1.inOut" }, 0.0000);
     tl.to("#night-leak", { opacity: 0.95, duration: 0.32, ease: "power2.out", yoyo: true, repeat: 1 }, 0.0000);
-    tl.to("#night-s1-tx", { rotation: 22, scale: 1.45, filter: "blur(16px)", duration: 0.4, ease: "power2.in" }, 1.9667);
-    tl.fromTo("#night-s1-kb", { scale: 1 }, { scale: 1.06, duration: 2.3667, ease: "none" }, 0.0000);
-    tl.fromTo("#night-s1-m", { objectPosition: "0% 50%" }, { objectPosition: "100% 50%", duration: 1.9667, ease: "sine.inOut" }, 0.0000);
-    tl.fromTo("#night-s2-tx", { rotation: -22, scale: 1.45, opacity: 0, filter: "blur(16px)" }, { rotation: 0, scale: 1, opacity: 1, filter: "blur(0px)", duration: 0.4, ease: "power2.out" }, 1.9667);
-    tl.to("#night-s2-tx", { scale: 1.12, duration: 0.4, ease: "power1.in" }, 3.1333);
-    tl.fromTo("#night-s2-kb", { scale: 1 }, { scale: 1.06, duration: 1.5667, ease: "none" }, 1.9667);
-    tl.fromTo("#night-s3-tx", { clipPath: "circle(0% at 50% 46%)" }, { clipPath: "circle(74% at 50% 46%)", duration: 0.440, ease: "power2.inOut" }, 3.1333);
-    tl.to("#night-s3-tx", { x: 0, y: -1920, filter: "blur(18px)", duration: 0.4, ease: "power2.in" }, 4.3000);
-    tl.fromTo("#night-s3-kb", { scale: 1 }, { scale: 1.06, duration: 1.5667, ease: "none" }, 3.1333);
-    tl.fromTo("#night-s4-tx", { x: 0, y: 1920, filter: "blur(18px)" }, { x: 0, y: 0, filter: "blur(0px)", duration: 0.4, ease: "power2.out" }, 4.3000);
-    tl.to("#night-s4-tx", { scale: 1.12, duration: 0.4, ease: "power1.in" }, 5.4667);
-    tl.fromTo("#night-s4-kb", { scale: 1 }, { scale: 1.06, duration: 1.5667, ease: "none" }, 4.3000);
-    tl.fromTo("#night-s5-tx", { opacity: 0 }, { opacity: 1, duration: 0.06, ease: "none" }, 5.6067);
-    tl.to("#night-flash", { opacity: 0.85, duration: 0.16, ease: "power2.out" }, 5.4667);
-    tl.to("#night-flash", { opacity: 0, duration: 0.36, ease: "power2.in" }, 5.6267);
-    tl.to("#night-s5-tx", { x: 1080, y: 0, filter: "blur(18px)", duration: 0.4, ease: "power2.in" }, 7.4333);
-    tl.fromTo("#night-s5-kb", { scale: 1 }, { scale: 1.06, duration: 2.3667, ease: "none" }, 5.4667);
-    tl.fromTo("#night-s6-tx", { x: -1080, y: 0, filter: "blur(18px)" }, { x: 0, y: 0, filter: "blur(0px)", duration: 0.4, ease: "power2.out" }, 7.4333);
-    tl.to("#night-s6-tx", { scale: 0.8, filter: "blur(12px)", duration: 0.4, ease: "power2.in" }, 8.6000);
-    tl.fromTo("#night-s6-kb", { scale: 1 }, { scale: 1.06, duration: 1.5667, ease: "none" }, 7.4333);
-    tl.fromTo("#night-s7-tx", { scale: 1.6, opacity: 0, filter: "blur(12px)" }, { scale: 1, opacity: 1, filter: "blur(0px)", duration: 0.4, ease: "power3.out" }, 8.6000);
-    tl.to("#night-s7-tx", { rotation: 22, scale: 1.45, filter: "blur(16px)", duration: 0.4, ease: "power2.in" }, 10.5667);
-    tl.fromTo("#night-s7-kb", { scale: 1 }, { scale: 1.06, duration: 2.3667, ease: "none" }, 8.6000);
+    tl.to("#night-s1-tx", { x: 0, y: -1920, filter: "blur(18px)", duration: 0.4, ease: "power2.in" }, 2.8000);
+    tl.fromTo("#night-s1-kb", { scale: 1 }, { scale: 1.06, duration: 3.2000, ease: "none" }, 0.0000);
+    tl.fromTo("#night-s1-m", { objectPosition: "0% 50%" }, { objectPosition: "100% 50%", duration: 2.8000, ease: "sine.inOut" }, 0.0000);
+    tl.fromTo("#night-s2-a", { x: -1080 }, { x: 0, duration: 0.5, ease: "power3.out" }, 2.9000);
+    tl.fromTo("#night-s2-b", { x: 1080 }, { x: 0, duration: 0.5, ease: "power3.out" }, 3.0200);
+    tl.fromTo("#night-s2-bar", { scaleX: 0 }, { scaleX: 1, duration: 0.45, ease: "expo.out" }, 3.2500);
+    tl.fromTo("#night-s2-la", { scale: 0, rotation: -18 }, { scale: 1, rotation: -4, duration: 0.45, ease: "back.out(2.6)" }, 3.4000);
+    tl.fromTo("#night-s2-lb", { scale: 0, rotation: 18 }, { scale: 1, rotation: 3, duration: 0.45, ease: "back.out(2.6)" }, 3.5500);
+    tl.fromTo("#night-s2-tx", { x: 0, y: 1920, filter: "blur(18px)" }, { x: 0, y: 0, filter: "blur(0px)", duration: 0.4, ease: "power2.out" }, 2.8000);
+    tl.to("#night-s2-tx", { scale: 1.12, duration: 0.4, ease: "power1.in" }, 5.1667);
+    tl.fromTo("#night-s2-kb", { scale: 1 }, { scale: 1.06, duration: 2.7667, ease: "none" }, 2.8000);
+    tl.fromTo("#night-s3-cap", { scale: 0, rotation: -16 }, { scale: 1, rotation: -2, duration: 0.5, ease: "back.out(2.6)" }, 5.6167);
+    tl.fromTo("#night-s3-tx", { opacity: 0 }, { opacity: 1, duration: 0.06, ease: "none" }, 5.3067);
+    tl.to("#night-flash", { opacity: 0.85, duration: 0.16, ease: "power2.out" }, 5.1667);
+    tl.to("#night-flash", { opacity: 0, duration: 0.36, ease: "power2.in" }, 5.3267);
+    tl.to("#night-s3-tx", { x: 1080, y: 0, filter: "blur(18px)", duration: 0.4, ease: "power2.in" }, 6.8333);
+    tl.fromTo("#night-s3-kb", { scale: 1 }, { scale: 1.06, duration: 2.0667, ease: "none" }, 5.1667);
+    tl.fromTo("#night-s4-tx", { x: -1080, y: 0, filter: "blur(18px)" }, { x: 0, y: 0, filter: "blur(0px)", duration: 0.4, ease: "power2.out" }, 6.8333);
+    tl.to("#night-s4-tx", { scale: 0.8, filter: "blur(12px)", duration: 0.4, ease: "power2.in" }, 8.8333);
+    tl.fromTo("#night-s4-kb", { scale: 1 }, { scale: 1.06, duration: 2.4000, ease: "none" }, 6.8333);
+    tl.fromTo("#night-s5-tx", { scale: 1.6, opacity: 0, filter: "blur(12px)" }, { scale: 1, opacity: 1, filter: "blur(0px)", duration: 0.4, ease: "power3.out" }, 8.8333);
+    tl.to("#night-s5-tx", { rotation: 22, scale: 1.45, filter: "blur(16px)", duration: 0.4, ease: "power2.in" }, 10.0000);
+    tl.fromTo("#night-s5-kb", { scale: 1 }, { scale: 1.06, duration: 1.5667, ease: "none" }, 8.8333);
     tl.fromTo("#night-label", { opacity: 0, scale: 0.6 }, { opacity: 1, scale: 1, duration: 0.5, ease: "back.out(2.2)" }, 0.50);
     tl.fromTo("#night-rule", { scaleX: 0 }, { scaleX: 1, duration: 0.6, ease: "expo.out" }, 0.70);
-    tl.to("#night-label", { opacity: 0, x: -40, duration: 0.25, ease: "power3.in" }, 10.2667);
+    tl.to("#night-label", { opacity: 0, x: -40, duration: 0.25, ease: "power3.in" }, 9.7000);
     window.__timelines["night"] = tl;
   </script>
 </template>

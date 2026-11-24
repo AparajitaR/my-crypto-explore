@@ -1,6 +1,6 @@
 # Kasol: 1st Year Anniversary
 
-A 90 s, 1080×1920 (vertical reel), 30 fps film of the couple's first anniversary trip to Kasol. It opens and closes on a glowing title and ends on #SayAnAparajitaStory.
+A 100 s, 1080×1920 (vertical reel), 30 fps film of the couple's first anniversary trip to Kasol. It opens and closes on a glowing title and ends on #SayAnAparajitaStory.
 
 ## Look
 
@@ -36,3 +36,11 @@ Beat entrances rotate between a clip-path rise, a blur-in, a horizontal whip and
 ## Sound
 
 Requested track: "Pahado Me Mera Dil". Put the file at `assets/audio/music.mp3` and rerun the generator; it adds the bed at volume 0.8 with a 2.5 s fade-out.
+
+## Fun layer (v5)
+
+- Sticker captions pop in (back-out bounce, slight tilt) on selected shots; captioned shots stay 1.4× longer.
+- His/Her split screens: two photos stack top and bottom, slide in from opposite sides on a warm ground, with pill tags.
+- Polaroid drop: three couple selfies fall onto a warm board.
+- "365 / Days of us" slot-machine counter opens the One year chapter.
+- Reel extended from 90 s to 100 s so stickers can be read.

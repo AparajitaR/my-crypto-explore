@@ -14,17 +14,46 @@
       color: #ffffff; font-size: 36px; letter-spacing: 0.3em; text-transform: uppercase; white-space: nowrap;
       text-shadow: 0 2px 16px rgba(0,0,0,0.65); transform-origin: left center; }
     #root .label .rule { width: 64px; height: 3px; background: linear-gradient(90deg, #ffc27a, #ff8a3d); transform-origin: left center; }
+    #root .sticker { position: absolute; left: 160px; top: 380px; padding: 14px 28px; border-radius: 18px;
+      font-family: "Poppins", sans-serif; font-weight: 700; font-size: 42px; line-height: 1.15; white-space: nowrap;
+      box-shadow: 0 14px 36px rgba(0,0,0,0.35); transform-origin: 30% 50%; }
+    #root .sticker.s0 { background: #ffffff; color: #15161a; }
+    #root .sticker.s1 { background: linear-gradient(135deg, #ffd08a, #ff8a3d); color: #2a1206; }
+    #root .sticker.s2 { background: #15161a; color: #ffd9a6; }
+    #root .splitbg { background: linear-gradient(160deg, #ffb35c, #ff6a3d); }
+    #root .half { position: absolute; left: 0; width: 1080px; height: 960px; overflow: hidden; }
+    #root .bar { position: absolute; left: 0; top: 952px; width: 1080px; height: 16px; background: #fff3e2;
+      box-shadow: 0 0 24px rgba(255,170,90,0.8); }
+    #root .tag { position: absolute; left: 120px; padding: 10px 24px; border-radius: 999px; background: #ffffff; color: #15161a;
+      font-family: "Poppins", sans-serif; font-weight: 700; font-size: 38px; text-transform: uppercase; letter-spacing: 0.08em;
+      box-shadow: 0 10px 28px rgba(0,0,0,0.35); white-space: nowrap; }
+    #root .tag.b { background: #ff8a3d; color: #1c0b03; }
+    #root .board { background: radial-gradient(ellipse at 50% 35%, #fbefdd 0%, #f0d2ab 60%, #e2b585 100%); }
+    #root .pol { position: absolute; width: 520px; height: 690px; background: #fffdf8; border-radius: 6px;
+      box-shadow: 0 24px 50px rgba(60,30,10,0.35); }
+    #root .kb .pol img { position: absolute; left: 22px; top: 22px; width: 476px; height: 560px; object-fit: cover; }
+    #root .countbg { background: radial-gradient(ellipse at 50% 45%, #3a1a0a 0%, #160b06 55%, #07080b 100%); }
+    #root .cstack { position: absolute; left: 120px; top: 288px; width: 840px; height: 960px; display: flex;
+      flex-direction: column; align-items: center; justify-content: center; }
+    #root .ckicker { color: #f1e3cf; font-size: 34px; letter-spacing: 0.3em; text-transform: uppercase; margin-bottom: 20px; padding-left: 0.3em; }
+    #root .digits { display: flex; gap: 6px; height: 360px; }
+    #root .dcol { width: 175px; height: 360px; overflow: hidden; }
+    #root .dstrip { display: flex; flex-direction: column; }
+    #root .dstrip span { display: block; height: 360px; line-height: 360px; text-align: center;
+      font-family: "Playfair Display", serif; font-weight: 700; font-size: 280px; color: #ffc98a;
+      text-shadow: 0 0 22px rgba(255,170,90,0.75), 0 0 60px rgba(255,120,50,0.5); }
+    #root .cword { margin-top: 30px; padding: 14px 34px; border-radius: 999px; background: #fff3e2; color: #2a1206;
+      font-family: "Poppins", sans-serif; font-weight: 700; font-size: 48px; text-transform: uppercase; letter-spacing: 0.1em; }
 
   </style>
-  <div id="root" data-composition-id="morning" data-width="1080" data-height="1920" data-duration="9.3667"
+  <div id="root" data-composition-id="morning" data-width="1080" data-height="1920" data-duration="11.7333"
     data-composition-variables='[{"id": "chapter", "type": "string", "label": "Chapter label", "default": "The morning"}]'>
-    <div id="morning-s1" class="shot" data-layout-allow-overflow><div id="morning-s1-tx" class="tx"><div id="morning-s1-kb" class="kb"><img id="morning-s1-m" class="clip" data-start="0" data-duration="2.3667" data-track-index="0" src="assets/photos/breakfast.jpg" style="object-position:58% 50%;" alt="" /></div></div></div>
-    <div id="morning-s2" class="shot" data-layout-allow-overflow><div id="morning-s2-tx" class="tx"><div id="morning-s2-kb" class="kb"><img id="morning-s2-m" class="clip" data-start="1.9667" data-duration="1.5667" data-track-index="1" src="assets/photos/scooter-valley.jpg" style="object-position:70% 50%;" alt="" /></div></div></div>
-    <div id="morning-s3" class="shot" data-layout-allow-overflow><div id="morning-s3-tx" class="tx"><div id="morning-s3-kb" class="kb"><img id="morning-s3-m" class="clip" data-start="3.1333" data-duration="1.5667" data-track-index="0" src="assets/photos/him-river-sun.jpg" alt="" /></div></div></div>
-    <div id="morning-s4" class="shot" data-layout-allow-overflow><div id="morning-s4-tx" class="tx"><div id="morning-s4-kb" class="kb"><img id="morning-s4-m" class="clip" data-start="4.3" data-duration="1.5667" data-track-index="1" src="assets/photos/her-river-sun.jpg" alt="" /></div></div></div>
-    <div id="morning-s5" class="shot" data-layout-allow-overflow><div id="morning-s5-tx" class="tx"><div id="morning-s5-kb" class="kb"><img id="morning-s5-m" class="clip" data-start="5.4667" data-duration="1.5667" data-track-index="0" src="assets/photos/him-beer-cafe.jpg" style="object-position:65% 50%;" alt="" /></div></div></div>
-    <div id="morning-s6" class="shot" data-layout-allow-overflow><div id="morning-s6-tx" class="tx"><div id="morning-s6-kb" class="kb"><img id="morning-s6-m" class="clip" data-start="6.6333" data-duration="1.5667" data-track-index="1" src="assets/photos/cafe-food.jpg" alt="" /></div></div></div>
-    <div id="morning-s7" class="shot" data-layout-allow-overflow><div id="morning-s7-tx" class="tx"><div id="morning-s7-kb" class="kb"><img id="morning-s7-m" class="clip" data-start="7.8" data-duration="1.5667" data-track-index="0" src="assets/photos/her-cafe.jpg" style="object-position:40% 50%;" alt="" /></div></div></div>
+    <div id="morning-s1" class="shot" data-layout-allow-overflow><div id="morning-s1-tx" class="tx"><div id="morning-s1-kb" class="kb"><img id="morning-s1-m" class="clip" data-start="0" data-duration="3.2" data-track-index="0" src="assets/photos/breakfast.jpg" style="object-position:58% 50%;" alt="" /></div><div id="morning-s1-cap" class="sticker s1">Paratha o'clock</div></div></div>
+    <div id="morning-s2" class="shot" data-layout-allow-overflow><div id="morning-s2-tx" class="tx"><div id="morning-s2-kb" class="kb"><img id="morning-s2-m" class="clip" data-start="2.8" data-duration="2.0667" data-track-index="1" src="assets/photos/scooter-valley.jpg" style="object-position:70% 50%;" alt="" /></div><div id="morning-s2-cap" class="sticker s2">Scooty diaries</div></div></div>
+    <div id="morning-s3" class="shot" data-layout-allow-overflow data-layout-allow-overlap><div id="morning-s3-tx" class="tx splitbg"><div id="morning-s3-kb" class="kb"><div id="morning-s3-a" class="half" style="top:0"><img id="morning-s3-ma" class="clip" data-start="4.4667" data-duration="2.7667" data-track-index="2" src="assets/photos/him-river-sun.jpg" style="object-position:50% 55%;" alt="" /></div><div id="morning-s3-b" class="half" style="top:960px"><img id="morning-s3-mb" class="clip" data-start="4.4667" data-duration="2.7667" data-track-index="3" src="assets/photos/her-river-sun.jpg" style="object-position:50% 62%;" alt="" /></div><div id="morning-s3-bar" class="bar"></div><div id="morning-s3-la" class="tag" style="top:820px">His view</div><div id="morning-s3-lb" class="tag b" style="top:1000px">Her view</div></div></div></div>
+    <div id="morning-s4" class="shot" data-layout-allow-overflow><div id="morning-s4-tx" class="tx"><div id="morning-s4-kb" class="kb"><img id="morning-s4-m" class="clip" data-start="6.8333" data-duration="2.0667" data-track-index="1" src="assets/photos/him-beer-cafe.jpg" style="object-position:65% 50%;" alt="" /></div><div id="morning-s4-cap" class="sticker s0">Riverside cheers</div></div></div>
+    <div id="morning-s5" class="shot" data-layout-allow-overflow><div id="morning-s5-tx" class="tx"><div id="morning-s5-kb" class="kb"><img id="morning-s5-m" class="clip" data-start="8.5" data-duration="1.5667" data-track-index="0" src="assets/photos/cafe-food.jpg" alt="" /></div></div></div>
+    <div id="morning-s6" class="shot" data-layout-allow-overflow><div id="morning-s6-tx" class="tx"><div id="morning-s6-kb" class="kb"><img id="morning-s6-m" class="clip" data-start="9.6667" data-duration="2.0667" data-track-index="1" src="assets/photos/her-cafe.jpg" style="object-position:40% 50%;" alt="" /></div><div id="morning-s6-cap" class="sticker s1">Main character energy</div></div></div>
     <div id="morning-scrim" class="scrim"></div>
     <div id="morning-label" class="label"><div id="morning-rule" class="rule"></div><span id="morning-label-text" data-var-text="chapter">The morning</span></div>
     <div id="morning-flash" class="flash" data-layout-ignore></div>
@@ -34,32 +63,38 @@
     const tl = gsap.timeline({ paused: true });
     tl.set("#morning-leak", { x: -1700, opacity: 0 }, 0);
     tl.set("#morning-flash", { opacity: 0 }, 0);
+    tl.fromTo("#morning-s1-cap", { scale: 0, rotation: -11 }, { scale: 1, rotation: 3, duration: 0.5, ease: "back.out(2.6)" }, 0.4500);
     tl.fromTo("#morning-s1-tx", { scale: 1.5, opacity: 0, filter: "blur(14px)" }, { scale: 1, opacity: 1, filter: "blur(0px)", duration: 0.4, ease: "power2.out" }, 0.0000);
-    tl.to("#morning-s1-tx", { scale: 1.12, duration: 0.4, ease: "power1.in" }, 1.9667);
-    tl.fromTo("#morning-s1-kb", { scale: 1 }, { scale: 1.06, duration: 2.3667, ease: "none" }, 0.0000);
-    tl.fromTo("#morning-s2-tx", { clipPath: "circle(0% at 50% 46%)" }, { clipPath: "circle(74% at 50% 46%)", duration: 0.440, ease: "power2.inOut" }, 1.9667);
-    tl.to("#morning-s2-tx", { x: 0, y: -1920, filter: "blur(18px)", duration: 0.4, ease: "power2.in" }, 3.1333);
-    tl.fromTo("#morning-s2-kb", { scale: 1 }, { scale: 1.06, duration: 1.5667, ease: "none" }, 1.9667);
-    tl.fromTo("#morning-s3-tx", { x: 0, y: 1920, filter: "blur(18px)" }, { x: 0, y: 0, filter: "blur(0px)", duration: 0.4, ease: "power2.out" }, 3.1333);
-    tl.to("#morning-s3-tx", { scale: 1.12, duration: 0.4, ease: "power1.in" }, 4.3000);
-    tl.fromTo("#morning-s3-kb", { scale: 1 }, { scale: 1.06, duration: 1.5667, ease: "none" }, 3.1333);
-    tl.fromTo("#morning-s4-tx", { opacity: 0 }, { opacity: 1, duration: 0.06, ease: "none" }, 4.4400);
-    tl.to("#morning-flash", { opacity: 0.85, duration: 0.16, ease: "power2.out" }, 4.3000);
-    tl.to("#morning-flash", { opacity: 0, duration: 0.36, ease: "power2.in" }, 4.4600);
-    tl.to("#morning-s4-tx", { x: 1080, y: 0, filter: "blur(18px)", duration: 0.4, ease: "power2.in" }, 5.4667);
-    tl.fromTo("#morning-s4-kb", { scale: 1 }, { scale: 1.06, duration: 1.5667, ease: "none" }, 4.3000);
-    tl.fromTo("#morning-s5-tx", { x: -1080, y: 0, filter: "blur(18px)" }, { x: 0, y: 0, filter: "blur(0px)", duration: 0.4, ease: "power2.out" }, 5.4667);
-    tl.to("#morning-s5-tx", { scale: 0.8, filter: "blur(12px)", duration: 0.4, ease: "power2.in" }, 6.6333);
-    tl.fromTo("#morning-s5-kb", { scale: 1 }, { scale: 1.06, duration: 1.5667, ease: "none" }, 5.4667);
-    tl.fromTo("#morning-s6-tx", { scale: 1.6, opacity: 0, filter: "blur(12px)" }, { scale: 1, opacity: 1, filter: "blur(0px)", duration: 0.4, ease: "power3.out" }, 6.6333);
-    tl.to("#morning-s6-tx", { scale: 1.35, filter: "blur(14px)", duration: 0.4, ease: "power2.in" }, 7.8000);
-    tl.fromTo("#morning-s6-kb", { scale: 1 }, { scale: 1.06, duration: 1.5667, ease: "none" }, 6.6333);
-    tl.fromTo("#morning-s7-tx", { scale: 1.5, opacity: 0, filter: "blur(14px)" }, { scale: 1, opacity: 1, filter: "blur(0px)", duration: 0.4, ease: "power2.out" }, 7.8000);
-    tl.to("#morning-s7-tx", { scale: 1.35, filter: "blur(14px)", duration: 0.4, ease: "power2.in" }, 8.9667);
-    tl.fromTo("#morning-s7-kb", { scale: 1 }, { scale: 1.06, duration: 1.5667, ease: "none" }, 7.8000);
+    tl.to("#morning-s1-tx", { scale: 1.12, duration: 0.4, ease: "power1.in" }, 2.8000);
+    tl.fromTo("#morning-s1-kb", { scale: 1 }, { scale: 1.06, duration: 3.2000, ease: "none" }, 0.0000);
+    tl.fromTo("#morning-s2-cap", { scale: 0, rotation: -16 }, { scale: 1, rotation: -2, duration: 0.5, ease: "back.out(2.6)" }, 3.2500);
+    tl.fromTo("#morning-s2-tx", { clipPath: "circle(0% at 50% 46%)" }, { clipPath: "circle(74% at 50% 46%)", duration: 0.440, ease: "power2.inOut" }, 2.8000);
+    tl.to("#morning-s2-tx", { x: 0, y: -1920, filter: "blur(18px)", duration: 0.4, ease: "power2.in" }, 4.4667);
+    tl.fromTo("#morning-s2-kb", { scale: 1 }, { scale: 1.06, duration: 2.0667, ease: "none" }, 2.8000);
+    tl.fromTo("#morning-s3-a", { x: -1080 }, { x: 0, duration: 0.5, ease: "power3.out" }, 4.5667);
+    tl.fromTo("#morning-s3-b", { x: 1080 }, { x: 0, duration: 0.5, ease: "power3.out" }, 4.6867);
+    tl.fromTo("#morning-s3-bar", { scaleX: 0 }, { scaleX: 1, duration: 0.45, ease: "expo.out" }, 4.9167);
+    tl.fromTo("#morning-s3-la", { scale: 0, rotation: -18 }, { scale: 1, rotation: -4, duration: 0.45, ease: "back.out(2.6)" }, 5.0667);
+    tl.fromTo("#morning-s3-lb", { scale: 0, rotation: 18 }, { scale: 1, rotation: 3, duration: 0.45, ease: "back.out(2.6)" }, 5.2167);
+    tl.fromTo("#morning-s3-tx", { x: 0, y: 1920, filter: "blur(18px)" }, { x: 0, y: 0, filter: "blur(0px)", duration: 0.4, ease: "power2.out" }, 4.4667);
+    tl.to("#morning-s3-tx", { scale: 1.12, duration: 0.4, ease: "power1.in" }, 6.8333);
+    tl.fromTo("#morning-s3-kb", { scale: 1 }, { scale: 1.06, duration: 2.7667, ease: "none" }, 4.4667);
+    tl.fromTo("#morning-s4-cap", { scale: 0, rotation: -9 }, { scale: 1, rotation: 5, duration: 0.5, ease: "back.out(2.6)" }, 7.2833);
+    tl.fromTo("#morning-s4-tx", { opacity: 0 }, { opacity: 1, duration: 0.06, ease: "none" }, 6.9733);
+    tl.to("#morning-flash", { opacity: 0.85, duration: 0.16, ease: "power2.out" }, 6.8333);
+    tl.to("#morning-flash", { opacity: 0, duration: 0.36, ease: "power2.in" }, 6.9933);
+    tl.to("#morning-s4-tx", { x: 1080, y: 0, filter: "blur(18px)", duration: 0.4, ease: "power2.in" }, 8.5000);
+    tl.fromTo("#morning-s4-kb", { scale: 1 }, { scale: 1.06, duration: 2.0667, ease: "none" }, 6.8333);
+    tl.fromTo("#morning-s5-tx", { x: -1080, y: 0, filter: "blur(18px)" }, { x: 0, y: 0, filter: "blur(0px)", duration: 0.4, ease: "power2.out" }, 8.5000);
+    tl.to("#morning-s5-tx", { scale: 0.8, filter: "blur(12px)", duration: 0.4, ease: "power2.in" }, 9.6667);
+    tl.fromTo("#morning-s5-kb", { scale: 1 }, { scale: 1.06, duration: 1.5667, ease: "none" }, 8.5000);
+    tl.fromTo("#morning-s6-cap", { scale: 0, rotation: -18 }, { scale: 1, rotation: -4, duration: 0.5, ease: "back.out(2.6)" }, 10.1167);
+    tl.fromTo("#morning-s6-tx", { scale: 1.6, opacity: 0, filter: "blur(12px)" }, { scale: 1, opacity: 1, filter: "blur(0px)", duration: 0.4, ease: "power3.out" }, 9.6667);
+    tl.to("#morning-s6-tx", { scale: 1.35, filter: "blur(14px)", duration: 0.4, ease: "power2.in" }, 11.3333);
+    tl.fromTo("#morning-s6-kb", { scale: 1 }, { scale: 1.06, duration: 2.0667, ease: "none" }, 9.6667);
     tl.fromTo("#morning-label", { opacity: 0, scale: 0.6 }, { opacity: 1, scale: 1, duration: 0.5, ease: "back.out(2.2)" }, 0.50);
     tl.fromTo("#morning-rule", { scaleX: 0 }, { scaleX: 1, duration: 0.6, ease: "expo.out" }, 0.70);
-    tl.to("#morning-label", { opacity: 0, x: -40, duration: 0.25, ease: "power3.in" }, 8.6667);
+    tl.to("#morning-label", { opacity: 0, x: -40, duration: 0.25, ease: "power3.in" }, 11.0333);
     window.__timelines["morning"] = tl;
   </script>
 </template>

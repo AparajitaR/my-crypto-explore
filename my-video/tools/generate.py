@@ -12,51 +12,81 @@ import glob, json, os, subprocess
 
 OUT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 P, V = "assets/photos/", "assets/video/"
-W, H, FPS, TOTAL = 1080, 1920, 30, 90
+W, H, FPS, TOTAL = 1080, 1920, 30, 100
 INTRO, OUTRO = 6.0, 7.5
 OVERLAP = 0.4
-WEIGHT = {"photo": 1.0, "video": 1.7, "wide": 1.7, "hero": 1.9}
+WEIGHT = {"photo": 1.0, "video": 1.7, "wide": 1.7, "hero": 1.9, "split": 2.0, "pola": 2.8, "count": 2.6}
+CAP_BONUS = 1.4  # a shot with a sticker caption stays on screen longer so it can be read
 TRANSITIONS = ["zoom", "whip-left", "spin", "iris", "whip-up", "flash", "whip-right", "zoom-out"]
 CHAPTER_TRANSITIONS = ["leak", "zoom", "leak", "spin"]
 
 
-def ph(name, pos=None, pan=None, kind=None):
-    """A photo. pos: horizontal focus in % for wide photos; pan: (from %, to %) to sweep across one."""
-    return {"tag": "img", "src": P + name + ".jpg", "pos": pos, "pan": pan, "kind": kind}
+def ph(name, pos=None, pan=None, kind=None, cap=None, y=None):
+    """A photo. pos/y: focus point in %; pan: (from %, to %) to sweep across a wide one; cap: sticker text."""
+    return {"tag": "img", "src": P + name + ".jpg", "pos": pos, "y": y, "pan": pan, "kind": kind, "cap": cap}
 
 
-def vd(name, start=0.0):
-    return {"tag": "video", "src": V + name + ".mp4", "start": start, "kind": "video", "pos": None, "pan": None}
+def vd(name, start=0.0, cap=None):
+    return {"tag": "video", "src": V + name + ".mp4", "start": start, "kind": "video", "pos": None, "y": None,
+            "pan": None, "cap": cap}
+
+
+def split(a, b, la, lb, cap=None):
+    """Two photos stacked top and bottom, sliding in from opposite sides, each with a tag."""
+    return {"tag": "split", "a": a, "b": b, "la": la, "lb": lb, "kind": "split", "cap": cap, "pan": None}
+
+
+def pola(items, cap=None):
+    """Polaroids dropping onto a warm board."""
+    return {"tag": "pola", "items": items, "kind": "pola", "cap": cap, "pan": None}
+
+
+def count(n, word, kicker):
+    """A number rolling up like a slot machine."""
+    return {"tag": "count", "n": n, "word": word, "kicker": kicker, "kind": "count", "cap": None, "pan": None}
 
 
 SCENES = [
-    ("drive", "The drive in", [vd("forest-drive"), vd("drive-traffic", start=1.0), vd("camp-pan"), ph("kasol-street")]),
-    ("morning", "The morning", [
-        ph("breakfast", pos=58), ph("scooter-valley", pos=70), ph("him-river-sun"), ph("her-river-sun"),
-        ph("him-beer-cafe", pos=65), ph("cafe-food"), ph("her-cafe", pos=40),
+    ("drive", "The drive in", [
+        vd("forest-drive"), vd("drive-traffic", start=1.0), vd("camp-pan"), ph("kasol-street", cap="Hello, Kasol"),
     ]),
-    ("golden", "Golden hour", [vd("walk-to-sunset"), vd("valley-sunset", start=6.0), vd("sun-rays")]),
+    ("morning", "The morning", [
+        ph("breakfast", pos=58, cap="Paratha o'clock"), ph("scooter-valley", pos=70, cap="Scooty diaries"),
+        split(ph("him-river-sun", y=55), ph("her-river-sun", y=62), "His view", "Her view"),
+        ph("him-beer-cafe", pos=65, cap="Riverside cheers"), ph("cafe-food"),
+        ph("her-cafe", pos=40, cap="Main character energy"),
+    ]),
+    ("golden", "Golden hour", [
+        vd("walk-to-sunset"), vd("valley-sunset", start=6.0, cap="Golden hour hits different"), vd("sun-rays"),
+    ]),
     ("sunset", "Sunset", [
-        ph("road-walk"), vd("her-on-road"), ph("sunset-view", pos=62), ph("her-photographing-sunset", pos=55),
-        ph("sunset-fire"), ph("sunset-road-red"), ph("dusk-pines", pos=35),
+        ph("road-walk"), vd("her-on-road"), ph("sunset-view", pos=62),
+        ph("her-photographing-sunset", pos=55, cap="One more photo, please"),
+        ph("sunset-fire", cap="Sky on fire"), ph("sunset-road-red"),
     ]),
     ("manikaran", "Manikaran", [
-        ph("gurudwara", pan=(30, 70)), ph("gurudwara-front", pos=40), ph("manikaran-temple-river", pos=40),
-        ph("hot-spring-pool", pos=70), vd("river-valley"), vd("river-run"), vd("manikaran-river"), ph("langar-thali"),
-        ph("her-on-bridge", pos=52), ph("couple-selfie-manikaran", pos=43), ph("him-on-bridge", pos=55),
-        ph("her-gurudwara-railing", pos=62), ph("him-bridge-walk", pos=56), ph("her-peace-gurudwara", pos=60),
-        ph("him-gurudwara-railing", pos=55),
+        ph("gurudwara", pan=(30, 70)), ph("gurudwara-front", pos=40),
+        ph("manikaran-temple-river", pos=40, cap="Hot springs, cold hands"),
+        vd("river-valley"), vd("river-run"), vd("manikaran-river"), ph("langar-thali", cap="Langar love"),
+        split(ph("him-on-bridge", pos=55, y=55), ph("her-on-bridge", pos=52, y=55), "His pose", "Her pose"),
+        ph("him-bridge-walk", pos=56),
+        split(ph("him-gurudwara-railing", pos=55, y=48), ph("her-peace-gurudwara", pos=60, y=45), "His lean", "Her peace"),
+        ph("her-gurudwara-railing", pos=62),
     ]),
     ("afternoons", "Slow afternoons", [
-        ph("her-heart", pos=45), ph("her-river-dusk", pos=45), ph("him-river-rock", pos=58),
-        ph("couple-selfie-cafe", pan=(12, 72)),
+        ph("her-heart", pos=45, cap="Heart full"), ph("her-river-dusk", pos=45),
+        ph("him-river-rock", pos=58, cap="Rock star"),
+        pola([ph("couple-selfie-manikaran", pos=43), ph("couple-selfie-cafe", pos=40), ph("couple-cosy-selfie", pos=45)],
+             cap="Us, on repeat"),
     ]),
     ("night", "After dark", [
-        ph("enfield-night", pan=(0, 100)), ph("snooker-him", pos=40), ph("snooker-her", pos=55),
-        ph("apple-mirror"), ph("couple-cosy-night", pos=26), ph("room-mirror"), ph("couple-cosy-selfie", pos=45),
+        ph("enfield-night", pan=(0, 100), cap="Night ride"),
+        split(ph("snooker-him", pos=40, y=45), ph("snooker-her", pos=55, y=42), "His shot", "Her shot"),
+        ph("apple-mirror", cap="Mirror, mirror"), ph("couple-cosy-night", pos=26), ph("room-mirror"),
     ]),
     ("oneyear", "One year", [
-        ph("anniversary-candles", kind="hero"), ph("anniversary-bracelet", kind="hero"), ph("anniversary-cake", kind="hero"),
+        count(365, "Days of us", "Our first year"), ph("anniversary-candles", kind="hero"),
+        ph("anniversary-bracelet", kind="hero", cap="A for always"), ph("anniversary-cake", kind="hero"),
         ph("story-coaster", kind="hero"),
     ]),
 ]
@@ -89,9 +119,13 @@ def frames(sec):
 
 budget = frames(TOTAL - INTRO - OUTRO)
 shots = [s for _, _, ss in SCENES for s in ss]
-unit = budget / sum(WEIGHT[kind(s)] for s in shots)
+def weight(item):
+    return WEIGHT[kind(item)] * (CAP_BONUS if item.get("cap") else 1.0)
+
+
+unit = budget / sum(weight(s) for s in shots)
 for s in shots:
-    s["frames"] = max(frames(1.0), round(WEIGHT[kind(s)] * unit))
+    s["frames"] = max(frames(1.0), round(weight(s) * unit))
 shots[-1]["frames"] += budget - sum(s["frames"] for s in shots)  # land exactly on TOTAL
 
 # ---- transitions ----------------------------------------------------------------------------
@@ -179,6 +213,36 @@ SHOT_CSS = """
       color: #ffffff; font-size: 36px; letter-spacing: 0.3em; text-transform: uppercase; white-space: nowrap;
       text-shadow: 0 2px 16px rgba(0,0,0,0.65); transform-origin: left center; }
     #root .label .rule { width: 64px; height: 3px; background: linear-gradient(90deg, #ffc27a, #ff8a3d); transform-origin: left center; }
+    #root .sticker { position: absolute; left: 160px; top: 380px; padding: 14px 28px; border-radius: 18px;
+      font-family: "Poppins", sans-serif; font-weight: 700; font-size: 42px; line-height: 1.15; white-space: nowrap;
+      box-shadow: 0 14px 36px rgba(0,0,0,0.35); transform-origin: 30% 50%; }
+    #root .sticker.s0 { background: #ffffff; color: #15161a; }
+    #root .sticker.s1 { background: linear-gradient(135deg, #ffd08a, #ff8a3d); color: #2a1206; }
+    #root .sticker.s2 { background: #15161a; color: #ffd9a6; }
+    #root .splitbg { background: linear-gradient(160deg, #ffb35c, #ff6a3d); }
+    #root .half { position: absolute; left: 0; width: 1080px; height: 960px; overflow: hidden; }
+    #root .bar { position: absolute; left: 0; top: 952px; width: 1080px; height: 16px; background: #fff3e2;
+      box-shadow: 0 0 24px rgba(255,170,90,0.8); }
+    #root .tag { position: absolute; left: 120px; padding: 10px 24px; border-radius: 999px; background: #ffffff; color: #15161a;
+      font-family: "Poppins", sans-serif; font-weight: 700; font-size: 38px; text-transform: uppercase; letter-spacing: 0.08em;
+      box-shadow: 0 10px 28px rgba(0,0,0,0.35); white-space: nowrap; }
+    #root .tag.b { background: #ff8a3d; color: #1c0b03; }
+    #root .board { background: radial-gradient(ellipse at 50% 35%, #fbefdd 0%, #f0d2ab 60%, #e2b585 100%); }
+    #root .pol { position: absolute; width: 520px; height: 690px; background: #fffdf8; border-radius: 6px;
+      box-shadow: 0 24px 50px rgba(60,30,10,0.35); }
+    #root .kb .pol img { position: absolute; left: 22px; top: 22px; width: 476px; height: 560px; object-fit: cover; }
+    #root .countbg { background: radial-gradient(ellipse at 50% 45%, #3a1a0a 0%, #160b06 55%, #07080b 100%); }
+    #root .cstack { position: absolute; left: 120px; top: 288px; width: 840px; height: 960px; display: flex;
+      flex-direction: column; align-items: center; justify-content: center; }
+    #root .ckicker { color: #f1e3cf; font-size: 34px; letter-spacing: 0.3em; text-transform: uppercase; margin-bottom: 20px; padding-left: 0.3em; }
+    #root .digits { display: flex; gap: 6px; height: 360px; }
+    #root .dcol { width: 175px; height: 360px; overflow: hidden; }
+    #root .dstrip { display: flex; flex-direction: column; }
+    #root .dstrip span { display: block; height: 360px; line-height: 360px; text-align: center;
+      font-family: "Playfair Display", serif; font-weight: 700; font-size: 280px; color: #ffc98a;
+      text-shadow: 0 0 22px rgba(255,170,90,0.75), 0 0 60px rgba(255,120,50,0.5); }
+    #root .cword { margin-top: 30px; padding: 14px 34px; border-radius: 999px; background: #fff3e2; color: #2a1206;
+      font-family: "Poppins", sans-serif; font-weight: 700; font-size: 48px; text-transform: uppercase; letter-spacing: 0.1em; }
 """
 
 
@@ -186,8 +250,10 @@ def media_tag(item, mid, start, dur, lane):
     style = ""
     if item.get("pan"):
         style = f' style="object-position:{item["pan"][0]}% 50%;"'
-    elif item.get("pos") is not None:
-        style = f' style="object-position:{item["pos"]}% 50%;"'
+    elif item.get("pos") is not None or item.get("y") is not None:
+        px = item["pos"] if item.get("pos") is not None else 50
+        py = item["y"] if item.get("y") is not None else 50
+        style = f' style="object-position:{px}% {py}%;"'
     if item["tag"] == "img":
         return (f'<img id="{mid}" class="clip" data-start="{start:g}" data-duration="{dur:g}" '
                 f'data-track-index="{lane}" src="{item["src"]}"{style} alt="" />')
@@ -199,6 +265,63 @@ def media_tag(item, mid, start, dur, lane):
 def shot_html(fid, item, start, dur, lane):
     return (f'    <div id="{fid}" class="shot" data-layout-allow-overflow><div id="{fid}-tx" class="tx">'
             f'<div id="{fid}-kb" class="kb">{media_tag(item, f"{fid}-m", round(start, 4), round(dur, 4), lane)}</div></div></div>')
+
+
+_cap_n = [0]
+
+
+def sticker(fid, item, s):
+    """Returns (html, js) for the shot's caption sticker, which pops in after the transition."""
+    if not item.get("cap"):
+        return "", []
+    n = _cap_n[0]
+    _cap_n[0] += 1
+    r = (-4, 3, -2, 5)[n % 4]
+    h = f'<div id="{fid}-cap" class="sticker s{n % 3}">{item["cap"]}</div>'
+    js = [f'    tl.fromTo("#{fid}-cap", {{ scale: 0, rotation: {r - 14} }}, '
+          f'{{ scale: 1, rotation: {r}, duration: 0.5, ease: "back.out(2.6)" }}, {s + T + 0.05:.4f});']
+    return h, js
+
+
+def special(fid, item, s, d):
+    """Inner html and js for split, polaroid and counter shots."""
+    a, js = [], []
+    if item["tag"] == "split":
+        a.append(f'<div id="{fid}-a" class="half" style="top:0">{media_tag(item["a"], f"{fid}-ma", round(s, 4), round(d + T, 4), 2)}</div>')
+        a.append(f'<div id="{fid}-b" class="half" style="top:960px">{media_tag(item["b"], f"{fid}-mb", round(s, 4), round(d + T, 4), 3)}</div>')
+        a.append(f'<div id="{fid}-bar" class="bar"></div>')
+        a.append(f'<div id="{fid}-la" class="tag" style="top:820px">{item["la"]}</div>')
+        a.append(f'<div id="{fid}-lb" class="tag b" style="top:1000px">{item["lb"]}</div>')
+        js += [f'    tl.fromTo("#{fid}-a", {{ x: -1080 }}, {{ x: 0, duration: 0.5, ease: "power3.out" }}, {s + 0.1:.4f});',
+               f'    tl.fromTo("#{fid}-b", {{ x: 1080 }}, {{ x: 0, duration: 0.5, ease: "power3.out" }}, {s + 0.22:.4f});',
+               f'    tl.fromTo("#{fid}-bar", {{ scaleX: 0 }}, {{ scaleX: 1, duration: 0.45, ease: "expo.out" }}, {s + 0.45:.4f});',
+               f'    tl.fromTo("#{fid}-la", {{ scale: 0, rotation: -18 }}, {{ scale: 1, rotation: -4, duration: 0.45, ease: "back.out(2.6)" }}, {s + 0.6:.4f});',
+               f'    tl.fromTo("#{fid}-lb", {{ scale: 0, rotation: 18 }}, {{ scale: 1, rotation: 3, duration: 0.45, ease: "back.out(2.6)" }}, {s + 0.75:.4f});']
+        return "splitbg", "".join(a), js
+    if item["tag"] == "pola":
+        spots = [(90, 400, -8), (470, 720, 7), (150, 1060, -3)]
+        for k, (it, (x, y, r)) in enumerate(zip(item["items"], spots)):
+            a.append(f'<div id="{fid}-p{k + 1}" class="pol" style="left:{x}px;top:{y}px;">'
+                     f'{media_tag(it, f"{fid}-mp{k + 1}", round(s, 4), round(d + T, 4), 2 + k)}</div>')
+            js.append(f'    tl.fromTo("#{fid}-p{k + 1}", {{ y: -1500, rotation: {r * 3} }}, '
+                      f'{{ y: 0, rotation: {r}, duration: 0.6, ease: "back.out(1.5)" }}, {s + 0.25 + k * 0.38:.4f});')
+        return "board", "".join(a), js
+    if item["tag"] == "count":
+        digits = str(item["n"])
+        cols = []
+        for k, ch in enumerate(digits):
+            loops = k + 1
+            strip = "".join(f"<span>{i % 10}</span>" for i in range(10 * loops))
+            cols.append(f'<div class="dcol"><div id="{fid}-d{k}" class="dstrip">{strip}</div></div>')
+            target = 10 * (loops - 1) + int(ch)
+            js.append(f'    tl.fromTo("#{fid}-d{k}", {{ y: 0 }}, {{ y: {-360 * target}, duration: 1.7, ease: "power3.out" }}, {s + 0.2:.4f});')
+        a.append(f'<div id="{fid}-cs" class="cstack"><div id="{fid}-ck" class="ckicker">{item["kicker"]}</div>'
+                 f'<div id="{fid}-dg" class="digits" data-layout-ignore>{"".join(cols)}</div>'
+                 f'<div id="{fid}-cw" class="cword">{item["word"]}</div></div>')
+        js += [f'    tl.fromTo("#{fid}-ck", {{ opacity: 0, y: 20 }}, {{ opacity: 1, y: 0, duration: 0.4, ease: "power3.out" }}, {s + 0.2:.4f});',
+               f'    tl.fromTo("#{fid}-cw", {{ scale: 0, rotation: -10 }}, {{ scale: 1, rotation: -3, duration: 0.5, ease: "back.out(2.8)" }}, {s + 1.85:.4f});']
+        return "countbg", "".join(a), js
+    raise ValueError(item["tag"])
 
 
 def wrap(sid, dur, html, js, css="", variables=None):
@@ -228,7 +351,19 @@ def build_scene(sid, chapter, items):
         n = i + 1
         s, d = t / FPS, item["frames"] / FPS
         fid = f"{sid}-s{n}"
-        html.append(shot_html(fid, item, s, d + T, i % 2))
+        cap_html, cap_js = sticker(fid, item, s)
+        if item["tag"] in ("img", "video"):
+            sh = shot_html(fid, item, s, d + T, i % 2)
+        else:
+            bg, inner, sjs = special(fid, item, s, d)
+            sh = (f'    <div id="{fid}" class="shot" data-layout-allow-overflow data-layout-allow-overlap>'
+                  f'<div id="{fid}-tx" class="tx {bg}"><div id="{fid}-kb" class="kb">{inner}</div></div></div>')
+            js.extend(sjs)
+        if cap_html:
+            k = sh.rindex("</div></div>")
+            sh = sh[:k] + cap_html + sh[k:]
+        html.append(sh)
+        js.extend(cap_js)
         if i == 0:
             js.append(t_in(item["in_kind"], f"#{fid}-tx", 0, sid))
         else:
@@ -271,12 +406,12 @@ TITLE_CSS = """
     #root .trule { width: 420px; height: 3px; margin: 34px 0 30px;
       background: linear-gradient(90deg, rgba(255,194,122,0), #ffc27a 30%, #ff8a3d 70%, rgba(255,138,61,0)); }
     #root .sub { font-size: 38px; letter-spacing: 0.12em; text-transform: uppercase; color: #ffc98a; padding-left: 0.12em;
-      white-space: nowrap; }
+      white-space: nowrap; text-shadow: 0 2px 10px rgba(0,0,0,0.55); }
     #root .sub span { display: inline-block; margin: 0 0.12em; }
     #root .closing { margin-top: 44px; color: #f1f2f4; font-size: 38px; letter-spacing: 0.04em; text-shadow: 0 2px 14px rgba(0,0,0,0.6); }
 """
-GLOW_OFF = '"0 0 0px rgba(255,170,90,0), 0 0 0px rgba(255,140,60,0)"'
-GLOW_ON = '"0 0 16px rgba(255,170,90,0.85), 0 0 46px rgba(255,140,60,0.55)"'
+GLOW_OFF = '"0 0 0px rgba(255,170,90,0), 0 0 0px rgba(255,140,60,0), 0 2px 10px rgba(0,0,0,0.55)"'
+GLOW_ON = '"0 0 16px rgba(255,170,90,0.85), 0 0 46px rgba(255,140,60,0.55), 0 2px 10px rgba(0,0,0,0.55)"'
 
 
 def embers(sid, seed, count=28):

@@ -14,6 +14,36 @@
       color: #ffffff; font-size: 36px; letter-spacing: 0.3em; text-transform: uppercase; white-space: nowrap;
       text-shadow: 0 2px 16px rgba(0,0,0,0.65); transform-origin: left center; }
     #root .label .rule { width: 64px; height: 3px; background: linear-gradient(90deg, #ffc27a, #ff8a3d); transform-origin: left center; }
+    #root .sticker { position: absolute; left: 160px; top: 380px; padding: 14px 28px; border-radius: 18px;
+      font-family: "Poppins", sans-serif; font-weight: 700; font-size: 42px; line-height: 1.15; white-space: nowrap;
+      box-shadow: 0 14px 36px rgba(0,0,0,0.35); transform-origin: 30% 50%; }
+    #root .sticker.s0 { background: #ffffff; color: #15161a; }
+    #root .sticker.s1 { background: linear-gradient(135deg, #ffd08a, #ff8a3d); color: #2a1206; }
+    #root .sticker.s2 { background: #15161a; color: #ffd9a6; }
+    #root .splitbg { background: linear-gradient(160deg, #ffb35c, #ff6a3d); }
+    #root .half { position: absolute; left: 0; width: 1080px; height: 960px; overflow: hidden; }
+    #root .bar { position: absolute; left: 0; top: 952px; width: 1080px; height: 16px; background: #fff3e2;
+      box-shadow: 0 0 24px rgba(255,170,90,0.8); }
+    #root .tag { position: absolute; left: 120px; padding: 10px 24px; border-radius: 999px; background: #ffffff; color: #15161a;
+      font-family: "Poppins", sans-serif; font-weight: 700; font-size: 38px; text-transform: uppercase; letter-spacing: 0.08em;
+      box-shadow: 0 10px 28px rgba(0,0,0,0.35); white-space: nowrap; }
+    #root .tag.b { background: #ff8a3d; color: #1c0b03; }
+    #root .board { background: radial-gradient(ellipse at 50% 35%, #fbefdd 0%, #f0d2ab 60%, #e2b585 100%); }
+    #root .pol { position: absolute; width: 520px; height: 690px; background: #fffdf8; border-radius: 6px;
+      box-shadow: 0 24px 50px rgba(60,30,10,0.35); }
+    #root .kb .pol img { position: absolute; left: 22px; top: 22px; width: 476px; height: 560px; object-fit: cover; }
+    #root .countbg { background: radial-gradient(ellipse at 50% 45%, #3a1a0a 0%, #160b06 55%, #07080b 100%); }
+    #root .cstack { position: absolute; left: 120px; top: 288px; width: 840px; height: 960px; display: flex;
+      flex-direction: column; align-items: center; justify-content: center; }
+    #root .ckicker { color: #f1e3cf; font-size: 34px; letter-spacing: 0.3em; text-transform: uppercase; margin-bottom: 20px; padding-left: 0.3em; }
+    #root .digits { display: flex; gap: 6px; height: 360px; }
+    #root .dcol { width: 175px; height: 360px; overflow: hidden; }
+    #root .dstrip { display: flex; flex-direction: column; }
+    #root .dstrip span { display: block; height: 360px; line-height: 360px; text-align: center;
+      font-family: "Playfair Display", serif; font-weight: 700; font-size: 280px; color: #ffc98a;
+      text-shadow: 0 0 22px rgba(255,170,90,0.75), 0 0 60px rgba(255,120,50,0.5); }
+    #root .cword { margin-top: 30px; padding: 14px 34px; border-radius: 999px; background: #fff3e2; color: #2a1206;
+      font-family: "Poppins", sans-serif; font-weight: 700; font-size: 48px; text-transform: uppercase; letter-spacing: 0.1em; }
 
     #root .dim { position: absolute; left: 0; top: 0; width: 1080px; height: 1920px;
       background: linear-gradient(180deg, rgba(7,8,11,0.3) 0%, rgba(7,8,11,0.55) 30%, rgba(7,8,11,0.6) 60%, rgba(7,8,11,0.35) 100%); }
@@ -31,7 +61,7 @@
     #root .trule { width: 420px; height: 3px; margin: 34px 0 30px;
       background: linear-gradient(90deg, rgba(255,194,122,0), #ffc27a 30%, #ff8a3d 70%, rgba(255,138,61,0)); }
     #root .sub { font-size: 38px; letter-spacing: 0.12em; text-transform: uppercase; color: #ffc98a; padding-left: 0.12em;
-      white-space: nowrap; }
+      white-space: nowrap; text-shadow: 0 2px 10px rgba(0,0,0,0.55); }
     #root .sub span { display: inline-block; margin: 0 0.12em; }
     #root .closing { margin-top: 44px; color: #f1f2f4; font-size: 38px; letter-spacing: 0.04em; text-shadow: 0 2px 14px rgba(0,0,0,0.6); }
 
@@ -70,7 +100,7 @@
     tl.fromTo("#outro-title", { opacity: 0, scale: 0.85, filter: "blur(8px)" }, { opacity: 1, scale: 1, filter: "blur(0px)", duration: 0.8, ease: "back.out(1.6)" }, 1.0);
     tl.fromTo("#outro-rule", { scaleX: 0 }, { scaleX: 1, duration: 0.9, ease: "expo.out" }, 1.6);
     tl.fromTo("#outro-sub span", { opacity: 0, filter: "blur(6px)" }, { opacity: 1, filter: "blur(0px)", duration: 0.3, ease: "power4.out", stagger: 0.09 }, 1.9);
-    tl.fromTo("#outro-sub", { textShadow: "0 0 0px rgba(255,170,90,0), 0 0 0px rgba(255,140,60,0)" }, { textShadow: "0 0 16px rgba(255,170,90,0.85), 0 0 46px rgba(255,140,60,0.55)", duration: 1.4, ease: "power2.inOut" }, 2.2);
+    tl.fromTo("#outro-sub", { textShadow: "0 0 0px rgba(255,170,90,0), 0 0 0px rgba(255,140,60,0), 0 2px 10px rgba(0,0,0,0.55)" }, { textShadow: "0 0 16px rgba(255,170,90,0.85), 0 0 46px rgba(255,140,60,0.55), 0 2px 10px rgba(0,0,0,0.55)", duration: 1.4, ease: "power2.inOut" }, 2.2);
     tl.fromTo("#outro-closing", { opacity: 0, y: 20, filter: "blur(6px)" }, { opacity: 1, y: 0, filter: "blur(0px)", duration: 0.5, ease: "back.out(1.8)" }, 3.0);
     tl.to("#outro-stage", { opacity: 0, duration: 2.0, ease: "power2.inOut" }, 5.4);
     window.__timelines["outro"] = tl;

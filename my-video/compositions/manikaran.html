@@ -14,25 +14,51 @@
       color: #ffffff; font-size: 36px; letter-spacing: 0.3em; text-transform: uppercase; white-space: nowrap;
       text-shadow: 0 2px 16px rgba(0,0,0,0.65); transform-origin: left center; }
     #root .label .rule { width: 64px; height: 3px; background: linear-gradient(90deg, #ffc27a, #ff8a3d); transform-origin: left center; }
+    #root .sticker { position: absolute; left: 160px; top: 380px; padding: 14px 28px; border-radius: 18px;
+      font-family: "Poppins", sans-serif; font-weight: 700; font-size: 42px; line-height: 1.15; white-space: nowrap;
+      box-shadow: 0 14px 36px rgba(0,0,0,0.35); transform-origin: 30% 50%; }
+    #root .sticker.s0 { background: #ffffff; color: #15161a; }
+    #root .sticker.s1 { background: linear-gradient(135deg, #ffd08a, #ff8a3d); color: #2a1206; }
+    #root .sticker.s2 { background: #15161a; color: #ffd9a6; }
+    #root .splitbg { background: linear-gradient(160deg, #ffb35c, #ff6a3d); }
+    #root .half { position: absolute; left: 0; width: 1080px; height: 960px; overflow: hidden; }
+    #root .bar { position: absolute; left: 0; top: 952px; width: 1080px; height: 16px; background: #fff3e2;
+      box-shadow: 0 0 24px rgba(255,170,90,0.8); }
+    #root .tag { position: absolute; left: 120px; padding: 10px 24px; border-radius: 999px; background: #ffffff; color: #15161a;
+      font-family: "Poppins", sans-serif; font-weight: 700; font-size: 38px; text-transform: uppercase; letter-spacing: 0.08em;
+      box-shadow: 0 10px 28px rgba(0,0,0,0.35); white-space: nowrap; }
+    #root .tag.b { background: #ff8a3d; color: #1c0b03; }
+    #root .board { background: radial-gradient(ellipse at 50% 35%, #fbefdd 0%, #f0d2ab 60%, #e2b585 100%); }
+    #root .pol { position: absolute; width: 520px; height: 690px; background: #fffdf8; border-radius: 6px;
+      box-shadow: 0 24px 50px rgba(60,30,10,0.35); }
+    #root .kb .pol img { position: absolute; left: 22px; top: 22px; width: 476px; height: 560px; object-fit: cover; }
+    #root .countbg { background: radial-gradient(ellipse at 50% 45%, #3a1a0a 0%, #160b06 55%, #07080b 100%); }
+    #root .cstack { position: absolute; left: 120px; top: 288px; width: 840px; height: 960px; display: flex;
+      flex-direction: column; align-items: center; justify-content: center; }
+    #root .ckicker { color: #f1e3cf; font-size: 34px; letter-spacing: 0.3em; text-transform: uppercase; margin-bottom: 20px; padding-left: 0.3em; }
+    #root .digits { display: flex; gap: 6px; height: 360px; }
+    #root .dcol { width: 175px; height: 360px; overflow: hidden; }
+    #root .dstrip { display: flex; flex-direction: column; }
+    #root .dstrip span { display: block; height: 360px; line-height: 360px; text-align: center;
+      font-family: "Playfair Display", serif; font-weight: 700; font-size: 280px; color: #ffc98a;
+      text-shadow: 0 0 22px rgba(255,170,90,0.75), 0 0 60px rgba(255,120,50,0.5); }
+    #root .cword { margin-top: 30px; padding: 14px 34px; border-radius: 999px; background: #fff3e2; color: #2a1206;
+      font-family: "Poppins", sans-serif; font-weight: 700; font-size: 48px; text-transform: uppercase; letter-spacing: 0.1em; }
 
   </style>
-  <div id="root" data-composition-id="manikaran" data-width="1080" data-height="1920" data-duration="21.9000"
+  <div id="root" data-composition-id="manikaran" data-width="1080" data-height="1920" data-duration="19.9667"
     data-composition-variables='[{"id": "chapter", "type": "string", "label": "Chapter label", "default": "Manikaran"}]'>
-    <div id="manikaran-s1" class="shot" data-layout-allow-overflow><div id="manikaran-s1-tx" class="tx"><div id="manikaran-s1-kb" class="kb"><img id="manikaran-s1-m" class="clip" data-start="0" data-duration="2.3667" data-track-index="0" src="assets/photos/gurudwara.jpg" style="object-position:30% 50%;" alt="" /></div></div></div>
-    <div id="manikaran-s2" class="shot" data-layout-allow-overflow><div id="manikaran-s2-tx" class="tx"><div id="manikaran-s2-kb" class="kb"><img id="manikaran-s2-m" class="clip" data-start="1.9667" data-duration="1.5667" data-track-index="1" src="assets/photos/gurudwara-front.jpg" style="object-position:40% 50%;" alt="" /></div></div></div>
-    <div id="manikaran-s3" class="shot" data-layout-allow-overflow><div id="manikaran-s3-tx" class="tx"><div id="manikaran-s3-kb" class="kb"><img id="manikaran-s3-m" class="clip" data-start="3.1333" data-duration="1.5667" data-track-index="0" src="assets/photos/manikaran-temple-river.jpg" style="object-position:40% 50%;" alt="" /></div></div></div>
-    <div id="manikaran-s4" class="shot" data-layout-allow-overflow><div id="manikaran-s4-tx" class="tx"><div id="manikaran-s4-kb" class="kb"><img id="manikaran-s4-m" class="clip" data-start="4.3" data-duration="1.5667" data-track-index="1" src="assets/photos/hot-spring-pool.jpg" style="object-position:70% 50%;" alt="" /></div></div></div>
-    <div id="manikaran-s5" class="shot" data-layout-allow-overflow><div id="manikaran-s5-tx" class="tx"><div id="manikaran-s5-kb" class="kb"><video id="manikaran-s5-m" class="clip" data-start="5.4667" data-duration="2.3667" data-track-index="0" muted playsinline src="assets/video/river-valley.mp4"></video></div></div></div>
-    <div id="manikaran-s6" class="shot" data-layout-allow-overflow><div id="manikaran-s6-tx" class="tx"><div id="manikaran-s6-kb" class="kb"><video id="manikaran-s6-m" class="clip" data-start="7.4333" data-duration="2.3667" data-track-index="1" muted playsinline src="assets/video/river-run.mp4"></video></div></div></div>
-    <div id="manikaran-s7" class="shot" data-layout-allow-overflow><div id="manikaran-s7-tx" class="tx"><div id="manikaran-s7-kb" class="kb"><video id="manikaran-s7-m" class="clip" data-start="9.4" data-duration="2.3667" data-track-index="0" muted playsinline src="assets/video/manikaran-river.mp4"></video></div></div></div>
-    <div id="manikaran-s8" class="shot" data-layout-allow-overflow><div id="manikaran-s8-tx" class="tx"><div id="manikaran-s8-kb" class="kb"><img id="manikaran-s8-m" class="clip" data-start="11.3667" data-duration="1.5667" data-track-index="1" src="assets/photos/langar-thali.jpg" alt="" /></div></div></div>
-    <div id="manikaran-s9" class="shot" data-layout-allow-overflow><div id="manikaran-s9-tx" class="tx"><div id="manikaran-s9-kb" class="kb"><img id="manikaran-s9-m" class="clip" data-start="12.5333" data-duration="1.5667" data-track-index="0" src="assets/photos/her-on-bridge.jpg" style="object-position:52% 50%;" alt="" /></div></div></div>
-    <div id="manikaran-s10" class="shot" data-layout-allow-overflow><div id="manikaran-s10-tx" class="tx"><div id="manikaran-s10-kb" class="kb"><img id="manikaran-s10-m" class="clip" data-start="13.7" data-duration="2.3667" data-track-index="1" src="assets/photos/couple-selfie-manikaran.jpg" style="object-position:43% 50%;" alt="" /></div></div></div>
-    <div id="manikaran-s11" class="shot" data-layout-allow-overflow><div id="manikaran-s11-tx" class="tx"><div id="manikaran-s11-kb" class="kb"><img id="manikaran-s11-m" class="clip" data-start="15.6667" data-duration="1.5667" data-track-index="0" src="assets/photos/him-on-bridge.jpg" style="object-position:55% 50%;" alt="" /></div></div></div>
-    <div id="manikaran-s12" class="shot" data-layout-allow-overflow><div id="manikaran-s12-tx" class="tx"><div id="manikaran-s12-kb" class="kb"><img id="manikaran-s12-m" class="clip" data-start="16.8333" data-duration="1.5667" data-track-index="1" src="assets/photos/her-gurudwara-railing.jpg" style="object-position:62% 50%;" alt="" /></div></div></div>
-    <div id="manikaran-s13" class="shot" data-layout-allow-overflow><div id="manikaran-s13-tx" class="tx"><div id="manikaran-s13-kb" class="kb"><img id="manikaran-s13-m" class="clip" data-start="18" data-duration="1.5667" data-track-index="0" src="assets/photos/him-bridge-walk.jpg" style="object-position:56% 50%;" alt="" /></div></div></div>
-    <div id="manikaran-s14" class="shot" data-layout-allow-overflow><div id="manikaran-s14-tx" class="tx"><div id="manikaran-s14-kb" class="kb"><img id="manikaran-s14-m" class="clip" data-start="19.1667" data-duration="1.5667" data-track-index="1" src="assets/photos/her-peace-gurudwara.jpg" style="object-position:60% 50%;" alt="" /></div></div></div>
-    <div id="manikaran-s15" class="shot" data-layout-allow-overflow><div id="manikaran-s15-tx" class="tx"><div id="manikaran-s15-kb" class="kb"><img id="manikaran-s15-m" class="clip" data-start="20.3333" data-duration="1.5667" data-track-index="0" src="assets/photos/him-gurudwara-railing.jpg" style="object-position:55% 50%;" alt="" /></div></div></div>
+    <div id="manikaran-s1" class="shot" data-layout-allow-overflow><div id="manikaran-s1-tx" class="tx"><div id="manikaran-s1-kb" class="kb"><img id="manikaran-s1-m" class="clip" data-start="0" data-duration="2.4" data-track-index="0" src="assets/photos/gurudwara.jpg" style="object-position:30% 50%;" alt="" /></div></div></div>
+    <div id="manikaran-s2" class="shot" data-layout-allow-overflow><div id="manikaran-s2-tx" class="tx"><div id="manikaran-s2-kb" class="kb"><img id="manikaran-s2-m" class="clip" data-start="2" data-duration="1.5667" data-track-index="1" src="assets/photos/gurudwara-front.jpg" style="object-position:40% 50%;" alt="" /></div></div></div>
+    <div id="manikaran-s3" class="shot" data-layout-allow-overflow><div id="manikaran-s3-tx" class="tx"><div id="manikaran-s3-kb" class="kb"><img id="manikaran-s3-m" class="clip" data-start="3.1667" data-duration="2.0667" data-track-index="0" src="assets/photos/manikaran-temple-river.jpg" style="object-position:40% 50%;" alt="" /></div><div id="manikaran-s3-cap" class="sticker s2">Hot springs, cold hands</div></div></div>
+    <div id="manikaran-s4" class="shot" data-layout-allow-overflow><div id="manikaran-s4-tx" class="tx"><div id="manikaran-s4-kb" class="kb"><video id="manikaran-s4-m" class="clip" data-start="4.8333" data-duration="2.4" data-track-index="1" muted playsinline src="assets/video/river-valley.mp4"></video></div></div></div>
+    <div id="manikaran-s5" class="shot" data-layout-allow-overflow><div id="manikaran-s5-tx" class="tx"><div id="manikaran-s5-kb" class="kb"><video id="manikaran-s5-m" class="clip" data-start="6.8333" data-duration="2.4" data-track-index="0" muted playsinline src="assets/video/river-run.mp4"></video></div></div></div>
+    <div id="manikaran-s6" class="shot" data-layout-allow-overflow><div id="manikaran-s6-tx" class="tx"><div id="manikaran-s6-kb" class="kb"><video id="manikaran-s6-m" class="clip" data-start="8.8333" data-duration="2.4" data-track-index="1" muted playsinline src="assets/video/manikaran-river.mp4"></video></div></div></div>
+    <div id="manikaran-s7" class="shot" data-layout-allow-overflow><div id="manikaran-s7-tx" class="tx"><div id="manikaran-s7-kb" class="kb"><img id="manikaran-s7-m" class="clip" data-start="10.8333" data-duration="2.0667" data-track-index="0" src="assets/photos/langar-thali.jpg" alt="" /></div><div id="manikaran-s7-cap" class="sticker s0">Langar love</div></div></div>
+    <div id="manikaran-s8" class="shot" data-layout-allow-overflow data-layout-allow-overlap><div id="manikaran-s8-tx" class="tx splitbg"><div id="manikaran-s8-kb" class="kb"><div id="manikaran-s8-a" class="half" style="top:0"><img id="manikaran-s8-ma" class="clip" data-start="12.5" data-duration="2.7667" data-track-index="2" src="assets/photos/him-on-bridge.jpg" style="object-position:55% 55%;" alt="" /></div><div id="manikaran-s8-b" class="half" style="top:960px"><img id="manikaran-s8-mb" class="clip" data-start="12.5" data-duration="2.7667" data-track-index="3" src="assets/photos/her-on-bridge.jpg" style="object-position:52% 55%;" alt="" /></div><div id="manikaran-s8-bar" class="bar"></div><div id="manikaran-s8-la" class="tag" style="top:820px">His pose</div><div id="manikaran-s8-lb" class="tag b" style="top:1000px">Her pose</div></div></div></div>
+    <div id="manikaran-s9" class="shot" data-layout-allow-overflow><div id="manikaran-s9-tx" class="tx"><div id="manikaran-s9-kb" class="kb"><img id="manikaran-s9-m" class="clip" data-start="14.8667" data-duration="1.5667" data-track-index="0" src="assets/photos/him-bridge-walk.jpg" style="object-position:56% 50%;" alt="" /></div></div></div>
+    <div id="manikaran-s10" class="shot" data-layout-allow-overflow data-layout-allow-overlap><div id="manikaran-s10-tx" class="tx splitbg"><div id="manikaran-s10-kb" class="kb"><div id="manikaran-s10-a" class="half" style="top:0"><img id="manikaran-s10-ma" class="clip" data-start="16.0333" data-duration="2.7667" data-track-index="2" src="assets/photos/him-gurudwara-railing.jpg" style="object-position:55% 48%;" alt="" /></div><div id="manikaran-s10-b" class="half" style="top:960px"><img id="manikaran-s10-mb" class="clip" data-start="16.0333" data-duration="2.7667" data-track-index="3" src="assets/photos/her-peace-gurudwara.jpg" style="object-position:60% 45%;" alt="" /></div><div id="manikaran-s10-bar" class="bar"></div><div id="manikaran-s10-la" class="tag" style="top:820px">His lean</div><div id="manikaran-s10-lb" class="tag b" style="top:1000px">Her peace</div></div></div></div>
+    <div id="manikaran-s11" class="shot" data-layout-allow-overflow><div id="manikaran-s11-tx" class="tx"><div id="manikaran-s11-kb" class="kb"><img id="manikaran-s11-m" class="clip" data-start="18.4" data-duration="1.5667" data-track-index="0" src="assets/photos/her-gurudwara-railing.jpg" style="object-position:62% 50%;" alt="" /></div></div></div>
     <div id="manikaran-scrim" class="scrim"></div>
     <div id="manikaran-label" class="label"><div id="manikaran-rule" class="rule"></div><span id="manikaran-label-text" data-var-text="chapter">Manikaran</span></div>
     <div id="manikaran-flash" class="flash" data-layout-ignore></div>
@@ -46,58 +72,56 @@
     tl.set("#manikaran-leak", { x: -1700 }, 0.0000);
     tl.to("#manikaran-leak", { x: 900, duration: 0.80, ease: "power1.inOut" }, 0.0000);
     tl.to("#manikaran-leak", { opacity: 0.95, duration: 0.32, ease: "power2.out", yoyo: true, repeat: 1 }, 0.0000);
-    tl.to("#manikaran-s1-tx", { x: -1080, y: 0, filter: "blur(18px)", duration: 0.4, ease: "power2.in" }, 1.9667);
-    tl.fromTo("#manikaran-s1-kb", { scale: 1 }, { scale: 1.06, duration: 2.3667, ease: "none" }, 0.0000);
-    tl.fromTo("#manikaran-s1-m", { objectPosition: "30% 50%" }, { objectPosition: "70% 50%", duration: 1.9667, ease: "sine.inOut" }, 0.0000);
-    tl.fromTo("#manikaran-s2-tx", { x: 1080, y: 0, filter: "blur(18px)" }, { x: 0, y: 0, filter: "blur(0px)", duration: 0.4, ease: "power2.out" }, 1.9667);
-    tl.to("#manikaran-s2-tx", { rotation: 22, scale: 1.45, filter: "blur(16px)", duration: 0.4, ease: "power2.in" }, 3.1333);
-    tl.fromTo("#manikaran-s2-kb", { scale: 1 }, { scale: 1.06, duration: 1.5667, ease: "none" }, 1.9667);
-    tl.fromTo("#manikaran-s3-tx", { rotation: -22, scale: 1.45, opacity: 0, filter: "blur(16px)" }, { rotation: 0, scale: 1, opacity: 1, filter: "blur(0px)", duration: 0.4, ease: "power2.out" }, 3.1333);
-    tl.to("#manikaran-s3-tx", { scale: 1.12, duration: 0.4, ease: "power1.in" }, 4.3000);
-    tl.fromTo("#manikaran-s3-kb", { scale: 1 }, { scale: 1.06, duration: 1.5667, ease: "none" }, 3.1333);
-    tl.fromTo("#manikaran-s4-tx", { clipPath: "circle(0% at 50% 46%)" }, { clipPath: "circle(74% at 50% 46%)", duration: 0.440, ease: "power2.inOut" }, 4.3000);
-    tl.to("#manikaran-s4-tx", { x: 0, y: -1920, filter: "blur(18px)", duration: 0.4, ease: "power2.in" }, 5.4667);
-    tl.fromTo("#manikaran-s4-kb", { scale: 1 }, { scale: 1.06, duration: 1.5667, ease: "none" }, 4.3000);
-    tl.fromTo("#manikaran-s5-tx", { x: 0, y: 1920, filter: "blur(18px)" }, { x: 0, y: 0, filter: "blur(0px)", duration: 0.4, ease: "power2.out" }, 5.4667);
-    tl.to("#manikaran-s5-tx", { scale: 1.12, duration: 0.4, ease: "power1.in" }, 7.4333);
-    tl.fromTo("#manikaran-s5-kb", { scale: 1 }, { scale: 1.06, duration: 2.3667, ease: "none" }, 5.4667);
-    tl.fromTo("#manikaran-s6-tx", { opacity: 0 }, { opacity: 1, duration: 0.06, ease: "none" }, 7.5733);
-    tl.to("#manikaran-flash", { opacity: 0.85, duration: 0.16, ease: "power2.out" }, 7.4333);
-    tl.to("#manikaran-flash", { opacity: 0, duration: 0.36, ease: "power2.in" }, 7.5933);
-    tl.to("#manikaran-s6-tx", { x: 1080, y: 0, filter: "blur(18px)", duration: 0.4, ease: "power2.in" }, 9.4000);
-    tl.fromTo("#manikaran-s6-kb", { scale: 1 }, { scale: 1.06, duration: 2.3667, ease: "none" }, 7.4333);
-    tl.fromTo("#manikaran-s7-tx", { x: -1080, y: 0, filter: "blur(18px)" }, { x: 0, y: 0, filter: "blur(0px)", duration: 0.4, ease: "power2.out" }, 9.4000);
-    tl.to("#manikaran-s7-tx", { scale: 0.8, filter: "blur(12px)", duration: 0.4, ease: "power2.in" }, 11.3667);
-    tl.fromTo("#manikaran-s7-kb", { scale: 1 }, { scale: 1.06, duration: 2.3667, ease: "none" }, 9.4000);
-    tl.fromTo("#manikaran-s8-tx", { scale: 1.6, opacity: 0, filter: "blur(12px)" }, { scale: 1, opacity: 1, filter: "blur(0px)", duration: 0.4, ease: "power3.out" }, 11.3667);
-    tl.to("#manikaran-s8-tx", { scale: 1.35, filter: "blur(14px)", duration: 0.4, ease: "power2.in" }, 12.5333);
-    tl.fromTo("#manikaran-s8-kb", { scale: 1 }, { scale: 1.06, duration: 1.5667, ease: "none" }, 11.3667);
-    tl.fromTo("#manikaran-s9-tx", { scale: 1.5, opacity: 0, filter: "blur(14px)" }, { scale: 1, opacity: 1, filter: "blur(0px)", duration: 0.4, ease: "power2.out" }, 12.5333);
-    tl.to("#manikaran-s9-tx", { x: -1080, y: 0, filter: "blur(18px)", duration: 0.4, ease: "power2.in" }, 13.7000);
-    tl.fromTo("#manikaran-s9-kb", { scale: 1 }, { scale: 1.06, duration: 1.5667, ease: "none" }, 12.5333);
-    tl.fromTo("#manikaran-s10-tx", { x: 1080, y: 0, filter: "blur(18px)" }, { x: 0, y: 0, filter: "blur(0px)", duration: 0.4, ease: "power2.out" }, 13.7000);
-    tl.to("#manikaran-s10-tx", { rotation: 22, scale: 1.45, filter: "blur(16px)", duration: 0.4, ease: "power2.in" }, 15.6667);
-    tl.fromTo("#manikaran-s10-kb", { scale: 1 }, { scale: 1.06, duration: 2.3667, ease: "none" }, 13.7000);
-    tl.fromTo("#manikaran-s11-tx", { rotation: -22, scale: 1.45, opacity: 0, filter: "blur(16px)" }, { rotation: 0, scale: 1, opacity: 1, filter: "blur(0px)", duration: 0.4, ease: "power2.out" }, 15.6667);
-    tl.to("#manikaran-s11-tx", { scale: 1.12, duration: 0.4, ease: "power1.in" }, 16.8333);
-    tl.fromTo("#manikaran-s11-kb", { scale: 1 }, { scale: 1.06, duration: 1.5667, ease: "none" }, 15.6667);
-    tl.fromTo("#manikaran-s12-tx", { clipPath: "circle(0% at 50% 46%)" }, { clipPath: "circle(74% at 50% 46%)", duration: 0.440, ease: "power2.inOut" }, 16.8333);
-    tl.to("#manikaran-s12-tx", { x: 0, y: -1920, filter: "blur(18px)", duration: 0.4, ease: "power2.in" }, 18.0000);
-    tl.fromTo("#manikaran-s12-kb", { scale: 1 }, { scale: 1.06, duration: 1.5667, ease: "none" }, 16.8333);
-    tl.fromTo("#manikaran-s13-tx", { x: 0, y: 1920, filter: "blur(18px)" }, { x: 0, y: 0, filter: "blur(0px)", duration: 0.4, ease: "power2.out" }, 18.0000);
-    tl.to("#manikaran-s13-tx", { scale: 1.12, duration: 0.4, ease: "power1.in" }, 19.1667);
-    tl.fromTo("#manikaran-s13-kb", { scale: 1 }, { scale: 1.06, duration: 1.5667, ease: "none" }, 18.0000);
-    tl.fromTo("#manikaran-s14-tx", { opacity: 0 }, { opacity: 1, duration: 0.06, ease: "none" }, 19.3067);
-    tl.to("#manikaran-flash", { opacity: 0.85, duration: 0.16, ease: "power2.out" }, 19.1667);
-    tl.to("#manikaran-flash", { opacity: 0, duration: 0.36, ease: "power2.in" }, 19.3267);
-    tl.to("#manikaran-s14-tx", { x: 1080, y: 0, filter: "blur(18px)", duration: 0.4, ease: "power2.in" }, 20.3333);
-    tl.fromTo("#manikaran-s14-kb", { scale: 1 }, { scale: 1.06, duration: 1.5667, ease: "none" }, 19.1667);
-    tl.fromTo("#manikaran-s15-tx", { x: -1080, y: 0, filter: "blur(18px)" }, { x: 0, y: 0, filter: "blur(0px)", duration: 0.4, ease: "power2.out" }, 20.3333);
-    tl.to("#manikaran-s15-tx", { scale: 1.35, filter: "blur(14px)", duration: 0.4, ease: "power2.in" }, 21.5000);
-    tl.fromTo("#manikaran-s15-kb", { scale: 1 }, { scale: 1.06, duration: 1.5667, ease: "none" }, 20.3333);
+    tl.to("#manikaran-s1-tx", { scale: 0.8, filter: "blur(12px)", duration: 0.4, ease: "power2.in" }, 2.0000);
+    tl.fromTo("#manikaran-s1-kb", { scale: 1 }, { scale: 1.06, duration: 2.4000, ease: "none" }, 0.0000);
+    tl.fromTo("#manikaran-s1-m", { objectPosition: "30% 50%" }, { objectPosition: "70% 50%", duration: 2.0000, ease: "sine.inOut" }, 0.0000);
+    tl.fromTo("#manikaran-s2-tx", { scale: 1.6, opacity: 0, filter: "blur(12px)" }, { scale: 1, opacity: 1, filter: "blur(0px)", duration: 0.4, ease: "power3.out" }, 2.0000);
+    tl.to("#manikaran-s2-tx", { scale: 1.35, filter: "blur(14px)", duration: 0.4, ease: "power2.in" }, 3.1667);
+    tl.fromTo("#manikaran-s2-kb", { scale: 1 }, { scale: 1.06, duration: 1.5667, ease: "none" }, 2.0000);
+    tl.fromTo("#manikaran-s3-cap", { scale: 0, rotation: -18 }, { scale: 1, rotation: -4, duration: 0.5, ease: "back.out(2.6)" }, 3.6167);
+    tl.fromTo("#manikaran-s3-tx", { scale: 1.5, opacity: 0, filter: "blur(14px)" }, { scale: 1, opacity: 1, filter: "blur(0px)", duration: 0.4, ease: "power2.out" }, 3.1667);
+    tl.to("#manikaran-s3-tx", { x: -1080, y: 0, filter: "blur(18px)", duration: 0.4, ease: "power2.in" }, 4.8333);
+    tl.fromTo("#manikaran-s3-kb", { scale: 1 }, { scale: 1.06, duration: 2.0667, ease: "none" }, 3.1667);
+    tl.fromTo("#manikaran-s4-tx", { x: 1080, y: 0, filter: "blur(18px)" }, { x: 0, y: 0, filter: "blur(0px)", duration: 0.4, ease: "power2.out" }, 4.8333);
+    tl.to("#manikaran-s4-tx", { rotation: 22, scale: 1.45, filter: "blur(16px)", duration: 0.4, ease: "power2.in" }, 6.8333);
+    tl.fromTo("#manikaran-s4-kb", { scale: 1 }, { scale: 1.06, duration: 2.4000, ease: "none" }, 4.8333);
+    tl.fromTo("#manikaran-s5-tx", { rotation: -22, scale: 1.45, opacity: 0, filter: "blur(16px)" }, { rotation: 0, scale: 1, opacity: 1, filter: "blur(0px)", duration: 0.4, ease: "power2.out" }, 6.8333);
+    tl.to("#manikaran-s5-tx", { scale: 1.12, duration: 0.4, ease: "power1.in" }, 8.8333);
+    tl.fromTo("#manikaran-s5-kb", { scale: 1 }, { scale: 1.06, duration: 2.4000, ease: "none" }, 6.8333);
+    tl.fromTo("#manikaran-s6-tx", { clipPath: "circle(0% at 50% 46%)" }, { clipPath: "circle(74% at 50% 46%)", duration: 0.440, ease: "power2.inOut" }, 8.8333);
+    tl.to("#manikaran-s6-tx", { x: 0, y: -1920, filter: "blur(18px)", duration: 0.4, ease: "power2.in" }, 10.8333);
+    tl.fromTo("#manikaran-s6-kb", { scale: 1 }, { scale: 1.06, duration: 2.4000, ease: "none" }, 8.8333);
+    tl.fromTo("#manikaran-s7-cap", { scale: 0, rotation: -11 }, { scale: 1, rotation: 3, duration: 0.5, ease: "back.out(2.6)" }, 11.2833);
+    tl.fromTo("#manikaran-s7-tx", { x: 0, y: 1920, filter: "blur(18px)" }, { x: 0, y: 0, filter: "blur(0px)", duration: 0.4, ease: "power2.out" }, 10.8333);
+    tl.to("#manikaran-s7-tx", { scale: 1.12, duration: 0.4, ease: "power1.in" }, 12.5000);
+    tl.fromTo("#manikaran-s7-kb", { scale: 1 }, { scale: 1.06, duration: 2.0667, ease: "none" }, 10.8333);
+    tl.fromTo("#manikaran-s8-a", { x: -1080 }, { x: 0, duration: 0.5, ease: "power3.out" }, 12.6000);
+    tl.fromTo("#manikaran-s8-b", { x: 1080 }, { x: 0, duration: 0.5, ease: "power3.out" }, 12.7200);
+    tl.fromTo("#manikaran-s8-bar", { scaleX: 0 }, { scaleX: 1, duration: 0.45, ease: "expo.out" }, 12.9500);
+    tl.fromTo("#manikaran-s8-la", { scale: 0, rotation: -18 }, { scale: 1, rotation: -4, duration: 0.45, ease: "back.out(2.6)" }, 13.1000);
+    tl.fromTo("#manikaran-s8-lb", { scale: 0, rotation: 18 }, { scale: 1, rotation: 3, duration: 0.45, ease: "back.out(2.6)" }, 13.2500);
+    tl.fromTo("#manikaran-s8-tx", { opacity: 0 }, { opacity: 1, duration: 0.06, ease: "none" }, 12.6400);
+    tl.to("#manikaran-flash", { opacity: 0.85, duration: 0.16, ease: "power2.out" }, 12.5000);
+    tl.to("#manikaran-flash", { opacity: 0, duration: 0.36, ease: "power2.in" }, 12.6600);
+    tl.to("#manikaran-s8-tx", { x: 1080, y: 0, filter: "blur(18px)", duration: 0.4, ease: "power2.in" }, 14.8667);
+    tl.fromTo("#manikaran-s8-kb", { scale: 1 }, { scale: 1.06, duration: 2.7667, ease: "none" }, 12.5000);
+    tl.fromTo("#manikaran-s9-tx", { x: -1080, y: 0, filter: "blur(18px)" }, { x: 0, y: 0, filter: "blur(0px)", duration: 0.4, ease: "power2.out" }, 14.8667);
+    tl.to("#manikaran-s9-tx", { scale: 0.8, filter: "blur(12px)", duration: 0.4, ease: "power2.in" }, 16.0333);
+    tl.fromTo("#manikaran-s9-kb", { scale: 1 }, { scale: 1.06, duration: 1.5667, ease: "none" }, 14.8667);
+    tl.fromTo("#manikaran-s10-a", { x: -1080 }, { x: 0, duration: 0.5, ease: "power3.out" }, 16.1333);
+    tl.fromTo("#manikaran-s10-b", { x: 1080 }, { x: 0, duration: 0.5, ease: "power3.out" }, 16.2533);
+    tl.fromTo("#manikaran-s10-bar", { scaleX: 0 }, { scaleX: 1, duration: 0.45, ease: "expo.out" }, 16.4833);
+    tl.fromTo("#manikaran-s10-la", { scale: 0, rotation: -18 }, { scale: 1, rotation: -4, duration: 0.45, ease: "back.out(2.6)" }, 16.6333);
+    tl.fromTo("#manikaran-s10-lb", { scale: 0, rotation: 18 }, { scale: 1, rotation: 3, duration: 0.45, ease: "back.out(2.6)" }, 16.7833);
+    tl.fromTo("#manikaran-s10-tx", { scale: 1.6, opacity: 0, filter: "blur(12px)" }, { scale: 1, opacity: 1, filter: "blur(0px)", duration: 0.4, ease: "power3.out" }, 16.0333);
+    tl.to("#manikaran-s10-tx", { scale: 1.35, filter: "blur(14px)", duration: 0.4, ease: "power2.in" }, 18.4000);
+    tl.fromTo("#manikaran-s10-kb", { scale: 1 }, { scale: 1.06, duration: 2.7667, ease: "none" }, 16.0333);
+    tl.fromTo("#manikaran-s11-tx", { scale: 1.5, opacity: 0, filter: "blur(14px)" }, { scale: 1, opacity: 1, filter: "blur(0px)", duration: 0.4, ease: "power2.out" }, 18.4000);
+    tl.to("#manikaran-s11-tx", { scale: 1.35, filter: "blur(14px)", duration: 0.4, ease: "power2.in" }, 19.5667);
+    tl.fromTo("#manikaran-s11-kb", { scale: 1 }, { scale: 1.06, duration: 1.5667, ease: "none" }, 18.4000);
     tl.fromTo("#manikaran-label", { opacity: 0, scale: 0.6 }, { opacity: 1, scale: 1, duration: 0.5, ease: "back.out(2.2)" }, 0.50);
     tl.fromTo("#manikaran-rule", { scaleX: 0 }, { scaleX: 1, duration: 0.6, ease: "expo.out" }, 0.70);
-    tl.to("#manikaran-label", { opacity: 0, x: -40, duration: 0.25, ease: "power3.in" }, 21.2000);
+    tl.to("#manikaran-label", { opacity: 0, x: -40, duration: 0.25, ease: "power3.in" }, 19.2667);
     window.__timelines["manikaran"] = tl;
   </script>
 </template>
