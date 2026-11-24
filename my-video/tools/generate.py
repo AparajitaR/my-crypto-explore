@@ -95,6 +95,14 @@ INTRO_BG = vd("valley-sunset")
 OUTRO_BG = ph("couple-heart", pos=48)
 CLOSING = "#SayAnAparajitaStory"
 
+# Derived photos made from tracked originals at build time (kept out of git).
+DERIVED = {"anniversary-candles-crop": ("anniversary-candles", "crop=1920:1860:0:0")}  # hides the glass and keyring
+for _name, (_src, _vf) in DERIVED.items():
+    _out = os.path.join(OUT, P, _name + ".jpg")
+    if not os.path.exists(_out):
+        subprocess.run(["ffmpeg", "-v", "error", "-y", "-i", os.path.join(OUT, P, _src + ".jpg"), "-vf", _vf,
+                        "-q:v", "3", _out], check=True)
+
 # ---- timing ---------------------------------------------------------------------------------
 _aspects = {}
 
